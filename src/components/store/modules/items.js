@@ -1,23 +1,42 @@
-import * as d3 from 'd3'
+import { csv } from 'd3-fetch'
 const state = {
 	items: [
+
+	],
+	itemsSelected: [
+
+	],
+	itemsAgg: [
+
+	],
+	tecs: [
+
+	],
+	libs: [
 
 	]
 }
 
 const getters = {
-	allItems: (state) => state.items
+	items: (state) => state.items,
+	itemsSelected: (state) => state.itemsSelected,
+	itemsAgg: (state) => state.itemsAgg,
+	tecs: (state) => state.tecs,
+	libs: (state) => state.libs
 }
-// Fetch anchors
+
 const actions = {
+	// Fetch anchors
 	async fetchItems() {
-		const response = await d3.csv(
-			'https://gist.githubusercontent.com/anerodata/1dc73d3e6bb314d7a6fae88023923a82/raw/d9fc13d7e689a8f4cbf8afd3c65354efff3633fb/traffic-airports.csv'
+		const response = await csv(
+			'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/data/data.csv'
 		)
+		// bind this 
 		console.log(response)
 	}
+	// Filter anchors
 }
-// Filter anchors
+
 
 export default {
 	state,
