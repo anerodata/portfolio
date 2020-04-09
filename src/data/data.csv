@@ -1,0 +1,3 @@
+titulo,fecha,url,tecnología,biblioteca,organización,Descripción
+¿En qué se gasta tu ayuntamiento el dinero? Comprueba las partidas desde el año 2010,2019-07-21,https://www.elconfidencial.com/economia/2019-07-21/ayuntamientos-buscador-gasto-presupuesto-partidas_2135047/,Javascript,d3.js,El Confidencial,Visualización interactiva
+Hacer política tras dejar la política: el 61% de los exministros ocupa cargos en fundaciones,2019-07-08,https://www.elconfidencial.com/espana/2019-07-08/politicos-fundaciones-lobby-ministros_2096406/,"Python,Onodo","requests.py,bs4.py",El Confidencial,Web scraping
