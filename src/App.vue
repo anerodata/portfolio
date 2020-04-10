@@ -25,8 +25,8 @@ export default {
   },
   data() {
     return {
-      title: 'Antonio Hernández',
-      subtitle: 'Periodismo de datos y desarrollo web'
+      title: '<Antonio Hernández/ >',
+      subtitle: '<Periodismo de datos y desarrollo web/ >'
     }
   }
 }
@@ -34,6 +34,6 @@ export default {
 
 <style>
   body {
-    background: #d1d1e0;
+    background-image: linear-gradient(to bottom right, white, #c1c1c1);
   }
 </style>

@@ -55,7 +55,17 @@
 		"url": "https://www.elconfidencial.com/alma-corazon-vida/2019-10-31/bajan-precios-medicamentos-paracetamol-ventolin_2308239/",
 		"biblioteca": ["requests.py", "beautifulSoup.py"],
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
-		"organización": "El Confidencial",
+		"organización": "Civio",
+		"descripción": "Pdf scraping"
+	},
+
+	{
+		"titulo": "Paracetamol o Ventolin: consulta aquí los 1.200 medicamentos que bajan de precio",
+		"fecha": "31/10/2019",
+		"url": "https://www.elconfidencial.com/alma-corazon-vida/2019-10-31/bajan-precios-medicamentos-paracetamol-ventolin_2308239/",
+		"biblioteca": ["requests.py", "beautifulSoup.py"],
+		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
+		"organización": "anerodata",
 		"descripción": "Pdf scraping"
 	}
 ]

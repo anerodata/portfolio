@@ -1,13 +1,13 @@
 <template>
  <div class="items_container">
- 	<div v-for="(item, index) in items" :key="index" class="item">
+ 	<div v-for="(item, index) in items" :key="index" class="item" v-bind:class="item.organización.replace(' ', '-')">
 		<a :href="item.url" target="_blank">
 			<div>
 				<h3>
 					{{item.titulo}}
 				</h3>
 				<div>
-					<span>{{item.fecha}}</span> - <span>{{item.organización}}</span>
+					<span>{{item.fecha}}</span> - <span class="item_organization">{{item.organización}}</span>
 				</div>
 			</div>
 		</a>
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style scoped>
-  	.items_container {
+   .items_container {
   		display: grid;
   		grid-template-columns: repeat(3, 1fr);
   		grid-gap: 1rem
@@ -49,12 +49,29 @@ export default {
   	.item {
   		background: white;
   		padding: 7px;
-  		border-radius: 5px;
-  		border: 1px solid #666699;
+  		border-radius: 3px;
+  		border: 1px solid #272822;
+      box-shadow: 3px 5px 10px #888888;
   	}
+
+    .item.El-Confidencial .item_organization {
+      color: #66D9EF;
+      font-weight: bold;
+    }
+
+    .item.Civio .item_organization {
+      color: #A6E22E;
+      font-weight: bold;
+    }
+
+    .item.anerodata .item_organization {
+      color: #FD971F;
+      font-weight: bold;
+    }
+
   	a {
   		text-decoration: none;
-  		color: black;
+  		color: #272822;
   	}
   	h3 {
   		font-weight: normal;
