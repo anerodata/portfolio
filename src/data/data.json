@@ -6,7 +6,8 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva"
+		"descripción": "Visualización interactiva",
+		"img": ""
 	},
 	
 	{
@@ -16,7 +17,8 @@
 		"biblioteca": ["MapboxGL.js", "geopandas.py"],
 		"tecnología": [{"key":"Javascript", "value":"js"}, {"key":"Python", "value":"py"}],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva"
+		"descripción": "Visualización interactiva",
+		"img": ""
 	},
 	
 	{
@@ -26,7 +28,8 @@
 		"biblioteca": ["Leaflet.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva"
+		"descripción": "Visualización interactiva",
+		"img": "https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/assets/img/1.png"
 	},
 	
 	{
@@ -36,7 +39,8 @@
 		"biblioteca": ["MapboxGL.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva"
+		"descripción": "Visualización interactiva",
+		"img": ""
 	},
 	
 	{
@@ -46,7 +50,8 @@
 		"biblioteca": ["requests.py", "beautifulSoup.py", "Open Refine"],
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "El Confidencial",
-		"descripción": "Web scraping"
+		"descripción": "Web scraping",
+		"img": ""
 	},
 	
 	{
@@ -56,7 +61,8 @@
 		"biblioteca": ["requests.py", "beautifulSoup.py"],
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "Civio",
-		"descripción": "Pdf scraping"
+		"descripción": "Pdf scraping",
+		"img": ""
 	},
 
 	{
@@ -66,6 +72,7 @@
 		"biblioteca": ["requests.py", "beautifulSoup.py"],
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "anerodata",
-		"descripción": "Pdf scraping"
+		"descripción": "Pdf scraping",
+		"img": ""
 	}
 ]

@@ -3,7 +3,10 @@
  	<div v-for="(item, index) in items" :key="index" class="item" v-bind:class="item.organización.replace(' ', '-')">
 		<a :href="item.url" target="_blank">
 			<div>
-				<h3>
+        
+        <img style="max-width: 100%;" src="https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/assets/img/1.png">
+				
+        <h3>
 					{{item.titulo}}
 				</h3>
 				<div>
