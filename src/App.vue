@@ -34,6 +34,6 @@ export default {
 
 <style>
   body {
-    background-image: linear-gradient(to bottom right, white, #c1c1c1);
+    background-image: linear-gradient(to bottom right, #383838, #272822);
   }
 </style>

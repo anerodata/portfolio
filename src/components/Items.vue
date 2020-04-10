@@ -47,11 +47,12 @@ export default {
   		grid-gap: 1rem
   	}
   	.item {
-  		background: white;
+  		background: #272822;
   		padding: 7px;
-  		border-radius: 3px;
+  		border-radius: 9px;
   		border: 1px solid #272822;
       box-shadow: 3px 5px 10px #888888;
+      color: white;
   	}
 
     .item.El-Confidencial .item_organization {
@@ -59,23 +60,36 @@ export default {
       font-weight: bold;
     }
 
+    .item.El-Confidencial {
+      box-shadow: 3px 5px 10px #66D9EF;
+    } 
+
     .item.Civio .item_organization {
       color: #A6E22E;
       font-weight: bold;
     }
 
+    .item.Civio {
+      box-shadow: 3px 5px 10px #A6E22E;
+    }
+
     .item.anerodata .item_organization {
-      color: #FD971F;
+      color: khaki;
       font-weight: bold;
+    }
+
+    .item.anerodata {
+      box-shadow: 3px 5px 10px khaki;
     }
 
   	a {
   		text-decoration: none;
-  		color: #272822;
+  		color: white;
   	}
   	h3 {
   		font-weight: normal;
   		margin: 10px 0;
+      color: white;
   	}
 
   	.item_description {
@@ -83,12 +97,13 @@ export default {
   	}
 
   	.item_package span {
-  		border: 1px solid grey;
+  		border: 1px solid mediumpurple;
+      color: mediumpurple;
   		border-radius: 3px;
   		padding: 3px;
   		margin: 10px 5px;
   		display: inline-block;
-  		background: #f1f1f1
+  		background: #272822;
   	}
 
  	@media only screen and (max-width: 700px) {

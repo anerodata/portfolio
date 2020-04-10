@@ -22,12 +22,19 @@ export default {
 
 	div {
 		font-family: 'Fira Code', monospace;
-		color: crimson;
+		color: #272822;
 		text-align: center;
-		margin: 22px 0px;
+		margin: 0px;
+		margin: 22px 0;
+		border-radius: 9px;
+		background: crimson;
+		padding: 7px;
+		box-shadow: 0px 3px 15px black;
+		max-width: 450px;
 	}
 
 	div h1 {
 		margin-bottom: 5px; 
+		margin-top: 0px;
 	} 
 </style>
