@@ -1,42 +1,22 @@
-import { csv } from 'd3-fetch'
+import { json } from 'd3-fetch'
 const state = {
 	items: [
-
-	],
-	itemsSelected: [
-
-	],
-	itemsAgg: [
-
-	],
-	tecs: [
-
-	],
-	libs: [
 
 	]
 }
 
 const getters = {
-	items: (state) => state.items,
-	itemsSelected: (state) => state.itemsSelected,
-	itemsAgg: (state) => state.itemsAgg,
-	tecs: (state) => state.tecs,
-	libs: (state) => state.libs
+	items: (state) => state.items
 }
 
 const actions = {
 	// Fetch anchors
 	async fetchItems({commit}) {
-		const response = await csv(
-			'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/data/data.csv'
+		const response = await json(
+			'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/data/data.json'
 		)
-		console.log(commit)
-		// bind this
 		commit('setItems', response)
-		console.log(state)
 	}
-	// Filter anchors
 }
 
 const mutations = {

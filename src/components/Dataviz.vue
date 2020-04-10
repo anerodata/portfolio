@@ -1,23 +1,15 @@
 <template>
   <div>
-    <select></select>
     <Columns/>
-    <Circles/>
   </div>
 </template>
 
 <script>
 import Columns from './Columns.vue'
-import Circles from './Circles.vue'
-
 export default {
   name: 'Dataviz',
   components: {
-    Columns,
-    Circles
-  },
-  props: {
-   
+    Columns
   }
 }
 </script>
