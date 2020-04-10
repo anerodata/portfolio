@@ -27,19 +27,26 @@ const getters = {
 
 const actions = {
 	// Fetch anchors
-	async fetchItems() {
+	async fetchItems({commit}) {
 		const response = await csv(
 			'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/data/data.csv'
 		)
-		// bind this 
-		console.log(response)
+		console.log(commit)
+		// bind this
+		commit('setItems', response)
+		console.log(state)
 	}
 	// Filter anchors
+}
+
+const mutations = {
+	setItems: (state, items) => state.items = items
 }
 
 
 export default {
 	state,
 	getters,
-	actions
+	actions,
+	mutations
 }
