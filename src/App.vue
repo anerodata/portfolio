@@ -35,5 +35,8 @@ export default {
 <style>
   body {
     background-image: linear-gradient(to bottom right, #383838, #272822);
+    max-width: 1200px;
+    margin: auto;
   }
+  
 </style>

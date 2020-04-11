@@ -1,11 +1,28 @@
 <template>
-	<div>
-	 	<h1>
-	 		{{title}}
-	 	</h1>
-	 	<span>
-	 		{{subtitle}}
-	 	</span>
+	<div class="header_container">
+		<div id="header">
+			<div id="header_title">
+			 	<h1>
+			 		{{title}}
+			 	</h1>
+			 	<span>
+			 		{{subtitle}}
+			 	</span>
+			</div>
+			<div id="social_btn">
+				<a href="https://github.com/anerodata"  target="_blank">
+					<img src="../assets/img/github.png"/>	
+				</a>
+				<a href="https://es.linkedin.com/in/antonio-hern%C3%A1ndez-637a2a74" target="_blank">
+					<img src="../assets/img/linkedin.png"/>
+				</a>
+			</div>
+		</div>
+		<div id="filter_btn">
+			<button class="El-Confidencial">El confidencial</button>
+			<button class="Civio">Civio</button>
+			<button class="anerodata">anerodata</button>
+		</div>
 	</div>
 </template>
 
@@ -18,23 +35,75 @@ export default {
 </script>
 
 <style scoped>
-	@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap');
-
-	div {
+	.header_container {
+		margin-bottom: 20px;
+		width: 100%;
+    	max-width: 470px;
+	}
+	div #header{
+		display: flex;
+	}
+	#header_title{
 		font-family: 'Fira Code', monospace;
 		color: #272822;
 		text-align: center;
 		margin: 0px;
-		margin: 22px 0;
-		border-radius: 9px;
 		background: crimson;
-		padding: 7px;
-		box-shadow: 0px 3px 15px black;
 		max-width: 450px;
+		padding: 7px;
 	}
 
-	div h1 {
+	#header_title, #social_btn{
+		margin: 18px 7px 12px 7px;
+		border-radius: 9px;
+		box-shadow: 0px 3px 15px black;
+	}	
+
+	#social_btn {
+		background: #fc9867;	
+	}
+
+	#social_btn img{
+		display: block;
+		width: 25px;
+		margin: 7px 10px;
+	}
+
+	#filter_btn {
+		display: flex;
+		margin-left: 7px;
+		background: #272822;
+		padding: 7px;
+		border-radius: 9px;
+		width: 92%;
+		border: 1px solid;
+	}
+
+	#header h1 {
 		margin-bottom: 5px; 
 		margin-top: 0px;
-	} 
+	}
+
+	#filter_btn button {
+		background: none;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		font-size: 16px;
+	}
+
+	.El-Confidencial {
+     	color: #66D9EF;
+      	font-weight: bold;
+    } 
+
+    .Civio{
+     	color: #A6E22E;
+     	font-weight: bold;
+    } 
+
+	.anerodata {
+		color: khaki;
+		font-weight: bold;
+	}
 </style>

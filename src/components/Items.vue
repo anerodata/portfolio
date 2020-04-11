@@ -47,7 +47,7 @@ export default {
    .items_container {
   		display: grid;
   		grid-template-columns: repeat(3, 1fr);
-  		grid-gap: 1rem
+  		grid-gap: 1rem;
   	}
   	.item {
   		background: #272822;
