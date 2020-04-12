@@ -15,7 +15,10 @@ const actions = {
 		let response = await json(
 			'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/data/data.json'
 		)
-		response.forEach(d => d.visible = true)
+		response.forEach(d => {
+			d.visible = true
+			d.src = './../assets/img/1.png'
+		})
 		commit('setItems', response)
 	}
 }
