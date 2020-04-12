@@ -132,8 +132,8 @@ export default {
 	}
 
 	.item {
-    flex-basis: 30%;
-    margin: 10px auto;
+    flex-basis: 29%;
+    margin: 10px 1%;
 		background: #272822;
 		padding: 7px;
 		border-radius: 9px;
