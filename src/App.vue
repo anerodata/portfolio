@@ -33,6 +33,7 @@ export default {
 </script>
 
 <style>
+
   body {
     background-image: linear-gradient(to bottom right, #383838, #272822);
     background-repeat: no-repeat;

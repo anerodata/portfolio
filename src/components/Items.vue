@@ -8,9 +8,10 @@
   <div class="items_container">
  	<div v-for="(item, index) in items" :key="index" class="item" v-bind:class="[item.organización.replace(' ', '-'), {'not-visible' : !item.visible}]">
 		<a :href="item.url" target="_blank">
-			<div>
-        <img style="max-width: 100%;" :src="'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/assets/img/'+item.id+'.png'">
-				
+			<div class="item_header">
+        <div class="item_img">
+          <img style="max-width: 100%;" :src="'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/assets/img/'+item.id+'.png'">
+				</div>
         <h3>
 					{{item.titulo}}
 				</h3>
@@ -120,13 +121,19 @@ export default {
   }
 
   .items_container {
-		display: grid;
+		/* display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		grid-gap: 1.5rem;
+		grid-gap: 1.5rem;*/
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: flex-start;    
     margin: 0 10px;
 	}
 
 	.item {
+    flex-basis: 30%;
+    margin: 10px auto;
 		background: #272822;
 		padding: 7px;
 		border-radius: 9px;
@@ -182,6 +189,11 @@ export default {
 
   .item.not-visible {
     display: none;
+  }
+
+  .item_img {
+    max-height: 225px;
+    overflow: hidden;
   }
 
   .item img {
