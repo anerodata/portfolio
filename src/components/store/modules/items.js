@@ -12,9 +12,10 @@ const getters = {
 const actions = {
 	// Fetch anchors
 	async fetchItems({commit}) {
-		const response = await json(
+		let response = await json(
 			'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/data/data.json'
 		)
+		response.forEach(d => d.visible = true)
 		commit('setItems', response)
 	}
 }

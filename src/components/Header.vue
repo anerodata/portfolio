@@ -18,16 +18,10 @@
 				</a>
 			</div>
 		</div>
-		<div id="filter_btn">
-			<button class="El-Confidencial">El confidencial</button>
-			<button class="Civio">Civio</button>
-			<button class="anerodata">anerodata</button>
-		</div>
 	</div>
 </template>
 
 <script>
-
 export default {
   name: 'Header',
   props: ['title', 'subtitle']
@@ -36,7 +30,6 @@ export default {
 
 <style scoped>
 	.header_container {
-		margin-bottom: 20px;
 		width: 100%;
     	max-width: 470px;
 	}
@@ -82,28 +75,5 @@ export default {
 	#header h1 {
 		margin-bottom: 5px; 
 		margin-top: 0px;
-	}
-
-	#filter_btn button {
-		background: none;
-		outline: none;
-		border: none;
-		cursor: pointer;
-		font-size: 16px;
-	}
-
-	.El-Confidencial {
-     	color: #66D9EF;
-      	font-weight: bold;
-    } 
-
-    .Civio{
-     	color: #A6E22E;
-     	font-weight: bold;
-    } 
-
-	.anerodata {
-		color: khaki;
-		font-weight: bold;
 	}
 </style>

@@ -25,8 +25,8 @@ export default {
   },
   data() {
     return {
-      title: '<Antonio Hernández/ >',
-      subtitle: '<Periodismo de datos y desarrollo web/ >'
+      title: '<Antonio Hernández/>',
+      subtitle: '<Periodismo de datos y desarrollo web/>'
     }
   }
 }
@@ -35,6 +35,10 @@ export default {
 <style>
   body {
     background-image: linear-gradient(to bottom right, #383838, #272822);
+    background-repeat: no-repeat;
+  }
+
+  .container {
     max-width: 1200px;
     margin: auto;
   }
