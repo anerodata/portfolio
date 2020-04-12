@@ -184,6 +184,17 @@ export default {
     display: none;
   }
 
+  .item img {
+    filter: grayscale(100%);
+    filter: saturate(0%);
+    transition: all 0.5s ease-in;
+  }
+
+  .item img:hover {
+    filter: grayscale(0%);
+    filter: saturate(150%);
+  }
+
   a {
     text-decoration: none;
     color: white;
