@@ -102,6 +102,10 @@ export default {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    padding: 7px;
+    margin: 7px;
+    border-radius: 9px;
+    box-shadow: 0px 3px 15px black;
   }
 
  .filter_btn.shown {
@@ -109,15 +113,15 @@ export default {
   }
 
   .El-Confidencial {
-    color: #66D9EF;
+    background: #66D9EF;
   } 
 
   .Civio{
-    color: #A6E22E;
+    background: #A6E22E;
   } 
 
   .anerodata {
-    color: khaki;
+    background: khaki;
   }
 
   .items_container {
@@ -129,11 +133,16 @@ export default {
     flex-flow: row wrap;
     justify-content: flex-start;    
     margin: 0 10px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
 	}
 
 	.item {
+    padding: 1rem;
     flex-basis: 29%;
-    margin: 10px 1%;
 		background: #272822;
 		padding: 7px;
 		border-radius: 9px;
