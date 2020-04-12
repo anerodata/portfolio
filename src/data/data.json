@@ -7,7 +7,7 @@
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
 		"descripción": "Visualización interactiva",
-		"img": ""
+		"id": "1"
 	},
 	
 	{
@@ -18,7 +18,7 @@
 		"tecnología": [{"key":"Javascript", "value":"js"}, {"key":"Python", "value":"py"}],
 		"organización": "El Confidencial",
 		"descripción": "Visualización interactiva",
-		"img": ""
+		"id": "2"
 	},
 	
 	{
@@ -29,7 +29,7 @@
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
 		"descripción": "Visualización interactiva",
-		"img": "https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/assets/img/1.png"
+		"id": "3"
 	},
 	
 	{
@@ -40,7 +40,7 @@
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
 		"descripción": "Visualización interactiva",
-		"img": ""
+		"id": "4"
 	},
 	
 	{
@@ -51,7 +51,7 @@
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "El Confidencial",
 		"descripción": "Web scraping",
-		"img": ""
+		"id": "5"
 	},
 	
 	{
@@ -62,7 +62,7 @@
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "Civio",
 		"descripción": "Pdf scraping",
-		"img": ""
+		"id": "6"
 	},
 
 	{
@@ -73,6 +73,6 @@
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "anerodata",
 		"descripción": "Pdf scraping",
-		"img": ""
+		"id": "7"
 	}
 ]

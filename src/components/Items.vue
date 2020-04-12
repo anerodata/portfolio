@@ -9,7 +9,7 @@
  	<div v-for="(item, index) in items" :key="index" class="item" v-bind:class="[item.organización.replace(' ', '-'), {'not-visible' : !item.visible}]">
 		<a :href="item.url" target="_blank">
 			<div>
-        <img style="max-width: 100%;" src="https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/assets/img/1.png">
+        <img style="max-width: 100%;" v-bind:src="'./../assets/img/'+item.id+'.png'">
 				
         <h3>
 					{{item.titulo}}
