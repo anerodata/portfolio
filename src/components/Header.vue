@@ -41,7 +41,7 @@ export default {
 		color: #272822;
 		text-align: center;
 		margin: 0px;
-		background: crimson;
+		background: #ff6188;
 		max-width: 450px;
 		padding: 7px;
 	}

@@ -92,10 +92,13 @@ export default {
   }
 
   #filter_container {
-    margin: 0 0 20px 7px;
+    margin: 0 0 20px 0;
+    display: flex;
+    max-width: 470px;
   }
 
   .filter_btn {
+    flex-basis: 30%;
     background: none;
     outline: none;
     border: none;
@@ -105,7 +108,7 @@ export default {
     padding: 7px;
     margin: 7px;
     border-radius: 9px;
-    box-shadow: 0px 3px 15px black;
+    box-shadow: 0px 3px 15px black; 
   }
 
  .filter_btn.shown {
@@ -113,15 +116,15 @@ export default {
   }
 
   .El-Confidencial {
-    background: #66D9EF;
+    background: #78dce8;
   } 
 
   .Civio{
-    background: #A6E22E;
+    background: #a9dc76;
   } 
 
   .anerodata {
-    background: khaki;
+    background: #ffd866;
   }
 
   .items_container {
@@ -137,11 +140,10 @@ export default {
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1.5rem;
 	}
 
 	.item {
-    padding: 1rem;
+    margin: 0.5rem;
     flex-basis: 29%;
 		background: #272822;
 		padding: 7px;
@@ -152,30 +154,30 @@ export default {
 	}
 
   .item.El-Confidencial .item_organization {
-    color: #66D9EF;
+    color: #78dce8;
     font-weight: bold;
   }
 
   .item.El-Confidencial {
-    box-shadow: 3px 5px 10px #66D9EF;
+    box-shadow: 3px 5px 10px #78dce8;
   } 
 
   .item.Civio .item_organization {
-    color: #A6E22E;
+    color: #a9dc76;
     font-weight: bold;
   }
 
   .item.Civio {
-    box-shadow: 3px 5px 10px #A6E22E;
+    box-shadow: 3px 5px 10px #a9dc76;
   }
 
   .item.anerodata .item_organization {
-    color: khaki;
+    color: #ffd866;
     font-weight: bold;
   }
 
   .item.anerodata {
-    box-shadow: 3px 5px 10px khaki;
+    box-shadow: 3px 5px 10px #ffd866;
   }
 
   .item_info {
