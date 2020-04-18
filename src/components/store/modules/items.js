@@ -1,4 +1,4 @@
-import { json } from 'd3-fetch'
+import data from './../../../data/data.json';
 const state = {
 	items: [
 
@@ -10,23 +10,17 @@ const getters = {
 }
 
 const actions = {
-	// Fetch anchors
 	async fetchItems({commit}) {
-		let response = await json(
-			'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/data/data.json'
-		)
-		response.forEach(d => {
+		data.forEach(d => {
 			d.visible = true
-			d.src = './../assets/img/1.png'
-		})
-		commit('setItems', response)
+		})	
+		commit('setItems', data)
 	}
 }
 
 const mutations = {
 	setItems: (state, items) => state.items = items
 }
-
 
 export default {
 	state,
