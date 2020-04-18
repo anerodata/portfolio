@@ -82,8 +82,19 @@
 		"url": "https://www.elconfidencial.com/espana/2020-01-07/cuentas-investidura-pedro-sanchez-presidente-martes_2397720/",
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
-		"organización": "El confidencial",
+		"organización": "El Confidencial",
 		"descripción": "Visualización interactiva",
 		"id": "8"
+	},
+
+	{
+		"titulo": "Cuántos nacimientos, muertes y bodas ha habido en tu municipio desde 1998",
+		"fecha": "2019-12-15",
+		"url": "https://www.elconfidencial.com/economia/2019-12-15/cuantos-nacimientos-muertes-bodas-municipios-espana-551_2377112/",
+		"biblioteca": ["d3.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": "Visualización interactiva",
+		"id": "9"
 	}
 ]
