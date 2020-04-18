@@ -13,7 +13,7 @@ const actions = {
 	// Fetch anchors
 	async fetchItems({commit}) {
 		let response = await json(
-			'https://raw.githubusercontent.com/anerodata/portfolio/master/src/data/data.json'
+			'https://raw.githubusercontent.com/anerodata/vue-portfolio/master/src/data/data.json'
 		)
 		response.forEach(d => {
 			d.visible = true

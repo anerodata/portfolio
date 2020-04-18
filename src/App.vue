@@ -3,7 +3,7 @@
     <div class="container">
       <Header :title="title" :subtitle="subtitle"/>
       <Dataviz/>
-      <Items/>
+      <Items :items="items"/>
       <Pagination/>
 
     </div>
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import Dataviz from './components/Dataviz.vue'
 import Items from './components/Items.vue'
 import Pagination from './components/Pagination.vue'
@@ -28,7 +29,14 @@ export default {
       title: '<Antonio Hernández/>',
       subtitle: '<Periodismo de datos y desarrollo web/>'
     }
-  }
+  },
+  created() {
+    this.fetchItems()
+  },
+  methods: {
+    ...mapActions(['fetchItems'])
+  },
+  computed: mapGetters(['items'])
 }
 </script>
 

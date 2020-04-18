@@ -38,6 +38,9 @@
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'Items',
+  props: {
+    items: Array
+  },
   data() {
     return {
       orgs: [
@@ -58,11 +61,7 @@ export default {
         ]
       }
   },
-  created() {
-    this.fetchItems()
-  },
   methods: {
-    ...mapActions(['fetchItems']),
     filterItems(org) {
       // Clean show attributte in all orgs unless the selected one
       this.orgs.forEach(d => {
@@ -82,7 +81,6 @@ export default {
       })
     }
   },
-  computed: mapGetters(['items'])
 }
 </script>
 
