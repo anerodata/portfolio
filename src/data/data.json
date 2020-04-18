@@ -74,5 +74,18 @@
 		"organización": "anerodata",
 		"descripción": "Pdf scraping",
 		"id": "7"
-	}
+	},
+
+	{
+		"titulo": "Las cuentas de la investidura: ¿cuántos votos necesita Pedro Sánchez para ser presidente?",
+		"fecha": "2020-07-01",
+		"url": "https://www.elconfidencial.com/espana/2020-01-07/cuentas-investidura-pedro-sanchez-presidente-martes_2397720/",
+		"biblioteca": ["d3.js"],
+		"tecnología": [],
+		"organización": "El confidencial",
+		"descripción": "Visualización interactiva",
+		"id": "8"
+	},
+
+
 ]
