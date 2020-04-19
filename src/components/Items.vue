@@ -10,7 +10,6 @@
 <script>
 import Item from './Item.vue'
 import FilterBtn from './FilterBtn.vue'
-import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'Items',
   components: {
@@ -34,7 +33,7 @@ export default {
           },
     
           {
-            name: 'anerodata',
+            name: 'Antonio',
             show: false
           }
         ]

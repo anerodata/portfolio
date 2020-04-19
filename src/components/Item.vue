@@ -65,12 +65,12 @@
     box-shadow: 3px 5px 10px #a9dc76;
   }
 
-  .item.anerodata .item_organization {
+  .item.Antonio .item_organization {
     color: #ffd866;
     font-weight: bold;
   }
 
-  .item.anerodata {
+  .item.Antonio {
     box-shadow: 3px 5px 10px #ffd866;
   }
 

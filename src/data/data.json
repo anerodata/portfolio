@@ -66,17 +66,6 @@
 	},
 
 	{
-		"titulo": "Paracetamol o Ventolin: consulta aquí los 1.200 medicamentos que bajan de precio",
-		"fecha": "2019-10-31",
-		"url": "https://www.elconfidencial.com/alma-corazon-vida/2019-10-31/bajan-precios-medicamentos-paracetamol-ventolin_2308239/",
-		"biblioteca": ["requests.py", "beautifulSoup.py"],
-		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
-		"organización": "anerodata",
-		"descripción": "Pdf scraping",
-		"id": "7"
-	},
-
-	{
 		"titulo": "Las cuentas de la investidura: ¿cuántos votos necesita Pedro Sánchez para ser presidente?",
 		"fecha": "2020-07-01",
 		"url": "https://www.elconfidencial.com/espana/2020-01-07/cuentas-investidura-pedro-sanchez-presidente-martes_2397720/",
@@ -116,7 +105,29 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva y calculadora",
+		"descripción": "Visualización interactiva, calculadora",
 		"id": "11"
+	},
+
+	{
+		"titulo": "Web del grupo musical Filete Vegano",
+		"fecha": "2019-06-10",
+		"url": "https://anerodata.github.io/filete-vegano/",
+		"biblioteca": ["Vanilla JS"],
+		"tecnología": [],
+		"organización": "Antonio",
+		"descripción": "Reproductor de música y web",
+		"id": "12"
+	},
+
+	{
+		"titulo": "Verba 📺 Explora todos los telediarios de TVE desde 2014",
+		"fecha": "2020-02-16",
+		"url": "https://verba.civio.es/",
+		"biblioteca": ["Vue.js"],
+		"tecnología": [],
+		"organización": "Civio",
+		"descripción": "web",
+		"id": "13"
 	}
 ]
