@@ -129,5 +129,16 @@
 		"organización": "Civio",
 		"descripción": "web",
 		"id": "13"
+	},
+
+	{
+		"titulo": "El éxodo urbano de España: La nueva despoblación del siglo XXI",
+		"fecha": "2019-09-27",
+		"url": "https://www.elconfidencial.com/economia/2019-09-27/exodo-urbano-espana-migraciones-ciudades-buscador_2251515/",
+		"biblioteca": ["d3.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": "Visualización interactiva, gráfico",
+		"id": "14"
 	}
 ]
