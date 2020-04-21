@@ -104,12 +104,12 @@
   .item img {
     filter: grayscale(100%);
     filter: saturate(0%);
-    transition: all 0.5s ease-in;
+    transition: all 0.2s ease-in;
   }
 
   .item img:hover {
     filter: grayscale(0%);
-    filter: saturate(150%);
+    filter: saturate(100%);
   }
 
   a {
