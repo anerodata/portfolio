@@ -140,5 +140,17 @@
 		"organización": "El Confidencial",
 		"descripción": "Visualización interactiva, gráfico",
 		"id": "14"
+	},
+
+	{
+		"titulo": "El 'misterio mariano' de las ondas: ¿por qué Radio María se escucha donde nadie llega?",
+		"fecha": "2019-09-12",
+		"url": "https://www.elconfidencial.com/comunicacion/2019-09-12/radio-maria-por-que-se-escucha-espana-secreto_2217187/",
+		"biblioteca": ["QGIS"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": "Visualización estática, mapa",
+		"id": "15"
 	}
+
 ]
