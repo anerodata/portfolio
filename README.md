@@ -31,7 +31,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 3. Don't commit ```.gitignore``` changes
 
-4. Run this command:
-``` git subtree push --prefix dist origin gh-pages```
+4. ```git add dist/```
+
+5. ```git commit -m "Building for production"```
+
+4. ``` git subtree push --prefix dist origin gh-pages```
 
 5. Comment in ```.gitignore``` the ```/dist``` folder.
