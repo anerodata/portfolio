@@ -51,7 +51,8 @@ export default {
   },
   computed: {
     sortedItems() {
-      return this.items.sort((a, b) => new Date (b.fecha) - new Date(a.fecha) )
+      const res = this.items
+      return res.sort((a, b) => new Date (b.fecha) - new Date(a.fecha) )
     }
   }
 }
