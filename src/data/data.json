@@ -173,6 +173,17 @@
 		"organización": "El Confidencial",
 		"descripción": "Visualización estática, mapa",
 		"id": "7"
+	},
+
+	{
+		"titulo": "La movilidad europea en tiempos de coronavirus",
+		"fecha": "2020-04-23",
+		"url": "https://civio.es/covid-movilidad-europea/",
+		"biblioteca": ["d3.js"],
+		"tecnología": [],
+		"organización": "Civio",
+		"descripción": "Visualización interactiva, gráfico",
+		"id": "17"
 	}
 
 ]
