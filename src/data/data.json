@@ -140,5 +140,27 @@
 		"organización": "El Confidencial",
 		"descripción": "Visualización interactiva, gráfico",
 		"id": "14"
+	},
+
+	{
+		"titulo": "¿Cuántos días de calor sufren tus hijos en el colegio comparado con los que tú pasaste?",
+		"fecha": "2018-09-24",
+		"url": "https://www.europeandatajournalism.eu/eng/News/Data-news/How-many-hot-days-do-your-kids-face-compared-to-your-childhood",
+		"biblioteca": ["d3.js"],
+		"tecnología": [],
+		"organización": "EDJNET",
+		"descripción": "Visualización interactiva, gráfico",
+		"id": "15"
+	},
+
+	{
+		"titulo": "Base de datos internacional sobre implantes sanitarios",
+		"fecha": "2018-11-25",
+		"url": "https://www.icij.org/investigations/implant-files/new-database-tracks-faulty-medical-devices-across-the-globe/",
+		"biblioteca": ["requests.py, bs4.py"],
+		"tecnología": [],
+		"organización": "ICIJ",
+		"descripción": "web scraping, pdf scraping",
+		"id": "16"
 	}
 ]

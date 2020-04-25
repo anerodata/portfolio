@@ -43,9 +43,14 @@
 	  padding: 7px;
 		border-radius: 9px;
 		border: 1px solid #272822;
-    box-shadow: 3px 5px 10px #888888;
+    box-shadow: 3px 5px 10px #ffd866;
     color: white;
 	}
+
+  .item .item_organization {
+    color: #ffd866;
+    font-weight: bold;
+  }
 
   .item.El-Confidencial .item_organization {
     color: #78dce8;
@@ -63,15 +68,6 @@
 
   .item.Civio {
     box-shadow: 3px 5px 10px #a9dc76;
-  }
-
-  .item.Antonio .item_organization {
-    color: #ffd866;
-    font-weight: bold;
-  }
-
-  .item.Antonio {
-    box-shadow: 3px 5px 10px #ffd866;
   }
 
   .item_info {

@@ -2,7 +2,7 @@
  <div class="body">
   <FilterBtn :orgs="orgs" :items="items"/>
   <div class="items_container">
-    <Item :item="item" v-for="(item, index) in items" :key="index"/>
+    <Item :item="item" v-for="(item, index) in sortedItems" :key="index"/>
   </div>
  </div>
 </template>
@@ -31,7 +31,17 @@ export default {
             name: 'Civio',
             show: false
           },
-    
+
+          {
+            name: 'ICIJ',
+            show: false
+          },
+
+          {
+            name: 'EDJNET',
+            show: false
+          },
+
           {
             name: 'Antonio',
             show: false
@@ -39,6 +49,11 @@ export default {
         ]
       }
   },
+  computed: {
+    sortedItems() {
+      return this.items.sort((a, b) => new Date (b.fecha) - new Date(a.fecha) )
+    }
+  }
 }
 </script>
 

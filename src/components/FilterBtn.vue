@@ -40,13 +40,12 @@
 
   .filter_btn {
     flex-basis: 30%;
-    background: none;
     outline: none;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-    padding: 7px;
+    padding: 5px;
     margin: 7px;
     border-radius: 9px;
     box-shadow: 0px 3px 15px black; 
@@ -54,6 +53,10 @@
 
  .filter_btn.shown {
     text-decoration: underline;
+  }
+
+  button {
+    background: #ffd866;
   }
 
   button.El-Confidencial {
@@ -64,7 +67,5 @@
     background: #a9dc76;
   } 
 
-  button.Antonio {
-    background: #ffd866;
-  }
+  
 </style>
