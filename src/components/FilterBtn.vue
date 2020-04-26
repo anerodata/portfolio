@@ -21,6 +21,7 @@
 	      this.items.forEach(item => {
           if(org.name  === 'Otros') {
             if(org.visible) {
+              // If item organization is not in the orgs array, it belong to 'Others' and will be visible
               if(!this.orgs.some(org => org.name === item['organización'])) {
                 item.visible = true
               } else {
