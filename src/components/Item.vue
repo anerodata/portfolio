@@ -1,5 +1,5 @@
 <template>
-	<div class="item" v-bind:class="[classItem(), {'not-visible' : !item.visible}]">
+	<div class="item" :class="[classItem(), {'not-visible' : !item.visible}]">
 		<a :href="item.url" target="_blank">
   			<div class="item_header">
           <div class="item_img">

@@ -1,6 +1,6 @@
 <template>
 	<div id="filter_container">
-    <button class="filter_btn" v-for="org in orgs" :key="org.value" v-bind:class="[org.name.replace(' ', '-'), {'shown': org.show}]" v-on:click="filterItems(org)">
+    <button class="filter_btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(' ', '-'), {visible: org.visible}]" v-on:click="filterItems(org)">
       {{ org.name }}
     </button>
   </div>
@@ -13,19 +13,31 @@
 	    filterItems(org) {
 	      // Clean show attributte in all orgs unless the selected one
 	      this.orgs.forEach(d => {
-	        if (org != d)
-	          d.show = false
+	        if (org != d) {
+            d.visible = false
+          }
 	      }) 
-	      org.show = !org.show
-	      this.items.forEach(d => {
-	        // If org.show is true hid the cards that are not related to org...
-	        if(d['organización'] !== org.name && org.show) {
-	          d.show = false
-	          d.visible = false
-	        // ... else show everything or cards related to org
-	        } else {
-	          d.visible = true  
-	        }
+	      org.visible = !org.visible
+	      this.items.forEach(item => {
+          if(org.name  === 'Otros') {
+            if(org.visible) {
+              if(!this.orgs.some(org => org.name === item['organización'])) {
+                item.visible = true
+              } else {
+                item.visible = false
+              }
+            } else {
+              item.visible = true
+            }
+          } else {
+            // If org.visible is true hid the cards that are not related to org...
+            if(item['organización'] !== org.name && org.visible) {
+              item.visible = false
+            // ... else show everything or cards related to org
+            } else {
+              item.visible = true  
+            }
+          }
 	      })
 	    }
   	},
@@ -51,7 +63,7 @@
     box-shadow: 0px 3px 15px black; 
   }
 
- .filter_btn.shown {
+ .filter_btn.visible {
     text-decoration: underline;
   }
 

@@ -24,27 +24,17 @@ export default {
       orgs: [
           {
             name: 'El Confidencial',
-            show: false
+            visible: false
           },
     
           {
             name: 'Civio',
-            show: false
+            visible: false
           },
 
           {
-            name: 'ICIJ',
-            show: false
-          },
-
-          {
-            name: 'EDJNET',
-            show: false
-          },
-
-          {
-            name: 'Antonio',
-            show: false
+            name: 'Otros',
+            visible: false
           }
         ]
       }
