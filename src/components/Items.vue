@@ -1,8 +1,8 @@
 <template>
  <div class="body">
-  <FilterBtn :orgs="orgs" :items="items"/>
+  <FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
   <div class="items_container">
-    <Item :item="item" v-for="(item, index) in sortedItems" :key="index"/>
+    <Item :item="item" :selectedOrg="selectedOrg" v-for="(item, index) in sortedItems" :key="index"/>
   </div>
  </div>
 </template>
@@ -24,25 +24,31 @@ export default {
       orgs: [
           {
             name: 'El Confidencial',
-            visible: false
+            clicked: false
           },
     
           {
             name: 'Civio',
-            visible: false
+            clicked: false
           },
 
           {
             name: 'Otros',
-            visible: false
+            clicked: false
           }
-        ]
+        ],
+      selectedOrg: 'all'
       }
   },
   computed: {
     sortedItems() {
       const res = this.items
       return res.sort((a, b) => new Date (b.fecha) - new Date(a.fecha) )
+    }
+  },
+  methods: {
+    filterOrg(orgValue) {
+      this.selectedOrg = orgValue
     }
   }
 }

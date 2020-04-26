@@ -1,5 +1,5 @@
 <template>
-	<div class="item" :class="[classItem(), {'not-visible' : !item.visible}]">
+	<div class="item" :class="[classItem, {'not-visible' : !itemVisibility}]">
 		<a :href="item.url" target="_blank">
   			<div class="item_header">
           <div class="item_img">
@@ -27,12 +27,22 @@
 <script>
 	export default {
 		name: 'Item',
-		props: ['item'],
-		methods: {
-			classItem() {
-				return this.item.organización.replace(' ', '-');
-			}
-		}
+		props: ['item', 'selectedOrg'],
+		
+    computed: {
+      itemVisibility() {
+        if (this.selectedOrg === 'all') {
+          return true
+        } else if (this.selectedOrg === 'Otros') {
+          return this.item['organización'] !== 'El Confidencial' && this.item['organización'] !== 'Civio'
+        } else {
+          return this.item['organización'] === this.selectedOrg
+        }
+      },
+      classItem() {
+        return this.item.organización.replace(' ', '-');
+      }
+    }
 	}
 </script>
 <style scoped>

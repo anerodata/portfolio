@@ -1,6 +1,6 @@
 <template>
 	<div id="filter_container">
-    <button class="filter_btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(' ', '-'), {visible: org.visible}]" v-on:click="filterItems(org)">
+    <button class="filter_btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(' ', '-'), {clicked: org.clicked}]" v-on:click="filterItems(org)">
       {{ org.name }}
     </button>
   </div>
@@ -8,11 +8,24 @@
 <script>
 	export default {
 		name: 'FilterBtn',
-		props: ['orgs', 'items'],
+		props: ['orgs'],
 		methods: {
 	    filterItems(org) {
+        if (org.clicked === true) {
+          org.clicked = !org.clicked
+          this.$emit('filter-org', 'all')
+
+        } else {
+          this.orgs.forEach(d => {
+            if (org != d) {
+              d.clicked = false
+            }
+          })
+          org.clicked = !org.clicked
+          this.$emit('filter-org', org.name)
+        }
 	      // Clean show attributte in all orgs unless the selected one
-	      this.orgs.forEach(d => {
+	      /*this.orgs.forEach(d => {
 	        if (org != d) {
             d.visible = false
           }
@@ -39,7 +52,7 @@
               item.visible = true  
             }
           }
-	      })
+	      })*/
 	    }
   	},
 	}
@@ -64,7 +77,7 @@
     box-shadow: 0px 3px 15px black; 
   }
 
- .filter_btn.visible {
+ .filter_btn.clicked {
     text-decoration: underline;
   }
 
