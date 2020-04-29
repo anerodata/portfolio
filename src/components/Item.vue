@@ -27,16 +27,18 @@
 <script>
 	export default {
 		name: 'Item',
-		props: ['item', 'selectedOrg'],
+		props: ['item', 'noSelectedOrgs', 'selectedOrg'],
 		
     computed: {
       itemVisibility() {
         if (this.selectedOrg === 'all') {
           return true
-        } else if (this.selectedOrg === 'Otros') {
-          return this.item['organización'] !== 'El Confidencial' && this.item['organización'] !== 'Civio'
         } else {
-          return this.item['organización'] === this.selectedOrg
+        	if(this.selectedOrg !== 'Otros') {
+        		return this.item['organización'] === this.selectedOrg
+        	} else {
+        		return this.noSelectedOrgs.indexOf(this.item['organización']) === -1
+        	}
         }
       },
       classItem() {

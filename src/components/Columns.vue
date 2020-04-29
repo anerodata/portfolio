@@ -7,9 +7,7 @@
 <script>
 export default {
   name: 'Columns',
-  props: {
-   
-  }
+  props: ['items']
 }
 </script>
 <style scoped>

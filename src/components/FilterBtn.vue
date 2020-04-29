@@ -24,35 +24,6 @@
           org.clicked = !org.clicked
           this.$emit('filter-org', org.name)
         }
-	      // Clean show attributte in all orgs unless the selected one
-	      /*this.orgs.forEach(d => {
-	        if (org != d) {
-            d.visible = false
-          }
-	      }) 
-	      org.visible = !org.visible
-	      this.items.forEach(item => {
-          if(org.name  === 'Otros') {
-            if(org.visible) {
-              // If item organization is not in the orgs array, it belong to 'Others' and will be visible
-              if(!this.orgs.some(org => org.name === item['organización'])) {
-                item.visible = true
-              } else {
-                item.visible = false
-              }
-            } else {
-              item.visible = true
-            }
-          } else {
-            // If org.visible is true hid the cards that are not related to org...
-            if(item['organización'] !== org.name && org.visible) {
-              item.visible = false
-            // ... else show everything or cards related to org
-            } else {
-              item.visible = true  
-            }
-          }
-	      })*/
 	    }
   	},
 	}

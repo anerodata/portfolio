@@ -37,6 +37,7 @@ export default {
 		display: flex;
 	}
 	#header_title{
+		flex-basis: 80%;
 		font-family: 'Fira Code', monospace;
 		color: #272822;
 		text-align: center;
@@ -53,6 +54,7 @@ export default {
 	}	
 
 	#social_btn {
+		flex-basis: 10%;
 		background: #fc9867;	
 	}
 

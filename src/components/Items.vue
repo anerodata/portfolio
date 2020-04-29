@@ -1,20 +1,23 @@
 <template>
  <div class="body">
   <FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
+  <Columns :items="items"/>
   <div class="items_container">
-    <Item :item="item" :selectedOrg="selectedOrg" v-for="(item, index) in sortedItems" :key="index"/>
+    <Item :item="item" :noSelectedOrgs="noSelectedOrgs" :selectedOrg="selectedOrg" v-for="(item, index) in sortedItems" :key="index"/>
   </div>
  </div>
 </template>
 
 <script>
-import Item from './Item.vue'
+import Columns from './Columns.vue'
 import FilterBtn from './FilterBtn.vue'
+import Item from './Item.vue'
 export default {
   name: 'Items',
   components: {
-    Item,
-    FilterBtn
+    FilterBtn,
+    Columns,
+    Item
   },
   props: {
     items: Array
@@ -37,6 +40,7 @@ export default {
             clicked: false
           }
         ],
+      noSelectedOrgs: [],
       selectedOrg: 'all'
       }
   },
@@ -46,8 +50,16 @@ export default {
       return res.sort((a, b) => new Date (b.fecha) - new Date(a.fecha) )
     }
   },
+  // https://stackoverflow.com/questions/50913026/group-and-count-objects-of-array-and-create-new-array
   methods: {
     filterOrg(orgValue) {
+        this.selectedOrg = orgValue
+        this.noSelectedOrgs = []
+        this.orgs.forEach(org => {
+          if(org.name !== orgValue) {
+            this.noSelectedOrgs.push(org.name)
+          }
+        })
       this.selectedOrg = orgValue
     }
   }
