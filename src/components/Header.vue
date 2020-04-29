@@ -54,6 +54,7 @@ export default {
 	}	
 
 	#social_btn {
+		position: relative;
 		flex-basis: 10%;
 		background: #fc9867;	
 	}
@@ -62,6 +63,11 @@ export default {
 		display: block;
 		width: 25px;
 		margin: 7px 10px;
+	}  
+
+	#social_btn a:first-child{
+		position: absolute;
+    	bottom: 0px;
 	}
 
 	#filter_btn {
@@ -75,6 +81,7 @@ export default {
 	}
 
 	#header h1 {
+		font-size: 30px;
 		margin-bottom: 5px; 
 		margin-top: 0px;
 	}
