@@ -33,6 +33,7 @@ export default {
 		width: 100%;
     	max-width: 470px;
 	}
+
 	div #header{
 		display: flex;
 	}

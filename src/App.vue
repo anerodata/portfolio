@@ -51,5 +51,9 @@ export default {
     max-width: 1200px;
     margin: auto;
   }
+
+  .header_container, .filter_container {
+    margin-left: 12px;
+  }
   
 </style>

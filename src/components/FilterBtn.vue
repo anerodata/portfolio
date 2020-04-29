@@ -1,5 +1,5 @@
 <template>
-	<div id="filter_container">
+	<div class="filter_container">
     <button class="filter_btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(' ', '-'), {clicked: org.clicked}]" v-on:click="filterItems(org)">
       {{ org.name }}
     </button>
@@ -29,8 +29,8 @@
 	}
 </script>
 <style scoped>
-	#filter_container {
-    margin: 0 0 20px 0;
+	.filter_container {
+    margin-bottom: 20px;
     display: flex;
     max-width: 470px;
   }
