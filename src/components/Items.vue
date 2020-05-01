@@ -48,19 +48,40 @@ export default {
     sortedItems() {
       const res = this.items
       return res.sort((a, b) => new Date (b.fecha) - new Date(a.fecha) )
-    }
+    },
+    
   },
   // https://stackoverflow.com/questions/50913026/group-and-count-objects-of-array-and-create-new-array
   methods: {
-    filterOrg(orgValue) {
-        this.selectedOrg = orgValue
-        this.noSelectedOrgs = []
-        this.orgs.forEach(org => {
-          if(org.name !== orgValue) {
-            this.noSelectedOrgs.push(org.name)
+    listTreemap() {
+      const res = this.items.reduce((acc, obj) => {
+        console.log(obj.biblioteca)
+        obj.biblioteca.forEach((bib) => {
+
+          let key = bib.split('.')[1]
+          console.log(bib, key, acc)
+          
+          if(!acc[key]) {
+            acc[key] = []
           }
+          acc[key].push(obj)
+          
         })
+        return acc
+      }, {})
+      console.log(res)
+      return false
+    },
+    filterOrg(orgValue) {
+      this.listTreemap()
       this.selectedOrg = orgValue
+      this.noSelectedOrgs = []
+      this.orgs.forEach(org => {
+        if(org.name !== orgValue) {
+          this.noSelectedOrgs.push(org.name)
+        }
+      })
+    this.selectedOrg = orgValue
     }
   }
 }

@@ -157,7 +157,7 @@
 		"titulo": "Base de datos internacional sobre implantes sanitarios",
 		"fecha": "2018-11-25",
 		"url": "https://www.icij.org/investigations/implant-files/new-database-tracks-faulty-medical-devices-across-the-globe/",
-		"biblioteca": ["requests.py, bs4.py"],
+		"biblioteca": ["requests.py", "bs4.py"],
 		"tecnología": [],
 		"organización": "ICIJ",
 		"descripción": "web scraping, pdf scraping",
