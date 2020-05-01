@@ -1,5 +1,5 @@
 <template>
-	<div class="item" :class="[classItem, {'not-visible' : !itemVisibility}]">
+	<div class="item" v-show="itemVisibility" :class="classItem">
 		<a :href="item.url" target="_blank">
   			<div class="item_header">
           <div class="item_img">
