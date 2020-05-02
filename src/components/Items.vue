@@ -58,9 +58,12 @@ export default {
         obj.biblioteca.forEach((bib) => {
 
           // Get tec (js, py) and lib (Leaflet, bs4)
-          let keyTec = bib.split('.')[1]
-          let keyLib = bib.split('.')[0]
-          
+          const keys = bib.split('.')
+          let keyTec = keys[1]
+          let keyLib = keys[0]
+          if(keys[1] === undefined) {
+            keyTec = 'Otras'
+          }
           // If global children array doesn't have and object with tec name...
           if(!acc.children.some(allChild => allChild.name === keyTec)) {
               //... create it
@@ -68,7 +71,7 @@ export default {
           }
 
           // Get children tec array
-          let keyList = acc.children.filter(allChild => allChild.name === keyTec)[0]
+          const keyList = acc.children.filter(allChild => allChild.name === keyTec)[0]
 
           // If children tec array doesn't have and object with lib name...
           if(!keyList.children.some(tecChild => tecChild.name === keyLib)) {
@@ -76,7 +79,7 @@ export default {
             keyList.children.push({name: keyLib, value: 1})
           } else {
             // Otherwise, add 1 to value property of the array
-            let tecList = keyList.children.filter(tecChild => tecChild.name === keyLib)[0]
+            const tecList = keyList.children.filter(tecChild => tecChild.name === keyLib)[0]
             tecList.value += 1
           }
           
@@ -84,10 +87,20 @@ export default {
         return acc
       }, { name: 'all', children: [] })
 
-      
+      res.children = this.sortArr(res.children, 'children')
+      res.children.forEach(child => { this.sortArr(child.children, 'value') })
       console.log(res)
       return false
     },
+    sortArr(arr, prop) {
+      return arr.sort((a, b) => {
+        if(a[prop] < b[prop]) {
+          return 1
+        } else {
+          return -1
+        }
+      })
+    }, 
     filterOrg(orgValue) {
       this.listTreemap()
       this.selectedOrg = orgValue
