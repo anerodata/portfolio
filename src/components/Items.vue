@@ -51,24 +51,40 @@ export default {
     },
     
   },
-  // https://stackoverflow.com/questions/50913026/group-and-count-objects-of-array-and-create-new-array
   methods: {
     listTreemap() {
       const res = this.items.reduce((acc, obj) => {
-        console.log(obj.biblioteca)
+        // Loop in library array
         obj.biblioteca.forEach((bib) => {
 
-          let key = bib.split('.')[1]
-          console.log(bib, key, acc)
+          // Get tec (js, py) and lib (Leaflet, bs4)
+          let keyTec = bib.split('.')[1]
+          let keyLib = bib.split('.')[0]
           
-          if(!acc[key]) {
-            acc[key] = []
+          // If global children array doesn't have and object with tec name...
+          if(!acc.children.some(allChild => allChild.name === keyTec)) {
+              //... create it
+              acc.children.push({name: keyTec, children: []})
           }
-          acc[key].push(obj)
+
+          // Get children tec array
+          let keyList = acc.children.filter(allChild => allChild.name === keyTec)[0]
+
+          // If children tec array doesn't have and object with lib name...
+          if(!keyList.children.some(tecChild => tecChild.name === keyLib)) {
+            //... create it
+            keyList.children.push({name: keyLib, value: 1})
+          } else {
+            // Otherwise, add 1 to value property of the array
+            let tecList = keyList.children.filter(tecChild => tecChild.name === keyLib)[0]
+            tecList.value += 1
+          }
           
         })
         return acc
-      }, {})
+      }, { name: 'all', children: [] })
+
+      
       console.log(res)
       return false
     },
