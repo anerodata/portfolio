@@ -44,7 +44,7 @@
     font-weight: bold;
     padding: 5px;
     margin: 7px;
-    border-radius: 9px;
+    border-radius: 5px;
     box-shadow: 0px 3px 15px black; 
   }
 

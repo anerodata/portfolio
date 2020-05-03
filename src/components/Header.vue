@@ -42,33 +42,31 @@ export default {
 	div #header{
 		display: flex;
 	}
+
 	#header_title{
 		flex-basis: 80%;
 		font-family: 'Fira Code', monospace;
-		color: #272822;
+		color: #ff6188;
+		/*color: #272822;*/
 		text-align: center;
 		margin: 0px;
-		background: #ff6188;
 		max-width: 450px;
 		padding: 7px;
 	}
 
-	#header_title, #social_btn{
-		margin: 18px 7px 12px 7px;
+	#social_btn{
 		border-radius: 9px;
-		box-shadow: 0px 3px 15px black;
 	}	
 
 	#social_btn {
 		position: relative;
-		flex-basis: 10%;
-		background: #fc9867;	
+		flex-basis: 15%;
 	}
 
 	#social_btn img{
 		display: block;
-		width: 25px;
-		margin: 7px 10px;
+		width: 30px;
+		margin: 10px 10px;
 	}  
 
 	#social_btn a:first-child{
