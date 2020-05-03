@@ -11,9 +11,7 @@ const getters = {
 
 const actions = {
 	async fetchItems({commit}) {
-		data.forEach(d => {
-			d.visible = true
-		})	
+		
 		commit('setItems', data)
 	}
 }

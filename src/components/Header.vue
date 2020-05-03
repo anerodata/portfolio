@@ -18,13 +18,18 @@
 				</a>
 			</div>
 		</div>
+		<Treemap :data="treemapData"/>
 	</div>
 </template>
 
 <script>
+import Treemap from './Treemap.vue'
 export default {
   name: 'Header',
-  props: ['title', 'subtitle']
+  components: {
+  	Treemap
+  },
+  props: ['title', 'subtitle', 'treemapData']
 }
 </script>
 

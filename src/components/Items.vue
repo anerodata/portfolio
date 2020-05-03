@@ -1,7 +1,6 @@
 <template>
  <div class="body">
   <FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
-  <Columns :items="items"/>
   <div class="items_container">
     <Item :item="item" :noSelectedOrgs="noSelectedOrgs" :selectedOrg="selectedOrg" v-for="(item, index) in sortedItems" :key="index"/>
   </div>
@@ -9,14 +8,12 @@
 </template>
 
 <script>
-import Columns from './Columns.vue'
 import FilterBtn from './FilterBtn.vue'
 import Item from './Item.vue'
 export default {
   name: 'Items',
   components: {
     FilterBtn,
-    Columns,
     Item
   },
   props: {
@@ -46,63 +43,13 @@ export default {
   },
   computed: {
     sortedItems() {
+      console.log(this.items)
       const res = this.items
       return res.sort((a, b) => new Date (b.fecha) - new Date(a.fecha) )
-    },
-    
+    }
   },
   methods: {
-    listTreemap() {
-      const res = this.items.reduce((acc, obj) => {
-        // Loop in library array
-        obj.biblioteca.forEach((bib) => {
-
-          // Get tec (js, py) and lib (Leaflet, bs4)
-          const keys = bib.split('.')
-          let keyTec = keys[1]
-          let keyLib = keys[0]
-          if(keys[1] === undefined) {
-            keyTec = 'Otras'
-          }
-          // If global children array doesn't have and object with tec name...
-          if(!acc.children.some(allChild => allChild.name === keyTec)) {
-              //... create it
-              acc.children.push({name: keyTec, children: []})
-          }
-
-          // Get children tec array
-          const keyList = acc.children.filter(allChild => allChild.name === keyTec)[0]
-
-          // If children tec array doesn't have and object with lib name...
-          if(!keyList.children.some(tecChild => tecChild.name === keyLib)) {
-            //... create it
-            keyList.children.push({name: keyLib, value: 1})
-          } else {
-            // Otherwise, add 1 to value property of the array
-            const tecList = keyList.children.filter(tecChild => tecChild.name === keyLib)[0]
-            tecList.value += 1
-          }
-          
-        })
-        return acc
-      }, { name: 'all', children: [] })
-
-      res.children = this.sortArr(res.children, 'children')
-      res.children.forEach(child => { this.sortArr(child.children, 'value') })
-      console.log(res)
-      return false
-    },
-    sortArr(arr, prop) {
-      return arr.sort((a, b) => {
-        if(a[prop] < b[prop]) {
-          return 1
-        } else {
-          return -1
-        }
-      })
-    }, 
     filterOrg(orgValue) {
-      this.listTreemap()
       this.selectedOrg = orgValue
       this.noSelectedOrgs = []
       this.orgs.forEach(org => {
