@@ -6,7 +6,6 @@
   </div>
  </div>
 </template>
-
 <script>
 import FilterBtn from './FilterBtn.vue'
 import Item from './Item.vue'

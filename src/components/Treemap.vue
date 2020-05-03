@@ -1,18 +1,40 @@
 <template>
   <div class="treemap_container">
-    {{ this.pep }}
+    <svg width="800px" height = "100px"></svg>
   </div>
 </template>
-
 <script>
+import * as d3 from 'd3'
 export default {
   name: 'Treemap',
   props: ['data'],
-  computed: {
-  	pep() {
-  		console.log(this.data)
-  		return false
-  	}
+  mounted() {
+  	this.createTreemap()
+  },
+  methods: {
+    createTreemap() {
+      const treemapLayout = d3.treemap()
+        .size([800, 100])
+        .paddingInner(5)
+        .paddingOuter(5)
+
+      const root = d3.hierarchy(this.data)
+      root.sum(function(d) {
+        return d.value;
+      });
+      treemapLayout(root)
+      d3.select('svg')
+        .selectAll('rect')
+        .data(root.descendants())
+        .enter()
+        .append('rect')
+        .attr('x', d => d.x0)
+        .attr('y', d => d.y0)
+        .attr('width', d => d.x1 - d.x0)
+        .attr('height', d => d.y1 - d.y0)
+
+
+    }
   }
 }
 </script>
