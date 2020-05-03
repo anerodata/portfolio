@@ -32,12 +32,24 @@ export default {
         .attr('y', d => d.y0)
         .attr('width', d => d.x1 - d.x0)
         .attr('height', d => d.y1 - d.y0)
+        .attr('class', d => {
+          if(d.parent !== null && d.parent.data.name !== 'all') {
+            return d.parent.data.name
+          } 
+        })
 
 
     }
   }
 }
 </script>
-<style scoped>
+<style>
+  .js, .py, .Otras {
+    fill: white;
+  }
 
+  svg rect {
+    rx: 3;
+    ry: 2;
+  }
 </style>
