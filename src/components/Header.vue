@@ -8,43 +8,48 @@
 			 	<span>
 			 		{{subtitle}}
 			 	</span>
+			 	<!--
+				 	<div id="social_btn">
+						<a href="https://github.com/anerodata"  target="_blank">
+							<img src="../assets/img/github.png"/>	
+						</a>
+						<a href="https://es.linkedin.com/in/antonio-hern%C3%A1ndez-637a2a74" target="_blank">
+							<img src="../assets/img/linkedin.png"/>
+						</a>
+					</div>
+				-->
 			</div>
-			<div id="social_btn">
-				<a href="https://github.com/anerodata"  target="_blank">
-					<img src="../assets/img/github.png"/>	
-				</a>
-				<a href="https://es.linkedin.com/in/antonio-hern%C3%A1ndez-637a2a74" target="_blank">
-					<img src="../assets/img/linkedin.png"/>
-				</a>
-			</div>
+			<FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
 		</div>
 		<Treemap :data="treemapData"/>
 	</div>
 </template>
 
 <script>
+import FilterBtn from './FilterBtn.vue'
 import Treemap from './Treemap.vue'
 export default {
   name: 'Header',
   components: {
+  	FilterBtn,
   	Treemap
   },
-  props: ['title', 'subtitle', 'treemapData']
+  props: ['title', 'subtitle', 'treemapData', 'orgs'],
+  methods: {
+  	filterOrg(orgValue) {
+  		this.$emit('filter-org', orgValue)
+    }
+  }
 }
 </script>
 
 <style scoped>
 	.header_container {
 		width: 100%;
-    	max-width: 470px;
-	}
-
-	div #header{
-		display: flex;
+    	display: flex;
 	}
 
 	#header_title{
-		flex-basis: 80%;
 		font-family: 'Fira Code', monospace;
 		color: #ff6188;
 		/*color: #272822;*/
@@ -59,20 +64,13 @@ export default {
 	}	
 
 	#social_btn {
-		position: relative;
-		flex-basis: 15%;
+		
 	}
 
 	#social_btn img{
-		display: block;
 		width: 30px;
 		margin: 10px 10px;
 	}  
-
-	#social_btn a:first-child{
-		position: absolute;
-    	bottom: 0px;
-	}
 
 	#filter_btn {
 		display: flex;

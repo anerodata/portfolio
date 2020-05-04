@@ -5,8 +5,14 @@
         :title="title" 
         :subtitle="subtitle" 
         :treemapData="treemapData"
+        :orgs="orgs"
+        @filter-org="filterOrg"
       />
-      <Items :items="items"/>
+      <Items 
+        :items="items"
+        :orgs="orgs"
+        :noSelectedOrgs="noSelectedOrgs"
+        :selectedOrg="selectedOrg"/>
     </div>
   </div>
 </template>
@@ -24,7 +30,25 @@ export default {
   data() {
     return {
       title: '<Antonio Hernández/>',
-      subtitle: '<Periodismo de datos y desarrollo web/>'
+      subtitle: '<Periodismo de datos y desarrollo web/>',
+      orgs: [
+          {
+            name: 'El Confidencial',
+            clicked: false
+          },
+    
+          {
+            name: 'Civio',
+            clicked: false
+          },
+
+          {
+            name: 'Otros',
+            clicked: false
+          }
+        ],
+      noSelectedOrgs: [],
+      selectedOrg: 'all'
     }
   },
   methods: {
@@ -36,7 +60,17 @@ export default {
           return -1
         }
       })
-    }, 
+    },
+    filterOrg(orgValue) {
+      this.selectedOrg = orgValue
+      this.noSelectedOrgs = []
+      this.orgs.forEach(org => {
+        if(org.name !== orgValue) {
+          this.noSelectedOrgs.push(org.name)
+        }
+      })
+      this.selectedOrg = orgValue
+    } 
   },
   computed: {
     items() {

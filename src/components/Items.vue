@@ -1,45 +1,24 @@
 <template>
  <div class="body">
-  <FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
   <div class="items_container">
     <Item :item="item" :noSelectedOrgs="noSelectedOrgs" :selectedOrg="selectedOrg" v-for="(item, index) in sortedItems" :key="index"/>
   </div>
  </div>
 </template>
 <script>
-import FilterBtn from './FilterBtn.vue'
 import Item from './Item.vue'
 export default {
   name: 'Items',
   components: {
-    FilterBtn,
     Item
   },
   props: {
-    items: Array
+    items: Array,
+    noSelectedOrgs: Array,
+    selectedOrg: String,
+    orgs: Array
   },
-  data() {
-    return {
-      orgs: [
-          {
-            name: 'El Confidencial',
-            clicked: false
-          },
-    
-          {
-            name: 'Civio',
-            clicked: false
-          },
-
-          {
-            name: 'Otros',
-            clicked: false
-          }
-        ],
-      noSelectedOrgs: [],
-      selectedOrg: 'all'
-      }
-  },
+  
   computed: {
     sortedItems() {
       console.log(this.items)
@@ -48,16 +27,7 @@ export default {
     }
   },
   methods: {
-    filterOrg(orgValue) {
-      this.selectedOrg = orgValue
-      this.noSelectedOrgs = []
-      this.orgs.forEach(org => {
-        if(org.name !== orgValue) {
-          this.noSelectedOrgs.push(org.name)
-        }
-      })
-    this.selectedOrg = orgValue
-    }
+    
   }
 }
 </script>

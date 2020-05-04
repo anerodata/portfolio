@@ -1,6 +1,6 @@
 <template>
   <div class="treemap_container">
-    <svg width="800px" height = "100px"></svg>
+    <svg width="800px" height = "130px"></svg>
   </div>
 </template>
 <script>
@@ -14,7 +14,7 @@ export default {
   methods: {
     createTreemap() {
       const treemapLayout = d3.treemap()
-        .size([800, 100])
+        .size([800, 130])
         .paddingInner(5)
         .paddingOuter(5)
 
@@ -37,8 +37,6 @@ export default {
             return d.parent.data.name
           } 
         })
-
-
     }
   }
 }
