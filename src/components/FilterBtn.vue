@@ -30,9 +30,9 @@
 </script>
 <style scoped>
 	.filter_container {
-    margin-bottom: 20px;
+    margin: 15px 0px 5px 0px;
     display: flex;
-    max-width: 470px;
+    max-width: 570px;
   }
 
   .filter_btn {
@@ -53,15 +53,15 @@
   }
 
   button {
-    background: #ffd866;
+    background: rgba(255, 216, 102, 0.9);
   }
 
   button.El-Confidencial {
-    background: #78dce8;
+    background: rgba(120, 220, 232, 0.9);
   } 
 
   button.Civio{
-    background: #a9dc76;
+    background: rgba(169, 220, 118, 0.9);
   } 
 
   

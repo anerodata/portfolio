@@ -1,5 +1,6 @@
 <template>
 	<div class="header_container">
+		<div class="header_top">
 		<div id="header">
 			<div id="header_title">
 			 	<h1>
@@ -19,9 +20,10 @@
 					</div>
 				-->
 			</div>
-			<FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
 		</div>
 		<Treemap :data="treemapData"/>
+	</div>
+		<FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
 	</div>
 </template>
 
@@ -45,8 +47,16 @@ export default {
 
 <style scoped>
 	.header_container {
+		margin-top: 16px;
+	}
+
+	.header_top {
 		width: 100%;
     	display: flex;
+	}
+
+	#header {
+		flex-basis: 40%;
 	}
 
 	#header_title{
@@ -55,7 +65,6 @@ export default {
 		/*color: #272822;*/
 		text-align: center;
 		margin: 0px;
-		max-width: 450px;
 		padding: 7px;
 	}
 
@@ -83,8 +92,12 @@ export default {
 	}
 
 	#header h1 {
-		font-size: 30px;
+		font-size: 35px;
 		margin-bottom: 5px; 
 		margin-top: 0px;
+	}
+
+	#header span {
+		font-size: 18px;
 	}
 </style>

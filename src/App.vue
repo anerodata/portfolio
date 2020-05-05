@@ -131,8 +131,8 @@ export default {
     margin: auto;
   }
 
-  .header_container, .filter_container {
-    margin-left: 12px;
+  .header_container {
+    margin: 0 12px;
   }
   
 </style>
