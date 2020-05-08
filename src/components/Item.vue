@@ -6,19 +6,19 @@
             <img style="max-width: 100%;" :src="require('./../assets/img/'+item.id+'.png')">
   				</div>
           <h3>
-  					{{item.titulo}}
+  					{{ item.titulo }}
   				</h3>
   				<div class="item_info">
-  					<span>{{item.fecha}}</span> - 
-            <span class="item_organization">{{item.organización}}</span> - 
-            <span class="item_description">{{item.descripción}}</span>
+  					<span>{{ item.fecha }}</span> - 
+            <span class="item_organization">{{ item.organización }}</span> - 
+            <span class="item_description">{{ item.descripción }}</span>
   				</div>
   			</div>
   		</a>
   		<div>
   			<div class="item_package">
-  				<span v-for="(biblioteca, index) in item.biblioteca" :key="index">
-  					{{biblioteca}}
+  				<span v-for="(biblioteca, index) in item.biblioteca" :key="index" :class="bibliotecaLang(biblioteca)">
+  					{{ biblioteca }}
   				</span>
   			</div>
   		</div>
@@ -42,7 +42,16 @@
         }
       },
       classItem() {
-        return this.item.organización.replace(' ', '-');
+        return this.item.organización.replace(' ', '-')
+      }
+    },
+    methods: {
+      bibliotecaLang(biblioteca) {
+        if (biblioteca.split('.')[1] !== undefined) {
+          return biblioteca.split('.')[1]
+        } else {
+          return 'Otras'
+        }
       }
     }
 	}
@@ -91,8 +100,6 @@
 	}
 
 	.item_package span {
-		border: 1px solid mediumpurple;
-    color: mediumpurple;
 		border-radius: 3px;
 		padding: 3px;
 		margin: 10px 5px;

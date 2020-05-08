@@ -132,7 +132,30 @@ export default {
   }
 
   .header_container {
-    margin: 0 12px;
+    margin: 0 18px;
+  }
+
+  .child.js, span.js {
+    fill: #ff6188;
+    color: #ff6188;
+    border: 1px solid #ff6188;
+    opacity: 0.8;
+  }
+
+  .child.py, span.py {
+    fill: #ab9df2;
+    color: #ab9df2;
+    border: 1px solid #ab9df2;
+  }
+
+  .child.Otras, span.Otras {
+    fill: #fc9867;
+    color: #fc9867;
+    border: 1px solid #fc9867;
+  }
+
+  rect, .item_package {
+    opacity: 0.8;
   }
   
 </style>

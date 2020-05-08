@@ -12,6 +12,10 @@ export default {
     return {
       pad: {
         top: 10, left: 0, bottom: 0, right: 0
+      },
+      labels: {
+        'js': 'Javascript',
+        'py': 'Python',
       }
     }
   },
@@ -20,7 +24,6 @@ export default {
   },
   methods: {
     createTreemap() {
-      console.dir(d3.select('#header').node())
       const height = d3.select('#header_title').node().clientHeight 
       const width = this.$el.clientWidth - 24
 
@@ -39,6 +42,18 @@ export default {
       });
       treemapLayout(root)
       d3.select('svg')
+        .append('g')
+        .attr('class', 'rects')
+
+      d3.select('svg')
+        .append('g')
+        .attr('class', 'labelContainers')
+
+      d3.select('svg')
+        .append('g')
+        .attr('class', 'labels')
+
+      d3.select('.rects')
         .selectAll('rect')
         .data(root.descendants())
         .enter()
@@ -48,13 +63,56 @@ export default {
         .attr('width', d => d.x1 - d.x0)
         .attr('height', d => d.y1 - d.y0)
         .attr('class', d => {
-          console.log(d.data.name)
           if(d.parent !== null && d.parent.data.name !== 'all') {
             return d.parent.data.name + ' child'
           }  else {
             return d.data.name + ' parent'
           }
         })
+
+      d3.select('.labels')
+        .selectAll('text')
+        .data(root.descendants())
+        .enter()
+        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
+        .append('text')
+        .attr('id', (d) => 'text-'+d.data.name)
+        .attr('x', d => {
+          return d.x0 + (d.x1 - d.x0) / 2 - 6
+        })
+        .attr('y', d => {
+          return d.y1 / 2
+        })
+        .text(d => this.labels[d.data.name])
+
+      d3.select('.labelContainers')
+        .selectAll('rect')
+        .data(root.descendants())
+        .enter()
+        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
+        .append('rect')
+        .attr('x', d => {
+          return d3.select('.labels')
+                    .select('#text-'+d.data.name).node()
+                    .getBBox().x - 6
+        })
+        .attr('y', d => {
+          return d3.select('.labels')
+                    .select('#text-'+d.data.name).node()
+                    .getBBox().y - 1
+        })
+        .attr('width', (d) => {
+          return d3.select('.labels')
+                    .select('#text-'+d.data.name).node()
+                    .getBBox().width + 11
+        })
+        .attr('height', (d) => {
+          return d3.select('.labels')
+                    .select('#text-'+d.data.name).node()
+                    .getBBox().height + 4
+        })
+        .attr('fill', 'white')
+
     }
   }
 }
@@ -73,21 +131,8 @@ export default {
     fill: white;
   }
 
-  .child.js {
-    fill: #ff6188;
-  }
-
-  .child.py {
-    fill: #ab9df2;
-  }
-
-  .child.Otras {
-    fill: #fc9867;
-  }
-
   svg rect {
     rx: 3;
     ry: 2;
-    opacity: 0.8;
   }
 </style>

@@ -91,7 +91,7 @@ export default {
 		border: 1px solid;
 	}
 
-	#header h1 {
+	h1 {
 		font-size: 35px;
 		margin-bottom: 5px; 
 		margin-top: 0px;
@@ -100,4 +100,25 @@ export default {
 	#header span {
 		font-size: 18px;
 	}
+
+	@media only screen and (max-width: 1200px) {
+   	 	h1 {
+      		font-size: 30px;
+    	}
+
+    	#header span {
+			font-size: 16px;
+		}
+  	}
+
+  	@media only screen and (max-width: 1000px) {
+   	 	.header_top {
+    		display: block;
+    	}
+
+    	.filter_container {
+    		justify-content: center;
+    		max-width: 100%;
+    	}
+  	}
 </style>

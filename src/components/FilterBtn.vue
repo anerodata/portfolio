@@ -43,7 +43,7 @@
     font-size: 14px;
     font-weight: bold;
     padding: 5px;
-    margin: 7px;
+    margin-right: -3px;
     border-radius: 5px;
     box-shadow: 0px 3px 15px black; 
   }
