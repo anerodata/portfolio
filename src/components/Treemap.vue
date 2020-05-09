@@ -1,6 +1,6 @@
 <template>
   <div class="treemap_container">
-    <svg></svg>
+    <svg id="chart"></svg>
   </div>
 </template>
 <script>
@@ -10,6 +10,10 @@ export default {
   props: ['data'],
   data() {
     return {
+      id: 'chart',
+      svg:  null,
+      width: null,
+      height: null,
       pad: {
         top: 10, left: 0, bottom: 0, right: 0
       },
@@ -20,19 +24,21 @@ export default {
     }
   },
   mounted() {
+    this.dimensions()
   	this.createTreemap()
   },
   methods: {
+    dimensions() {
+      this.width = this.$el.clientWidth - 24
+      this.height = d3.select('#header_title').node().clientHeight
+      this.svg = d3.select(`#${this.id}`)
+        .attr('width', this.width)
+        .attr('height', this.height)
+    },
     createTreemap() {
-      const height = d3.select('#header_title').node().clientHeight 
-      const width = this.$el.clientWidth - 24
-
-      d3.select('svg')
-        .attr('width', width)
-        .attr('height', height)
 
       const treemapLayout = d3.treemap()
-        .size([width, height])
+        .size([this.width, this.height])
         .paddingInner(5)
         .paddingOuter(0)
 
