@@ -168,7 +168,7 @@ export default {
           return d.y1 / 2
         })
         .text(d => {
-          return `${this.labels[d.data.name]} (${d.value})`
+          return `${this.labels[d.data.name]}: ${d.value}`
         })
     },
 
