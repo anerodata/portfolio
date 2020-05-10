@@ -1,6 +1,7 @@
 <template>
   <div class="treemap_container">
     <svg id="chart"></svg>
+    <div id="tooltip"></div>
   </div>
 </template>
 <script>
@@ -12,6 +13,7 @@ export default {
     return {
       id: 'chart',
       svg:  null,
+      root: null,
       width: null,
       height: null,
       pad: {
@@ -25,45 +27,105 @@ export default {
   },
   mounted() {
     this.dimensions()
+    this.treemapRootData()
+    this.treemapLayout()
+    this.bones()
   	this.createTreemap()
+    window.addEventListener('resize', this.redraw);
   },
   methods: {
     dimensions() {
-      this.width = this.$el.clientWidth - 24
-      this.height = d3.select('#header_title').node().clientHeight
+      let chartPercentWidth = null
+      if (window.innerWidth > 1000) {
+        chartPercentWidth = 60
+      } else {
+        chartPercentWidth = 100
+      }
+
+      this.width = d3.select(`#${this.id}`)
+        .node()
+        .parentNode
+        .parentNode
+        .clientWidth * chartPercentWidth / 100
+      this.height = 80
       this.svg = d3.select(`#${this.id}`)
         .attr('width', this.width)
         .attr('height', this.height)
     },
-    createTreemap() {
 
+    treemapRootData() {
+      this.root = d3.hierarchy(this.data)
+      this.root.sum(function(d) {
+        return d.value;
+      });
+    },
+
+    treemapLayout() {
       const treemapLayout = d3.treemap()
         .size([this.width, this.height])
         .paddingInner(5)
         .paddingOuter(0)
 
-      const root = d3.hierarchy(this.data)
-      root.sum(function(d) {
-        return d.value;
-      });
-      treemapLayout(root)
-      d3.select('svg')
+      treemapLayout(this.root)
+    },
+
+    bones() {
+      this.svg
         .append('g')
         .attr('class', 'rects')
 
-      d3.select('svg')
+      this.svg
         .append('g')
         .attr('class', 'labelContainers')
 
-      d3.select('svg')
+      this.svg
         .append('g')
         .attr('class', 'labels')
+    },
 
+    createTreemap() {
       d3.select('.rects')
         .selectAll('rect')
-        .data(root.descendants())
+        .data(this.root.descendants())
         .enter()
         .append('rect')
+        .call(rects => {
+          return this.drawRects(rects)
+        })
+        .on('mousemove', (d, i, nodes) => {
+          this.moveTooltip(d3.mouse(nodes[i]))
+          if(i > 0) {
+            this.writeTooltip(d)
+          }
+        })
+
+        .on('mouseout', () => {
+          this.hidTooltip()
+        })  
+
+      d3.select('.labels')
+        .selectAll('text')
+        .data(this.root.descendants())
+        .enter()
+        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
+        .append('text')
+        .call(texts => {
+          return this.drawTexts(texts)
+        })
+
+      d3.select('.labelContainers')
+        .selectAll('rect')
+        .data(this.root.descendants())
+        .enter()
+        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
+        .append('rect')
+        .call(containers => {
+          return this.drawLabelContainers(containers)
+        })
+    },
+
+    drawRects(rects) {
+      rects
         .attr('x', d => d.x0)
         .attr('y', d => d.y0)
         .attr('width', d => d.x1 - d.x0)
@@ -75,13 +137,10 @@ export default {
             return d.data.name + ' parent'
           }
         })
+    },
 
-      d3.select('.labels')
-        .selectAll('text')
-        .data(root.descendants())
-        .enter()
-        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
-        .append('text')
+    drawTexts(texts) {
+      texts
         .attr('id', (d) => 'text-'+d.data.name)
         .attr('x', d => {
           return d.x0 + (d.x1 - d.x0) / 2 - 6
@@ -89,14 +148,13 @@ export default {
         .attr('y', d => {
           return d.y1 / 2
         })
-        .text(d => this.labels[d.data.name])
+        .text(d => {
+          return `${this.labels[d.data.name]} (${d.value})`
+        })
+    },
 
-      d3.select('.labelContainers')
-        .selectAll('rect')
-        .data(root.descendants())
-        .enter()
-        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
-        .append('rect')
+    drawLabelContainers(containers) {
+      containers
         .attr('x', d => {
           return d3.select('.labels')
                     .select('#text-'+d.data.name).node()
@@ -118,7 +176,46 @@ export default {
                     .getBBox().height + 4
         })
         .attr('fill', 'white')
+    },
 
+    moveTooltip(mousePos) {
+      d3.select('#tooltip')
+        .style('display', 'block')
+        .style('left', mousePos[0]+12+'px')
+        .style('top', mousePos[1]-8+'px')
+    },
+
+    writeTooltip(d) {
+      d3.select('#tooltip')
+        .attr('class', d.parent.data.name)
+        .text(`${d.data.name}: ${d.value}`)
+    },
+
+    hidTooltip() {
+      d3.select('#tooltip')
+        .style('display', 'none')
+    },
+
+    redraw() {
+      this.dimensions()
+      this.treemapLayout()
+      d3.select('.rects')
+        .selectAll('rect')
+        .call(rects => {
+          return this.drawRects(rects)
+        })
+
+      d3.select('.labels')
+        .selectAll('text')
+        .call(texts => {
+          return this.drawTexts(texts)
+        })
+
+      d3.select('.labelContainers')
+        .selectAll('rect')
+        .call(containers => {
+          return this.drawLabelContainers(containers)
+        })
     }
   }
 }
@@ -127,15 +224,27 @@ export default {
 
   .treemap_container {
     flex-basis: 60%;
+    position: relative;
   }
 
   .parent {
-    fill: none;
+    fill: transparent;
   }
 
   .child {
     fill: white;
   }
+
+  #tooltip {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 3px 7px;
+  }
+
+  .labelContainers, .labels {
+    pointer-events: none;
+  }  
 
   svg rect {
     rx: 3;

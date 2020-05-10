@@ -135,21 +135,41 @@ export default {
     margin: 0 18px;
   }
 
-  .child.js, span.js {
+  .child.js {
     fill: #ff6188;
-    color: #ff6188;
-    border: 1px solid #ff6188;
+  }
+
+  .child.js, span.js {
     opacity: 0.8;
   }
 
-  .child.py, span.py {
+  span.js, #tooltip.js {
+    color: #ff6188;
+    border: 1px solid #ff6188;
+  }
+
+  .child.py{
     fill: #ab9df2;
+  }
+
+  .child.py, span.py {
+    opacity: 0.8;
+  }
+
+  span.py, #tooltip.py {
     color: #ab9df2;
     border: 1px solid #ab9df2;
   }
 
-  .child.Otras, span.Otras {
+  .child.Otras{
     fill: #fc9867;
+  }
+
+  .child.Otras, span.Otras {
+    opacity: 0.8;
+  }
+
+  span.Otras, #tooltip.Otras {
     color: #fc9867;
     border: 1px solid #fc9867;
   }
