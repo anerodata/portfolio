@@ -26,6 +26,7 @@ export default {
     }
   },
   mounted() {
+    this.svg = d3.select(`#${this.id}`)
     this.dimensions()
     this.treemapRootData()
     this.treemapLayout()
@@ -47,8 +48,9 @@ export default {
         .parentNode
         .parentNode
         .clientWidth * chartPercentWidth / 100
+
       this.height = 80
-      this.svg = d3.select(`#${this.id}`)
+      this.svg
         .attr('width', this.width)
         .attr('height', this.height)
     },
@@ -86,7 +88,8 @@ export default {
     },
 
     createTreemap() {
-      d3.select('.rects')
+      this.svg
+        .select('.rects')
         .selectAll('rect')
         .data(this.root.descendants())
         .enter()
@@ -96,7 +99,6 @@ export default {
         })
         .on('mouseover', (d, i, nodes) => {
           this.setHighClass(nodes[i])
-          this.hidLabels()
         })
         .on('mousemove', (d, i, nodes) => {
           this.moveTooltip(d3.mouse(nodes[i]))
@@ -106,14 +108,20 @@ export default {
         })
         .on('mouseout', (d, i, nodes) => {
           this.removeHighClass(nodes[i])
-          this.showLabels()
           this.hidTooltip()
         })
         .on('click', (d) => {
           console.log(d)
-        }) 
+        })
 
-      d3.select('.labels')
+      this.svg
+          .on('mouseover', () => this.hidLabels())
+
+      this.svg
+          .on('mouseout', () => this.showLabels())
+
+      this.svg
+        .select('.labels')
         .selectAll('text')
         .data(this.root.descendants())
         .enter()
@@ -123,7 +131,8 @@ export default {
           return this.drawTexts(texts)
         })
 
-      d3.select('.labelContainers')
+      this.svg
+        .select('.labelContainers')
         .selectAll('rect')
         .data(this.root.descendants())
         .enter()
@@ -191,8 +200,20 @@ export default {
     moveTooltip(mousePos) {
       d3.select('#tooltip')
         .style('display', 'block')
-        .style('left', mousePos[0]+12+'px')
         .style('top', mousePos[1]-8+'px')
+
+      let xPos = null
+      if(mousePos[0] > this.width / 2) {
+          xPos = this.width - mousePos[0]+8
+          d3.select('#tooltip')
+            .style('right', xPos+'px')
+            .style('left', null)
+      } else {
+          xPos = mousePos[0]+12
+          d3.select('#tooltip')
+            .style('left', xPos+'px')
+            .style('right', null)
+      }
     },
 
     writeTooltip(d) {
@@ -208,21 +229,17 @@ export default {
 
     hidLabels() {
       d3.select('.labelContainers')
-        .transition()
         .attr('opacity', 0)
 
       d3.select('.labels')
-        .transition()
         .attr('opacity', 0)
     },
 
     showLabels() {
       d3.select('.labelContainers')
-        .transition()
         .attr('opacity', 1)
 
       d3.select('.labels')
-        .transition()
         .attr('opacity', 1)
     },
 
@@ -282,7 +299,7 @@ export default {
     padding: 3px 7px;
   }
 
-  .labelContainers, .labels {
+  .labelContainers, .labels, #tooltip {
     pointer-events: none;
   }
 
