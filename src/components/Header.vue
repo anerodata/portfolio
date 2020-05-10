@@ -23,24 +23,21 @@
 		</div>
 		<Treemap :data="treemapData"/>
 	</div>
-		<FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
+		
 	</div>
 </template>
 
 <script>
-import FilterBtn from './FilterBtn.vue'
+
 import Treemap from './Treemap.vue'
 export default {
   name: 'Header',
   components: {
-  	FilterBtn,
   	Treemap
   },
-  props: ['title', 'subtitle', 'treemapData', 'orgs'],
+  props: ['title', 'subtitle', 'treemapData'],
   methods: {
-  	filterOrg(orgValue) {
-  		this.$emit('filter-org', orgValue)
-    }
+  	
   }
 }
 </script>
@@ -78,16 +75,6 @@ export default {
 	#social_btn img{
 		width: 30px;
 		margin: 10px 10px;
-	}  
-
-	#filter_btn {
-		display: flex;
-		margin-left: 7px;
-		background: #272822;
-		padding: 7px;
-		border-radius: 9px;
-		width: 92%;
-		border: 1px solid;
 	}
 
 	h1 {
@@ -117,11 +104,6 @@ export default {
 
     	#header_title {
     		margin-bottom: 16px;
-    	}
-
-    	.filter_container {
-    		justify-content: center;
-    		max-width: 100%;
     	}
   	}
 </style>

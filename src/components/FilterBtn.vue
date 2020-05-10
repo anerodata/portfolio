@@ -30,7 +30,7 @@
 </script>
 <style scoped>
 	.filter_container {
-    margin: 15px 0px 5px 0px;
+    margin: 15px 19px 7px 19px;
     display: flex;
     max-width: 570px;
   }
@@ -62,7 +62,14 @@
 
   button.Civio{
     background: rgba(169, 220, 118, 0.8);
-  } 
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .filter_container {
+      justify-content: center;
+      max-width: 100%;
+    }
+  }
 
   
 </style>

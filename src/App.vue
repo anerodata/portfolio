@@ -8,6 +8,7 @@
         :orgs="orgs"
         @filter-org="filterOrg"
       />
+      <FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
       <Items 
         :items="items"
         :orgs="orgs"
@@ -20,11 +21,13 @@
 <script>
 import data from './data/data.json';
 import Header from './components/Header.vue'
+import FilterBtn from './components/FilterBtn.vue'
 import Items from './components/Items.vue'
 export default {
   name: 'App',
   components: {
-    Header, 
+    Header,
+    FilterBtn,
     Items
   },
   data() {
@@ -61,6 +64,7 @@ export default {
         }
       })
     },
+
     filterOrg(orgValue) {
       this.selectedOrg = orgValue
       this.noSelectedOrgs = []
@@ -180,6 +184,16 @@ export default {
 
   rect, .item_package {
     opacity: 0.8;
+  }
+
+  #filter_btn {
+    display: flex;
+    margin-left: 7px;
+    background: #272822;
+    padding: 7px;
+    border-radius: 9px;
+    width: 92%;
+    border: 1px solid;
   }
   
 </style>
