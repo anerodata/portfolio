@@ -135,11 +135,15 @@ export default {
     margin: 0 18px;
   }
 
+  .treemap_container .child {
+    opacity: 0.7;
+  }
+
   .child.js {
     fill: #ff6188;
   }
 
-  .child.js, span.js {
+  span.js {
     opacity: 0.8;
   }
 
@@ -152,7 +156,7 @@ export default {
     fill: #ab9df2;
   }
 
-  .child.py, span.py {
+  span.py {
     opacity: 0.8;
   }
 
@@ -165,7 +169,7 @@ export default {
     fill: #fc9867;
   }
 
-  .child.Otras, span.Otras {
+  span.Otras {
     opacity: 0.8;
   }
 

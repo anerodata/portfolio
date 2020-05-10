@@ -65,7 +65,6 @@ export default {
 		/*color: #272822;*/
 		text-align: center;
 		margin: 0px;
-		padding: 7px;
 	}
 
 	#social_btn{
@@ -114,6 +113,10 @@ export default {
   	@media only screen and (max-width: 1000px) {
    	 	.header_top {
     		display: block;
+    	}
+
+    	#header_title {
+    		margin-bottom: 16px;
     	}
 
     	.filter_container {

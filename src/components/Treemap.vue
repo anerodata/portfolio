@@ -77,10 +77,12 @@ export default {
       this.svg
         .append('g')
         .attr('class', 'labelContainers')
+        .attr('opacity', 1)
 
       this.svg
         .append('g')
         .attr('class', 'labels')
+        .attr('opacity', 1)
     },
 
     createTreemap() {
@@ -92,16 +94,24 @@ export default {
         .call(rects => {
           return this.drawRects(rects)
         })
+        .on('mouseover', (d, i, nodes) => {
+          this.setHighClass(nodes[i])
+          this.hidLabels()
+        })
         .on('mousemove', (d, i, nodes) => {
           this.moveTooltip(d3.mouse(nodes[i]))
-          if(i > 0) {
+          if(d.children === undefined) {
             this.writeTooltip(d)
           }
         })
-
-        .on('mouseout', () => {
+        .on('mouseout', (d, i, nodes) => {
+          this.removeHighClass(nodes[i])
+          this.showLabels()
           this.hidTooltip()
-        })  
+        })
+        .on('click', (d) => {
+          console.log(d)
+        }) 
 
       d3.select('.labels')
         .selectAll('text')
@@ -196,6 +206,36 @@ export default {
         .style('display', 'none')
     },
 
+    hidLabels() {
+      d3.select('.labelContainers')
+        .transition()
+        .attr('opacity', 0)
+
+      d3.select('.labels')
+        .transition()
+        .attr('opacity', 0)
+    },
+
+    showLabels() {
+      d3.select('.labelContainers')
+        .transition()
+        .attr('opacity', 1)
+
+      d3.select('.labels')
+        .transition()
+        .attr('opacity', 1)
+    },
+
+    setHighClass(rect) {
+      d3.select(rect)
+        .classed('highClass', true)
+    },
+
+    removeHighClass(rect) {
+      d3.select(rect)
+        .classed('highClass', false)
+    },
+
     redraw() {
       this.dimensions()
       this.treemapLayout()
@@ -244,6 +284,10 @@ export default {
 
   .labelContainers, .labels {
     pointer-events: none;
+  }
+
+  .treemap_container .child.highClass {
+    opacity: 0.9;
   }  
 
   svg rect {
