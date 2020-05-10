@@ -53,15 +53,15 @@
   }
 
   button {
-    background: rgba(255, 216, 102, 0.9);
+    background: rgba(255, 216, 102, 0.8);
   }
 
   button.El-Confidencial {
-    background: rgba(120, 220, 232, 0.9);
+    background: rgba(120, 220, 232, 0.8);
   } 
 
   button.Civio{
-    background: rgba(169, 220, 118, 0.9);
+    background: rgba(169, 220, 118, 0.8);
   } 
 
   

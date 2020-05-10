@@ -139,7 +139,7 @@ export default {
     opacity: 0.7;
   }
 
-  .child.js {
+  .child.js, .labels .js {
     fill: #ff6188;
   }
 
@@ -152,7 +152,7 @@ export default {
     border: 1px solid #ff6188;
   }
 
-  .child.py{
+  .child.py, .labels .py{
     fill: #ab9df2;
   }
 
@@ -165,7 +165,7 @@ export default {
     border: 1px solid #ab9df2;
   }
 
-  .child.Otras{
+  .child.Otras, .labels .Otras{
     fill: #fc9867;
   }
 

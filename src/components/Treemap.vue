@@ -25,6 +25,7 @@ export default {
       }
     }
   },
+
   mounted() {
     this.svg = d3.select(`#${this.id}`)
     this.dimensions()
@@ -34,6 +35,7 @@ export default {
   	this.createTreemap()
     window.addEventListener('resize', this.redraw);
   },
+  
   methods: {
     dimensions() {
       let chartPercentWidth = null
@@ -161,6 +163,7 @@ export default {
     drawTexts(texts) {
       texts
         .attr('id', (d) => 'text-'+d.data.name)
+        .attr('class', (d) => d.data.name)
         .attr('x', d => {
           return d.x0 + (d.x1 - d.x0) / 2 - 6
         })
@@ -194,7 +197,6 @@ export default {
                     .select('#text-'+d.data.name).node()
                     .getBBox().height + 4
         })
-        .attr('fill', 'white')
     },
 
     moveTooltip(mousePos) {
@@ -295,8 +297,12 @@ export default {
   #tooltip {
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: #383838;
     padding: 3px 7px;
+  }
+  
+  .labelContainers {
+    fill: #383838;
   }
 
   .labelContainers, .labels, #tooltip {
