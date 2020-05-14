@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <div class="header_container">
+      <Header :treemapData="treemapData"/>
+      <Treemap :data="treemapData"/>
+    </div>
     <FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
     <Items 
       :items="items"
@@ -11,11 +15,15 @@
 
 <script>
 import data from './../data/data.json'
+import Header from './../components/Header.vue'
+import Treemap from './../components/Treemap.vue'
 import FilterBtn from './../components/FilterBtn.vue'
 import Items from './../components/Items.vue'
 export default {
   name: 'Home',
   components: {
+    Header,
+    Treemap,
     FilterBtn,
     Items
   },
@@ -23,18 +31,15 @@ export default {
     return {
       orgs: [
           {
-            name: 'El Confidencial',
-            clicked: false
+            name: 'El Confidencial'
           },
     
           {
-            name: 'Civio',
-            clicked: false
+            name: 'Civio'
           },
 
           {
-            name: 'Otros',
-            clicked: false
+            name: 'Otros'
           }
         ],
       noSelectedOrgs: [],
@@ -51,11 +56,61 @@ export default {
         }
       })
       this.selectedOrg = orgValue
-    } 
+    },
+
+    sortArr(arr, prop) {
+      return arr.sort((a, b) => {
+        if(a[prop] < b[prop]) {
+          return 1
+        } else {
+          return -1
+        }
+      })
+    }
   },
   computed: {
     items() {
       return data
+    },
+
+    treemapData() {
+      const res = this.items.reduce((acc, obj) => {
+        // Loop in library array
+        obj.biblioteca.forEach((bib) => {
+
+          // Get tec (js, py) and lib (Leaflet, bs4)
+          const keys = bib.split('.')
+          let keyTec = keys[1]
+          let keyLib = keys[0]
+          if(keys[1] === undefined) {
+            keyTec = 'Otras'
+          }
+          // If global children array doesn't have and object with tec name...
+          if(!acc.children.some(allChild => allChild.name === keyTec)) {
+              //... create it
+              acc.children.push({name: keyTec, children: []})
+          }
+
+          // Get children tec array
+          const keyList = acc.children.filter(allChild => allChild.name === keyTec)[0]
+
+          // If children tec array doesn't have and object with lib name...
+          if(!keyList.children.some(tecChild => tecChild.name === keyLib)) {
+            //... create it
+            keyList.children.push({name: keyLib, value: 1})
+          } else {
+            // Otherwise, add 1 to value property of the array
+            const tecList = keyList.children.filter(tecChild => tecChild.name === keyLib)[0]
+            tecList.value += 1
+          }
+          
+        })
+        return acc
+      }, { name: 'all', children: [] })
+
+      res.children = this.sortArr(res.children, 'children')
+      res.children.forEach(child => { this.sortArr(child.children, 'value') })
+      return res
     }
   }
 }
