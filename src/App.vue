@@ -1,58 +1,16 @@
 <template>
   <div id="app">
-    <div class="container">
-      <Header 
-        :title="title" 
-        :subtitle="subtitle" 
-        :treemapData="treemapData"
-        :orgs="orgs"
-        @filter-org="filterOrg"
-      />
-      <FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
-      <Items 
-        :items="items"
-        :orgs="orgs"
-        :noSelectedOrgs="noSelectedOrgs"
-        :selectedOrg="selectedOrg"/>
-    </div>
+    <Header :treemapData="treemapData"/>
+    <router-view/>
   </div>
 </template>
-
 <script>
-import data from './data/data.json';
+import data from './data/data.json'
 import Header from './components/Header.vue'
-import FilterBtn from './components/FilterBtn.vue'
-import Items from './components/Items.vue'
 export default {
-  name: 'App',
+  name: 'About',
   components: {
-    Header,
-    FilterBtn,
-    Items
-  },
-  data() {
-    return {
-      title: '<Antonio Hernández/>',
-      subtitle: '<Periodismo de datos y desarrollo web/>',
-      orgs: [
-          {
-            name: 'El Confidencial',
-            clicked: false
-          },
-    
-          {
-            name: 'Civio',
-            clicked: false
-          },
-
-          {
-            name: 'Otros',
-            clicked: false
-          }
-        ],
-      noSelectedOrgs: [],
-      selectedOrg: 'all'
-    }
+    Header
   },
   methods: {
     sortArr(arr, prop) {
@@ -63,18 +21,7 @@ export default {
           return -1
         }
       })
-    },
-
-    filterOrg(orgValue) {
-      this.selectedOrg = orgValue
-      this.noSelectedOrgs = []
-      this.orgs.forEach(org => {
-        if(org.name !== orgValue) {
-          this.noSelectedOrgs.push(org.name)
-        }
-      })
-      this.selectedOrg = orgValue
-    } 
+    }
   },
   computed: {
     items() {
@@ -130,7 +77,7 @@ export default {
     background-repeat: no-repeat;
   }
 
-  .container {
+  #app, .container {
     max-width: 1200px;
     margin: auto;
   }

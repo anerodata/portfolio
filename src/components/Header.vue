@@ -1,29 +1,28 @@
 <template>
 	<div class="header_container">
 		<div class="header_top">
-		<div id="header">
-			<div id="header_title">
-			 	<h1>
-			 		{{title}}
-			 	</h1>
-			 	<span>
-			 		{{subtitle}}
-			 	</span>
-			 	<!--
-				 	<div id="social_btn">
-						<a href="https://github.com/anerodata"  target="_blank">
-							<img src="../assets/img/github.png"/>	
-						</a>
-						<a href="https://es.linkedin.com/in/antonio-hern%C3%A1ndez-637a2a74" target="_blank">
-							<img src="../assets/img/linkedin.png"/>
-						</a>
-					</div>
-				-->
+			<div id="header">
+				<div id="header_title">
+				 	<h1>
+				 		&lt;Antonio Hernández/&gt;
+				 	</h1>
+				 	<span>
+				 		&lt;Periodismo de datos y desarrollo web/&gt;
+				 	</span>
+				 	<!--
+					 	<div id="social_btn">
+							<a href="https://github.com/anerodata"  target="_blank">
+								<img src="../assets/img/github.png"/>	
+							</a>
+							<a href="https://es.linkedin.com/in/antonio-hern%C3%A1ndez-637a2a74" target="_blank">
+								<img src="../assets/img/linkedin.png"/>
+							</a>
+						</div>
+					-->
+				</div>
 			</div>
+			<Treemap :data="treemapData"/>
 		</div>
-		<Treemap :data="treemapData"/>
-	</div>
-		
 	</div>
 </template>
 
@@ -35,10 +34,7 @@ export default {
   components: {
   	Treemap
   },
-  props: ['title', 'subtitle', 'treemapData'],
-  methods: {
-  	
-  }
+  props: ['treemapData']
 }
 </script>
 
