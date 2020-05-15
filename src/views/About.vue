@@ -9,7 +9,7 @@
       </p>
 
       <p>
-        En 2016 comencé a formarme en desarrollo web, obteniendo el <a href=""><strong>Certificado de Profesionalidad de Desarrollo Web con Teconologías Web</strong></a>. Desde entonces, he segido formandome en esta disciplina ininterrumpidamente.
+        En 2016 comencé a formarme en desarrollo web, obteniendo el <a href="https://github.com/anerodata/portfolio/blob/master/src/assets/pdf/certificado-aplicaciones-web.pdf"><strong>Certificado de Profesionalidad de Desarrollo Web con Teconologías Web</strong></a>. Desde entonces, he segido formandome en esta disciplina ininterrumpidamente.
       </p>
 
       <p>
@@ -18,6 +18,9 @@
 
       <p>
         Me interesa todo lo relacionado con la programación y la web. No obstante, siento predilección por la visualicación de datos. Tengo bastante esperiencia con <code>d3.js</code>, <code>Leaflet.js</code>, <code>Highcharts.js</code> y <code>MapboxGL.js</code>. Para el minado y análisis de datos utilizo el paquete de Python <code>pandas.py</code> y para hacer <i>web scraping</i>, <code>bs4.py</code>. Además, he realizado algunos trabajos de cartografía con la herramienta <i>open source</i> QGIS.
+      </p>
+      <p>
+        En cuanto a desarrollo de grandes proyectos de <i>front-end</i>, tengo algo de experiencia con el <i>framework</i> de Javascript <code>Vue.js</code>.
       </p>
       <p>
         Puedes encontrarme en <a href="https://github.com/anerodata">Github</a> y <a href="https://www.linkedin.com/in/antonio-hern%C3%A1ndez-637a2a74/">Linkedin</a>.
@@ -40,5 +43,12 @@ export default {
 	p a{
     color: #ab9df2;
     text-decoration: none;
-  } 
+  }
+
+  code {
+    background-color: #bababa;
+    color: black;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
 </style>
