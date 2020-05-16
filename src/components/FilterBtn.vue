@@ -1,6 +1,6 @@
 <template>
 	<div class="filter-container">
-    <button class="filter-btn" v-for="org in orgs" :key="org.value" :class="[orgClass(org), { clicked: clicked(org) }]" v-on:click="filterItems(org)">
+    <button class="filter-btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(/ /g, '-'), { clicked: clicked(org) }]" v-on:click="filterItems(org)">
       {{ org.name }}
     </button>
   </div>
@@ -17,10 +17,6 @@
           this.$emit('filter-org', org.name)
         }
 	    },
-
-      orgClass(org) {
-        return org.name.replace(' ', '-')
-      },
 
       clicked(org) {
         return org.name === this.selectedOrg

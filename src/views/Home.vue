@@ -10,6 +10,9 @@
         About
       </router-link>
     </div>
+    <p v-show="this.selectedOrg !== 'all'" class="user-msg">
+      Pulsa sobre <span :class="selectedOrg.replace(/ /g, '-')" >{{ this.selectedOrg }}</span> de nuevo para volver a mostrar el resto de trabajos
+    </p>
     <Items 
       :items="items"
       :orgs="orgs"
@@ -125,6 +128,24 @@ export default {
     display: flex;
     justify-content: space-between;
     margin: 15px 22px 7px 22px;
+  }
+
+  .user-msg {
+    max-width: 700px;
+    margin: 15px 0 5px 22px;
+    font-size: 0.9em;
+  } 
+
+  span.Otros {
+    color: rgb(255, 216, 102);
+  }
+
+  span.Civio {
+    color: rgb(169, 220, 118);
+  }
+
+  span.El-Confidencial {
+    color: rgb(120, 220, 232);
   }
 
   @media only screen and (max-width: 1000px) {

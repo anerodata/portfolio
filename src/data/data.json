@@ -195,6 +195,17 @@
 		"organización": "El Confidencial",
 		"descripción": "Visualización interactiva, mapa",
 		"id": "18"
+	},
+
+	{
+		"titulo": "Preguntas frecuentes sobre qué se puede hacer y qué no en las primeras fases de la desescalada",
+		"fecha": "2020-05-14",
+		"url": "https://civio.es/el-boe-nuestro-de-cada-dia/2020/05/14/respuestas-a-preguntas-frecuentes/",
+		"biblioteca": ["Vue.js", "Lunr.js"],
+		"tecnología": [],
+		"organización": "Civio",
+		"descripción": "Buscador",
+		"id": "19"
 	}
 
 ]
