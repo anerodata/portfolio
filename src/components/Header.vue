@@ -1,6 +1,6 @@
 <template>
 	<div id="header">
-		<div id="header_title">
+		<div id="header-title">
 		 	<h1>
 		 		&lt;Antonio Hernández/&gt;
 		 	</h1>
@@ -19,8 +19,11 @@ export default {
 </script>
 
 <style>
+	#header {
+    	flex-basis: 40%;
+  	}
 
-	#header_title{
+	#header-title{
 		font-family: 'Fira Code', monospace;
 		color: #ff6188;
 		/*color: #272822;*/
@@ -42,22 +45,22 @@ export default {
 	}
 
 	h1 {
-		font-size: 35px;
+		font-size: 2.2em;
 		margin-bottom: 5px; 
 		margin-top: 0px;
 	}
 
 	#header span {
-		font-size: 18px;
+		font-size: 1.12em;
 	}
 
 	@media only screen and (max-width: 1200px) {
    	 	h1 {
-      		font-size: 30px;
+      		font-size: 1.9em;
     	}
 
     	#header span {
-			font-size: 16px;
+			font-size: 1em;
 		}
   	}
 
@@ -66,7 +69,7 @@ export default {
     		display: block;
     	}
 
-    	#header_title {
+    	#header-title {
     		margin-bottom: 16px;
     	}
   	}

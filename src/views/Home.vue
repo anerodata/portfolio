@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="header_container">
+    <div class="header-container">
       <Header :treemapData="treemapData"/>
       <Treemap :data="treemapData"/>
     </div>
@@ -123,3 +123,23 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .filter-router-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 22px 7px 22px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .filter-router-container {
+      display: block;
+    }
+
+    .filter-router-container .router-link {
+      width: 100%;
+      display: block;
+      text-align: center;
+      margin-top: 12px;
+    }
+  }
+</style>

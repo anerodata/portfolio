@@ -58,7 +58,7 @@
 </script>
 <style scoped>
 	.item {
-    margin: 0.5rem;
+    margin: 0.6rem;
     flex-basis: 29%;
 	  background: #272822;
 	  padding: 7px;
@@ -96,9 +96,12 @@
   }
 
   .item_info {
-    font-size: 0.9em;
     margin-bottom: 10px;
   }
+
+  .item_info, .item_package span{
+    font-size: 0.9em;
+  } 
 
 	.item_description {
 		margin: 5px 0;
@@ -141,4 +144,5 @@
     font-weight: normal;
     margin: 10px 0;
   }
+
 </style>

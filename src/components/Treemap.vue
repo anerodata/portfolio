@@ -322,4 +322,16 @@ export default {
     rx: 3;
     ry: 2;
   }
+
+  .child.js, .labels .js {
+    fill: #ff6188;
+  }
+
+  .child.py, .labels .py{
+    fill: #ab9df2;
+  }
+
+  .child.Otras, .labels .Otras{
+    fill: #fc9867;
+  }
 </style>

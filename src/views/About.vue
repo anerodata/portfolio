@@ -1,6 +1,6 @@
 <template>
 	<div id="about">
-    <div class="header_container">
+    <div class="header-container">
       <Header/>
     </div>
     <div class="container">
@@ -48,7 +48,7 @@ export default {
     margin: auto;
   }
 
-  .header_container {
+  .header-container {
     display: block;
   }
 
@@ -56,7 +56,7 @@ export default {
     color: #eaeaea;
     line-height: 30px;
     margin: 0 17px;
-    font-size: 17px;
+    font-size: 1.1em;
     letter-spacing: 0.3px;
     font-weight: lighter;
   }

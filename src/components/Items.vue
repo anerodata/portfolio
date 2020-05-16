@@ -1,6 +1,6 @@
 <template>
- <div class="body">
-  <div class="items_container">
+ <div class="body-container">
+  <div class="items-container">
     <Item :item="item" :noSelectedOrgs="noSelectedOrgs" :selectedOrg="selectedOrg" v-for="(item, index) in sortedItems" :key="index"/>
   </div>
  </div>
@@ -33,11 +33,11 @@ export default {
 </script>
 
 <style scoped>
-  .body {
+  .body-container {
     min-height: 100vh;
   }
 
-  .items_container {
+  .items-container {
 		/* display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 1.5rem;*/
@@ -47,18 +47,17 @@ export default {
     justify-content: flex-start;    
     margin: 0 10px;
     box-sizing: border-box;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 	}
 
  	@media only screen and (max-width: 700px) {
-		.items_container{
+		.items-container{
 	    	grid-template-columns: repeat(2, 1fr);
 	 	}
 	}
 	@media only screen and (max-width: 500px) {
-		.items_container{
+		.items-container{
 	    	grid-template-columns: repeat(1, 1fr);
 	 	}
 	}

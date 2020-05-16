@@ -1,6 +1,6 @@
 <template>
-	<div class="filter_container">
-    <button class="filter_btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(' ', '-'), {clicked: org.clicked}]" v-on:click="filterItems(org)">
+	<div class="filter-container">
+    <button class="filter-btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(' ', '-'), {clicked: org.clicked}]" v-on:click="filterItems(org)">
       {{ org.name }}
     </button>
   </div>
@@ -29,13 +29,13 @@
 	}
 </script>
 <style scoped>
-	.filter_container {
+	.filter-container {
     display: flex;
     max-width: 570px;
     width: 100%;
   }
 
-  .filter_btn {
+  .filter-btn {
     flex-basis: 30%;
     outline: none;
     border: none;
@@ -47,7 +47,7 @@
     opacity: 0.8;
   }
 
- .filter_btn.clicked {
+ .filter-btn.clicked {
     opacity: 1;
     box-shadow: none;
   }
@@ -65,7 +65,7 @@
   }
 
   @media only screen and (max-width: 1000px) {
-    .filter_container {
+    .filter-container {
       justify-content: center;
       max-width: 100%;
     }
