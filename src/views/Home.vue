@@ -6,11 +6,14 @@
     </div>
     <div class="filter-router-container">
       <FilterBtn :orgs="orgs" :selectedOrg="selectedOrg" @filter-org="filterOrg"/>
-      <router-link to="/about" class="router-link">
+      <p v-show="this.selectedOrg !== 'all'" class="user-msg responsive">
+        Pulsa sobre <span :class="selectedOrg.replace(/ /g, '-')" >{{ this.selectedOrg }}</span> de nuevo para volver a mostrar el resto de trabajos
+      </p>
+      <router-link to="/about" class="router-link desktop">
         About
       </router-link>
     </div>
-    <p v-show="this.selectedOrg !== 'all'" class="user-msg">
+    <p v-show="this.selectedOrg !== 'all'" class="user-msg desktop">
       Pulsa sobre <span :class="selectedOrg.replace(/ /g, '-')" >{{ this.selectedOrg }}</span> de nuevo para volver a mostrar el resto de trabajos
     </p>
     <Items 
@@ -134,7 +137,11 @@ export default {
     max-width: 700px;
     margin: 15px 0 5px 22px;
     font-size: 0.9em;
-  } 
+  }
+
+  .user-msg.responsive {
+    display: none;
+  }
 
   span.Otros {
     color: rgb(255, 216, 102);
@@ -158,6 +165,14 @@ export default {
       display: block;
       text-align: center;
       margin-top: 12px;
+    }
+
+    .user-msg.responsive {
+      display: block;
+    }
+
+    .user-msg.desktop {
+      display: none;
     }
   }
 </style>
