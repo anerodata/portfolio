@@ -68,6 +68,10 @@
     color: white;
 	}
 
+  .item h3 {
+    line-height: 24px;
+  }
+
   .item .item_organization {
     color: #ffd866;
     font-weight: bold;
@@ -93,6 +97,7 @@
 
   .item_info {
     font-size: 0.9em;
+    margin-bottom: 10px;
   }
 
 	.item_description {

@@ -30,9 +30,9 @@
 </script>
 <style scoped>
 	.filter_container {
-    margin: 15px 19px 7px 19px;
     display: flex;
     max-width: 570px;
+    width: 100%;
   }
 
   .filter_btn {
@@ -40,16 +40,16 @@
     outline: none;
     border: none;
     cursor: pointer;
-    font-size: 14px;
     font-weight: bold;
     padding: 5px;
-    margin-right: -3px;
     border-radius: 5px;
-    box-shadow: 0px 3px 15px black; 
+    box-shadow: 0px 3px 15px black;
+    opacity: 0.8;
   }
 
  .filter_btn.clicked {
-    text-decoration: underline;
+    opacity: 1;
+    box-shadow: none;
   }
 
   button {

@@ -7,16 +7,6 @@
 		 	<span>
 		 		&lt;Periodismo de datos y desarrollo web/&gt;
 		 	</span>
-		 	<!--
-			 	<div id="social_btn">
-					<a href="https://github.com/anerodata"  target="_blank">
-						<img src="../assets/img/github.png"/>	
-					</a>
-					<a href="https://es.linkedin.com/in/antonio-hern%C3%A1ndez-637a2a74" target="_blank">
-						<img src="../assets/img/linkedin.png"/>
-					</a>
-				</div>
-			-->
 		</div>
 	</div>
 </template>
