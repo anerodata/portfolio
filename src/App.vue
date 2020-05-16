@@ -71,7 +71,7 @@ export default {
     border: 1px solid #fc9867;
   }
 
-  rect, .item_package span {
+  rect, .item-package span {
     opacity: 0.7;
   }
 
@@ -82,11 +82,12 @@ export default {
   }
 
   /* Footer */
-  
+
   footer {
+    max-width: 640px;
     color: #eaeaea;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
     font-size: 15px;
     line-height: 24px;
   }

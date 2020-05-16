@@ -10,13 +10,13 @@
   				</h3>
   				<div class="item_info">
   					<span>{{ item.fecha }}</span> - 
-            <span class="item_organization">{{ item.organización }}</span> - 
-            <span class="item_description">{{ item.descripción }}</span>
+            <span class="item-organization">{{ item.organización }}</span> - 
+            <span class="item-description">{{ item.descripción }}</span>
   				</div>
   			</div>
   		</a>
   		<div>
-  			<div class="item_package">
+  			<div class="item-package">
   				<span v-for="(biblioteca, index) in item.biblioteca" :key="index" :class="bibliotecaLang(biblioteca)">
   					{{ biblioteca }}
   				</span>
@@ -68,16 +68,20 @@
     color: white;
 	}
 
-  .item h3 {
+  .item h3{
     line-height: 24px;
   }
 
-  .item .item_organization {
+  .item_info {
+    line-height: 22px;
+  } 
+
+  .item .item-organization {
     color: #ffd866;
     font-weight: bold;
   }
 
-  .item.El-Confidencial .item_organization {
+  .item.El-Confidencial .item-organization {
     color: #78dce8;
     font-weight: bold;
   }
@@ -86,7 +90,7 @@
     box-shadow: 3px 5px 10px #78dce8;
   } 
 
-  .item.Civio .item_organization {
+  .item.Civio .item-organization {
     color: #a9dc76;
     font-weight: bold;
   }
@@ -99,18 +103,18 @@
     margin-bottom: 10px;
   }
 
-  .item_info, .item_package span{
+  .item_info, .item-package span{
     font-size: 0.9em;
   } 
 
-	.item_description {
+	.item-description {
 		margin: 5px 0;
 	}
 
-	.item_package span {
+	.item-package span {
 		border-radius: 3px;
 		padding: 3px;
-		margin: 10px 5px;
+		margin: 10px 3px;
 		display: inline-block;
 		background: #272822;
 	}

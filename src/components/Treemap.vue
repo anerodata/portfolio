@@ -27,7 +27,6 @@ export default {
   },
 
   mounted() {
-    console.log(this.data)
     this.svg = d3.select(`#${this.id}`)
     this.dimensions()
     this.treemapRootData()
@@ -51,10 +50,6 @@ export default {
         .parentNode
         .parentNode
         .clientWidth * chartPercentWidth / 100
-
-      console.log(d3.select(`#${this.id}`)
-        .node()
-        .parentNode)
 
       this.height = 80
       this.svg
@@ -116,9 +111,6 @@ export default {
         .on('mouseout', (d, i, nodes) => {
           this.removeHighClass(nodes[i])
           this.hidTooltip()
-        })
-        .on('click', (d) => {
-          console.log(d)
         })
 
       this.svg

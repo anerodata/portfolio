@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="header-container">
-      <Header :treemapData="treemapData"/>
+      <Header/>
       <Treemap :data="treemapData"/>
     </div>
     <div class="filter-router-container">
-      <FilterBtn :orgs="orgs" @filter-org="filterOrg"/>
+      <FilterBtn :orgs="orgs" :selectedOrg="selectedOrg" @filter-org="filterOrg"/>
       <router-link to="/about" class="router-link">
         About
       </router-link>
@@ -36,18 +36,15 @@ export default {
     return {
       orgs: [
           {
-            name: 'El Confidencial',
-            clicked: false
+            name: 'El Confidencial'
           },
     
           {
-            name: 'Civio',
-            clicked: false
+            name: 'Civio'
           },
 
           {
-            name: 'Otros',
-            clicked: false
+            name: 'Otros'
           }
         ],
       noSelectedOrgs: [],

@@ -21,7 +21,6 @@ export default {
   
   computed: {
     sortedItems() {
-      console.log(this.items)
       const res = this.items
       return res.sort((a, b) => new Date (b.fecha) - new Date(a.fecha) )
     }
@@ -54,6 +53,7 @@ export default {
  	@media only screen and (max-width: 700px) {
 		.items-container{
 	    	grid-template-columns: repeat(2, 1fr);
+        margin: 0px;
 	 	}
 	}
 	@media only screen and (max-width: 500px) {
