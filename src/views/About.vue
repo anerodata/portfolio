@@ -12,15 +12,15 @@
       </p>
 
       <p>
-        En 2016 comencé a formarme en desarrollo web, obteniendo el <a href="https://github.com/anerodata/portfolio/blob/master/src/assets/pdf/certificado-aplicaciones-web.pdf"><strong>Certificado de Profesionalidad de Desarrollo Web con Teconologías Web</strong></a>. Desde entonces, he seguido formándome en esta disciplina ininterrumpidamente.
+        En 2016 comencé a formarme en <strong>desarrollo web</strong>, obteniendo el <a href="https://github.com/anerodata/portfolio/blob/master/src/assets/pdf/certificado-aplicaciones-web.pdf">Certificado de Profesionalidad de Desarrollo Web con Teconologías Web</a>. Desde entonces, he seguido formándome en esta disciplina ininterrumpidamente.
       </p>
 
       <p>
-        También tengo el grado en <strong>Periodismo</strong> por la <strong>Universidad Rey Juan Carlos</strong> con un año en la <strong>Hanzehogeschool</strong> Groningen (Países Bajos) y cursé el Máster en <strong>Periodismo de Datos</strong> del <strong>Centro Universitario Villanueva</strong>.
+        También tengo el grado en Periodismo por la Universidad Rey Juan Carlos con un año en la Hanzehogeschool Groningen (Países Bajos) y cursé el Máster en <strong>Periodismo de Datos</strong> del Centro Universitario Villanueva.
       </p>
 
       <p>
-        Me interesa todo lo relacionado con la programación y la web. No obstante, siento predilección por la visualicación de datos. Tengo bastante experiencia con <span class="lib-code">d3.js</span>, <span class="lib-code">Leaflet.js</span>, <span class="lib-code">Highcharts.js</span> y <span class="lib-code">MapboxGL.js</span>. Para el minado y análisis de datos utilizo el paquete de Python <span class="lib-code">pandas.py</span> y para hacer <i>web scraping</i>, <span class="lib-code">bs4.py</span>. Además, he realizado algunos trabajos con el sistema de información geográfica <i>open source</i> QGIS.
+        Me interesa todo lo relacionado con la <strong>programación</strong> y la web. No obstante, siento predilección por la <strong>visualicación de datos</strong>. Tengo bastante experiencia con <span class="lib-code">d3.js</span>, <span class="lib-code">Leaflet.js</span>, <span class="lib-code">Highcharts.js</span> y <span class="lib-code">MapboxGL.js</span>. Para el minado y <strong>análisis de datos</strong> utilizo el paquete de Python <span class="lib-code">pandas.py</span> y para hacer <i>web scraping</i>, <span class="lib-code">bs4.py</span>. Además, he realizado algunos trabajos con el <strong>sistema de información geográfica</strong> <i>open source</i> QGIS.
       </p>
       <p>
         En cuanto a desarrollo de grandes proyectos de <i>front-end</i>, tengo algo de experiencia con el <i>framework</i> de Javascript <span class="lib-code">Vue.js</span>.
