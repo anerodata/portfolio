@@ -52,15 +52,16 @@ export default {
 
 	#header span {
 		font-size: 1.12em;
+		font-weight: 200;
 	}
 
 	@media only screen and (max-width: 1200px) {
    	 	h1 {
-      		font-size: 1.9em;
+      		font-size: 2em;
     	}
 
     	#header span {
-			font-size: 1em;
+			font-size: 1.2em;
 		}
   	}
 

@@ -119,6 +119,10 @@ export default {
     .router-link {
       font-size: 1.1em; 
     }
+
+    html, body {
+      font-size: 93%;
+    }
   }
   
 </style>
