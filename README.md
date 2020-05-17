@@ -25,16 +25,26 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### To Build for production ([source](https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd)):
 
-1. Uncomment in ```.gitignore``` the ```/dist``` folder.
+1. Comment in ```.gitignore``` the ```/dist``` folder line.
 
 2. Run the command ```npm run build```
 
 3. Don't commit ```.gitignore``` changes
 
+4. Echo CNAME for point web to domain ```echo 'anerodata.com' > dist/CNAME```
+
 4. ```git add dist/```
 
 5. ```git commit -m "Building for production"```
 
-4. ``` git subtree push --prefix dist origin gh-pages```
+4. ```git subtree push --prefix dist origin gh-pages```
 
 5. Comment in ```.gitignore``` the ```/dist``` folder.
+
+```
+npm run build
+echo 'anerodata.com' > dist/CNAME
+git add dist/
+git commit -m "Building for production"
+git subtree push --prefix dist origin gh-pages
+```
