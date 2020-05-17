@@ -11,7 +11,9 @@
   				<div class="item_info">
   					<span>{{ item.fecha }}</span> - 
             <span class="item-organization">{{ item.organización }}</span> - 
-            <span class="item-description">{{ item.descripción }}</span>
+            <span v-for="(descripción, index) in item.descripción" :key="index" class="item-description">
+                {{ descripción }}<span v-if="index < item.descripción.length -1">,</span>
+            </span>
   				</div>
   			</div>
   		</a>

@@ -6,7 +6,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, gráfico",
+		"descripción": ["Visualización interactiva", "gráfico"],
 		"id": "1"
 	},
 	
@@ -17,7 +17,7 @@
 		"biblioteca": ["MapboxGL.js", "geopandas.py"],
 		"tecnología": [{"key":"Javascript", "value":"js"}, {"key":"Python", "value":"py"}],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, mapa",
+		"descripción": ["Visualización interactiva", "mapa"],
 		"id": "2"
 	},
 	
@@ -28,7 +28,7 @@
 		"biblioteca": ["Leaflet.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, mapa",
+		"descripción": ["Visualización interactiva", "mapa"],
 		"id": "3"
 	},
 	
@@ -39,7 +39,7 @@
 		"biblioteca": ["MapboxGL.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, mapa",
+		"descripción": ["Visualización interactiva", "mapa"],
 		"id": "4"
 	},
 	
@@ -50,7 +50,7 @@
 		"biblioteca": ["requests.py", "beautifulsoup.py", "Open Refine"],
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "El Confidencial",
-		"descripción": "Web scraping",
+		"descripción": ["Web scraping"],
 		"id": "5"
 	},
 	
@@ -61,7 +61,7 @@
 		"biblioteca": ["requests.py", "beautifulsoup.py"],
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "El Confidencial",
-		"descripción": "Pdf scraping",
+		"descripción": ["Pdf scraping"],
 		"id": "6"
 	},
 
@@ -72,7 +72,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, calculadora",
+		"descripción": ["Visualización interactiva", "calculadora"],
 		"id": "8"
 	},
 
@@ -83,7 +83,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, gráfico",
+		"descripción": ["Visualización interactiva", "gráfico"],
 		"id": "9"
 	},
 
@@ -94,7 +94,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, gráfico",
+		"descripción": ["Visualización interactiva", "gráfico"],
 		"id": "10"
 	},
 
@@ -105,7 +105,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, calculadora",
+		"descripción": ["Visualización interactiva", "calculadora"],
 		"id": "11"
 	},
 
@@ -116,19 +116,8 @@
 		"biblioteca": ["Vanilla.js"],
 		"tecnología": [],
 		"organización": "Antonio",
-		"descripción": "Reproductor de música y web",
+		"descripción": ["Reproductor de música", "web"],
 		"id": "12"
-	},
-
-	{
-		"titulo": "Verba 📺 Explora todos los telediarios de TVE desde 2014",
-		"fecha": "2020-02-16",
-		"url": "https://verba.civio.es/",
-		"biblioteca": ["Vue.js"],
-		"tecnología": [],
-		"organización": "Civio",
-		"descripción": "web",
-		"id": "13"
 	},
 
 	{
@@ -138,7 +127,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, gráfico",
+		"descripción": ["Visualización interactiva", "gráfico"],
 		"id": "14"
 	},
 
@@ -149,7 +138,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "EDJNET",
-		"descripción": "Visualización interactiva, gráfico",
+		"descripción": ["Visualización interactiva", "gráfico"],
 		"id": "15"
 	},
 
@@ -160,7 +149,7 @@
 		"biblioteca": ["requests.py", "beautifulsoup.py"],
 		"tecnología": [],
 		"organización": "ICIJ",
-		"descripción": "web scraping, pdf scraping",
+		"descripción": ["web scraping", "pdf scraping"],
 		"id": "16"
 	},
 
@@ -171,7 +160,7 @@
 		"biblioteca": ["QGIS"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": "Visualización estática, mapa",
+		"descripción": ["Visualización estática", "mapa"],
 		"id": "7"
 	},
 
@@ -182,7 +171,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "Civio",
-		"descripción": "Visualización interactiva, gráfico",
+		"descripción": ["Visualización interactiva", "gráfico"],
 		"id": "17"
 	},
 
@@ -193,7 +182,7 @@
 		"biblioteca": ["Leaflet.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": "Visualización interactiva, mapa",
+		"descripción": ["Visualización interactiva", "mapa"],
 		"id": "18"
 	},
 
@@ -204,7 +193,7 @@
 		"biblioteca": ["Vue.js", "Lunr.js"],
 		"tecnología": [],
 		"organización": "Civio",
-		"descripción": "Buscador",
+		"descripción": ["Buscador"],
 		"id": "19"
 	}
 
