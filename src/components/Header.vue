@@ -24,7 +24,7 @@ export default {
   	}
 
 	#header-title{
-		font-family: 'Fira Code', monospace;
+		font-family: 'Source Code Pro', monospace;
 		color: #ff6188;
 		/*color: #272822;*/
 		text-align: center;
