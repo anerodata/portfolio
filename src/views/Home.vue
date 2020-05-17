@@ -158,6 +158,7 @@ export default {
   @media only screen and (max-width: 1000px) {
     .filter-router-container {
       display: block;
+      margin: 15px 2px 7px 2px;
     }
 
     .filter-router-container .router-link {

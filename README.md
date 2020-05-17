@@ -33,13 +33,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 4. Echo CNAME for point web to domain ```echo 'anerodata.com' > dist/CNAME```
 
-4. ```git add dist/```
+5. ```git add dist/```
 
-5. ```git commit -m "Building for production"```
+6. ```git commit -m "Building for production"```
 
-4. ```git subtree push --prefix dist origin gh-pages```
+7. ```git subtree push --prefix dist origin gh-pages```
 
-5. Comment in ```.gitignore``` the ```/dist``` folder.
+8. Comment in ```.gitignore``` the ```/dist``` folder.
 
 ```
 npm run build

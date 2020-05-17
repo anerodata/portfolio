@@ -12,7 +12,7 @@
       </p>
 
       <p>
-        En 2016 comencé a formarme en <strong>desarrollo web</strong>, obteniendo el <a href="https://github.com/anerodata/portfolio/blob/master/src/assets/pdf/certificado-aplicaciones-web.pdf">Certificado de Profesionalidad de Desarrollo Web con Teconologías Web</a>. Desde entonces, he seguido formándome en esta disciplina ininterrumpidamente.
+        En 2016 comencé a estudiar <strong>desarrollo web</strong>, obteniendo el <a href="https://github.com/anerodata/portfolio/blob/master/src/assets/pdf/certificado-aplicaciones-web.pdf">Certificado de Profesionalidad de Desarrollo Web con Teconologías Web</a>. Desde entonces, he seguido formándome en esta disciplina ininterrumpidamente.
       </p>
 
       <p>
