@@ -4,7 +4,7 @@
       <Header/>
       <Treemap :data="treemapData"/>
     </div>
-    <div class="filter-router-container">
+    <section class="filter-router-container">
       <FilterBtn :orgs="orgs" :selectedOrg="selectedOrg" @filter-org="filterOrg"/>
       <p v-show="this.selectedOrg !== 'all'" class="user-msg responsive">
         Pulsa sobre <span :class="selectedOrg.replace(/ /g, '-')" >{{ this.selectedOrg }}</span> de nuevo para volver a mostrar el resto de trabajos
@@ -12,7 +12,7 @@
       <router-link to="/about" class="router-link desktop">
         About
       </router-link>
-    </div>
+    </section>
     <p v-show="this.selectedOrg !== 'all'" class="user-msg desktop">
       Pulsa sobre <span :class="selectedOrg.replace(/ /g, '-')" >{{ this.selectedOrg }}</span> de nuevo para volver a mostrar el resto de trabajos
     </p>
