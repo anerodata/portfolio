@@ -71,11 +71,11 @@
 	}
 
   .item h3{
-    line-height: 24px;
+    line-height: 1.5em;
   }
 
   .item_info {
-    line-height: 22px;
+    line-height: 1.4em;
   } 
 
   .item .item-organization {

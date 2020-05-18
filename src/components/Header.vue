@@ -45,23 +45,23 @@ export default {
 	}
 
 	h1 {
-		font-size: 2.2em;
+		font-size: 36px;
 		margin-bottom: 5px; 
 		margin-top: 0px;
 	}
 
 	#header span {
-		font-size: 1.12em;
+		font-size: 18px;
 		font-weight: 200;
 	}
 
 	@media only screen and (max-width: 1200px) {
    	 	h1 {
-      		font-size: 2em;
+      		font-size: 32px;
     	}
 
     	#header span {
-			font-size: 1.2em;
+			font-size: 17px;
 		}
   	}
 

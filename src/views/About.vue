@@ -54,7 +54,7 @@ export default {
 
   .container {
     color: #eaeaea;
-    line-height: 30px;
+    line-height: 1.9em;
     margin: 0 17px;
     font-size: 1.1em;
     letter-spacing: 0.3px;
