@@ -51,7 +51,7 @@ export default {
   }
 
   .router-link {
-    font-size: 1.2em; 
+    font-size: 1.2em;
   }
 
   /* Treemap and Item */

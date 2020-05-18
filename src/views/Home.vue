@@ -9,6 +9,7 @@
       <p v-show="this.selectedOrg !== 'all'" class="user-msg responsive">
         Pulsa sobre <span :class="selectedOrg.replace(/ /g, '-')" >{{ this.selectedOrg }}</span> de nuevo para volver a mostrar el resto de trabajos
       </p>
+      <p><a href="https://github.com/anerodata">Github</a> | <a href="https://www.linkedin.com/in/antonio-hern%C3%A1ndez-637a2a74/">Linkedin</a></p>
       <router-link to="/about" class="router-link desktop">
         About
       </router-link>
@@ -155,6 +156,17 @@ export default {
     color: rgb(120, 220, 232);
   }
 
+  /* REMOVE FOR ABOUT */
+  .router-link {
+    display: none;
+  }
+
+  /* REMOVE FOR ABOUT */
+  .filter-router-container p {
+    font-size: 1.2em;
+    margin:0px;
+  }
+
   @media only screen and (max-width: 1000px) {
     .filter-router-container {
       display: block;
@@ -163,9 +175,15 @@ export default {
 
     .filter-router-container .router-link {
       width: 100%;
-      display: block;
+      /*display: block;*/
       text-align: center;
       margin-top: 12px;
+    }
+
+    /* REMOVE FOR ABOUT */
+    .filter-router-container p {
+      text-align: center;
+      margin: 16px 0 0 0;
     }
 
     .user-msg.responsive {
