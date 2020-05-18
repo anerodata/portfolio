@@ -3,7 +3,7 @@
 		<a :href="item.url" target="_blank">
   			<div class="item_header">
           <figure class="item_img">
-            <img style="max-width: 100%;" :src="require('./../assets/img/'+item.id+'.png')">
+            <img onload="console.log('loaded');" style="max-width: 100%;" :src="require('./../assets/img/'+item.id+'.jpg')">
   				</figure>
           <h3>
   					{{ item.titulo }}
@@ -59,6 +59,14 @@
 	}
 </script>
 <style scoped>
+  .not-opacity {
+    opacity: 0;
+  }
+
+  .opacity {
+    opacity: 1;
+  }
+
 	.item {
     margin: 0.6rem;
     flex-basis: 29%;
