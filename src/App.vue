@@ -22,6 +22,7 @@ export default {
 
 <style>
   html, body {
+    min-height: 100vh;
     background-image: -o-linear-gradient(to bottom right, #383838, #272822);
     background-image: -ms-linear-gradient(to bottom right, #383838, #272822);
     background-image: -moz-linear-gradient(to bottom right, #383838, #272822);
