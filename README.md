@@ -1,4 +1,6 @@
-# portfolio
+# Portfolio
+
+- [Standalone](https://anerodata.com)
 
 ## Project setup
 ```
@@ -29,7 +31,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 2. Run the command ```npm run build```
 
-3. Don't commit ```.gitignore``` changes
+3. Run the command ```cp -a 404.html dist/```
 
 4. Echo CNAME for point web to domain ```echo 'anerodata.com' > dist/CNAME```
 
@@ -39,10 +41,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 7. ```git subtree push --prefix dist origin gh-pages```
 
-8. Comment in ```.gitignore``` the ```/dist``` folder.
+8. Don't commit ```.gitignore``` changes
+
+9. Comment in ```.gitignore``` the ```/dist``` folder.
 
 ```
 npm run build
+cp -a 404.html dist/
 echo 'anerodata.com' > dist/CNAME
 git add dist/
 git commit -m "Building for production"

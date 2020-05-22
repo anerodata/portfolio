@@ -1,13 +1,15 @@
 <template>
 	<header id="header">
-		<div id="header-title">
-		 	<h1>
-		 		&lt;Antonio Hernández/&gt;
-		 	</h1>
-		 	<span>
-		 		&lt;Periodismo de datos y desarrollo web/&gt;
-		 	</span>
-		</div>
+		<router-link to="/">
+			<div id="header-title">
+			 	<h1>
+			 		&lt;Antonio Hernández/&gt;
+			 	</h1>
+			 	<span>
+			 		&lt;Periodismo de datos y desarrollo web/&gt;
+			 	</span>
+			</div>
+		</router-link>
 	</header>
 </template>
 

@@ -6,7 +6,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "gráfico"],
+		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "1"
 	},
 	
@@ -17,7 +17,7 @@
 		"biblioteca": ["MapboxGL.js", "geopandas.py"],
 		"tecnología": [{"key":"Javascript", "value":"js"}, {"key":"Python", "value":"py"}],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "mapa"],
+		"descripción": ["visualización interactiva", "mapa"],
 		"id": "2"
 	},
 	
@@ -28,7 +28,7 @@
 		"biblioteca": ["Leaflet.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "mapa"],
+		"descripción": ["visualización interactiva", "mapa"],
 		"id": "3"
 	},
 	
@@ -39,7 +39,7 @@
 		"biblioteca": ["MapboxGL.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "mapa"],
+		"descripción": ["visualización interactiva", "mapa"],
 		"id": "4"
 	},
 	
@@ -72,7 +72,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "calculadora"],
+		"descripción": ["visualización interactiva", "calculadora"],
 		"id": "8"
 	},
 
@@ -83,7 +83,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "gráfico"],
+		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "9"
 	},
 
@@ -94,7 +94,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "gráfico"],
+		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "10"
 	},
 
@@ -105,7 +105,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "calculadora"],
+		"descripción": ["visualización interactiva", "calculadora"],
 		"id": "11"
 	},
 
@@ -127,7 +127,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "gráfico"],
+		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "14"
 	},
 
@@ -138,7 +138,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "EDJNET",
-		"descripción": ["Visualización interactiva", "gráfico"],
+		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "15"
 	},
 
@@ -160,7 +160,7 @@
 		"biblioteca": ["QGIS"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización estática", "mapa"],
+		"descripción": ["visualización estática", "mapa"],
 		"id": "7"
 	},
 
@@ -171,7 +171,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "Civio",
-		"descripción": ["Visualización interactiva", "gráfico"],
+		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "17"
 	},
 
@@ -182,7 +182,7 @@
 		"biblioteca": ["Leaflet.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["Visualización interactiva", "mapa"],
+		"descripción": ["visualización interactiva", "mapa"],
 		"id": "18"
 	},
 
@@ -193,8 +193,41 @@
 		"biblioteca": ["Vue.js", "Lunr.js"],
 		"tecnología": [],
 		"organización": "Civio",
-		"descripción": ["Buscador"],
+		"descripción": ["buscador"],
 		"id": "19"
+	},
+
+	{
+		"titulo": "Tres gráficos para entender de dónde vienen las pateras y a qué provincias llegan",
+		"fecha": "2019-08-10",
+		"url": "https://civio.es/el-boe-nuestro-de-cada-dia/2020/05/14/respuestas-a-preguntas-frecuentes/",
+		"biblioteca": ["Highcharts.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización interactiva", "gráfico"],
+		"id": "20"
+	},
+
+	{
+		"titulo": "El 'Lolita Express' de Epstein aterrizó al menos seis veces en España",
+		"fecha": "2019-08-19",
+		"url": "https://www.elconfidencial.com/mundo/2019-08-19/lolita-express-epstein-aterrizo-seis-veces-espana_2182579/",
+		"biblioteca": ["QGIS"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización estática", "mapa"],
+		"id": "21"
+	},
+
+	{
+		"titulo": "El chasco sanitario: dentistas, podólogos o fisios, entre los graduados que menos ganan",
+		"fecha": "2019-08-05",
+		"url": "https://www.elconfidencial.com/economia/2019-08-05/universidad-dinero-ciencias-letras-egresados_2154839/",
+		"biblioteca": ["Highcharts.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización interactiva", "gráfico", "buscador"],
+		"id": "22"
 	}
 
 ]
