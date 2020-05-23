@@ -12,21 +12,19 @@ export default {
   components: {
     Item
   },
+
   props: {
     items: Array,
     noSelectedOrgs: Array,
     selectedOrg: String,
     orgs: Array
   },
-  
+
   computed: {
     sortedItems() {
       const res = this.items
       return res.sort((a, b) => new Date (b.fecha) - new Date(a.fecha) )
     }
-  },
-  methods: {
-    
   }
 }
 </script>

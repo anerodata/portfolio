@@ -1,9 +1,9 @@
 <template>
-	<article class="item" v-show="itemVisibility" :class="classItem">
+	<article class="item" v-show="itemVisibility" :class="[classItem, imgLoaded ? 'fullOpacity' : '']">
 		<a :href="item.url" target="_blank">
   			<div class="item_header">
           <figure class="item_img">
-            <img style="max-width: 100%;" :src="require('./../assets/img/'+item.id+'.jpg')">
+            <img style="max-width: 100%;" :src="loadImg(item)">
   				</figure>
           <h3>
   					{{ item.titulo }}
@@ -30,7 +30,12 @@
 	export default {
 		name: 'Item',
 		props: ['item', 'noSelectedOrgs', 'selectedOrg'],
-		
+    data() {
+      return {
+        imgLoaded: false
+      }
+    },
+
     computed: {
       itemVisibility() {
         if (this.selectedOrg === 'all') {
@@ -43,10 +48,12 @@
         	}
         }
       },
+
       classItem() {
         return this.item.organización.replace(' ', '-')
       }
     },
+
     methods: {
       bibliotecaLang(biblioteca) {
         if (biblioteca.split('.')[1] !== undefined) {
@@ -54,6 +61,15 @@
         } else {
           return 'Otras'
         }
+      },
+
+      loadImg(item) {
+        const img = new Image()
+        img.onload = function() {
+          this.imgLoaded = true
+        }.bind(this)
+        img.src = require('./../assets/img/'+item.id+'.jpg')
+        return img.src
       }
     }
 	}
@@ -76,7 +92,13 @@
 		border: 1px solid #272822;
     box-shadow: 3px 5px 10px #ffd866;
     color: white;
+    opacity: 0;
+    transition: 1s;
 	}
+
+  .item.fullOpacity {
+    opacity: 1;
+  }
 
   .item h3{
     line-height: 1.5em;

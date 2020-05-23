@@ -25,7 +25,7 @@ export default {
       }
     }
   },
-
+  
   mounted() {
     this.svg = d3.select(`#${this.id}`)
     this.dimensions()
