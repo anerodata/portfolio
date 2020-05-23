@@ -29,7 +29,12 @@
 <script>
 	export default {
 		name: 'Item',
-		props: ['item', 'noSelectedOrgs', 'selectedOrg'],
+		props: {
+      item: Object,
+      noSelectedOrgs: Array,
+      selectedOrg: String
+    },
+    
     data() {
       return {
         imgLoaded: false

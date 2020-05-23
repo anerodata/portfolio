@@ -8,7 +8,9 @@
 import * as d3 from 'd3'
 export default {
   name: 'Treemap',
-  props: ['data'],
+  props: {
+    data: Object
+  },
   data() {
     return {
       id: 'chart',
@@ -25,7 +27,7 @@ export default {
       }
     }
   },
-  
+
   mounted() {
     this.svg = d3.select(`#${this.id}`)
     this.dimensions()

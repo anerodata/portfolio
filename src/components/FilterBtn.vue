@@ -8,7 +8,11 @@
 <script>
 	export default {
 		name: 'FilterBtn',
-		props: ['orgs', 'selectedOrg'],
+		props: {
+      orgs: Array,
+      selectedOrg: String
+    },
+
 		methods: {
 	    filterItems(org) {
         if (org['name'] === this.selectedOrg) {
