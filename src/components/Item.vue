@@ -1,8 +1,8 @@
 <template>
-	<article class="item" v-show="itemVisibility" :class="[classItem, imgLoaded ? 'fullOpacity' : '']">
+	<article class="item" v-show="itemVisibility" :class="itemClass" :id="itemId">
 		<a :href="item.url" target="_blank">
   			<div class="item_header">
-          <figure class="item_img">
+          <figure class="item_img" :class="imgLoaded ? 'fullOpacity' : ''" :style="{ height: imgHeight + 'px' }">
             <img style="max-width: 100%;" :src="loadImg(item)">
   				</figure>
           <h3>
@@ -37,11 +37,13 @@
     
     data() {
       return {
-        imgLoaded: false
+        imgLoaded: false,
+        imgHeight: 0
       }
     },
 
     computed: {
+      // Set visibility depending onfilter falue
       itemVisibility() {
         if (this.selectedOrg === 'all') {
           return true
@@ -54,12 +56,25 @@
         }
       },
 
-      classItem() {
+      itemClass() {
         return this.item.organización.replace(' ', '-')
+      },
+
+      itemId() {
+        return `item-${this.item.id}`
       }
     },
 
+    mounted() {
+      // Set image height depending on viewport width
+      this.imgHeight = this.changeImgHeight()
+      window.addEventListener('resize', () => {
+        this.imgHeight = this.changeImgHeight()
+      })  
+    },
+
     methods: {
+      // Set library class for every span
       bibliotecaLang(biblioteca) {
         if (biblioteca.split('.')[1] !== undefined) {
           return biblioteca.split('.')[1]
@@ -68,13 +83,19 @@
         }
       },
 
+      // Opacity transition starts after img is loaded
       loadImg(item) {
         const img = new Image()
         img.onload = function() {
           this.imgLoaded = true
         }.bind(this)
+
         img.src = require('./../assets/img/'+item.id+'.jpg')
         return img.src
+      },
+
+      changeImgHeight() {
+        return this.$el.clientWidth * 225 / 371
       }
     }
 	}
@@ -97,13 +118,7 @@
 		border: 1px solid #272822;
     box-shadow: 3px 5px 10px #ffd866;
     color: white;
-    opacity: 0;
-    transition: 1s;
 	}
-
-  .item.fullOpacity {
-    opacity: 1;
-  }
 
   .item h3{
     line-height: 1.5em;
@@ -161,15 +176,20 @@
   }
 
   .item_img {
-    max-height: 225px;
     overflow: hidden;
     margin: 0;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .item_img.fullOpacity {
+    opacity: 1;
   }
 
   .item img {
     filter: grayscale(100%);
     filter: saturate(0%);
-    transition: all 0.2s ease-in;
+    transition: all 0.2s ease;
   }
 
   .item img:hover {
