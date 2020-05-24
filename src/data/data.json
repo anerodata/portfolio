@@ -245,7 +245,7 @@
 		"titulo": "Viaje a la luna: sigue minuto a minuto la histórica misión",
 		"fecha": "2019-07-16",
 		"url": "https://www.elconfidencial.com/tecnologia/ciencia/2019-07-16/viaje-a-la-luna-falso-directo_2122343/",
-		"biblioteca": ["d3.js", "Vanilla"],
+		"biblioteca": ["d3.js", "Vanilla.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización estática", "web"],
