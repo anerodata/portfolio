@@ -9,7 +9,7 @@
   					{{ item.titulo }}
   				</h3>
   				<div class="item_info">
-  					<span>{{ item.fecha }}</span> - 
+  					<span>{{ formatDate }}</span> - 
             <span class="item-organization">{{ item.organización }}</span> - 
             <span v-for="(descripción, index) in item.descripción" :key="index" class="item-description">
                 {{ descripción }}<span v-if="index < item.descripción.length -1">,</span>
@@ -27,78 +27,84 @@
 	</article>
 </template>
 <script>
-	export default {
-		name: 'Item',
-		props: {
-      item: Object,
-      noSelectedOrgs: Array,
-      selectedOrg: String
-    },
-    
-    data() {
-      return {
-        imgLoaded: false,
-        imgHeight: 0
-      }
-    },
-
-    computed: {
-      // Set visibility depending onfilter falue
-      itemVisibility() {
-        if (this.selectedOrg === 'all') {
-          return true
-        } else {
-        	if(this.selectedOrg !== 'Otros') {
-        		return this.item['organización'] === this.selectedOrg
-        	} else {
-        		return this.noSelectedOrgs.indexOf(this.item['organización']) === -1
-        	}
-        }
-      },
-
-      itemClass() {
-        return this.item.organización.replace(' ', '-')
-      },
-
-      itemId() {
-        return `item-${this.item.id}`
-      }
-    },
-
-    mounted() {
-      // Set image height depending on viewport width
-      this.imgHeight = this.changeImgHeight()
-      window.addEventListener('resize', () => {
-        this.imgHeight = this.changeImgHeight()
-      })  
-    },
-
-    methods: {
-      // Set library class for every span
-      bibliotecaLang(biblioteca) {
-        if (biblioteca.split('.')[1] !== undefined) {
-          return biblioteca.split('.')[1]
-        } else {
-          return 'Otras'
-        }
-      },
-
-      // Opacity transition starts after img is loaded
-      loadImg(item) {
-        const img = new Image()
-        img.onload = function() {
-          this.imgLoaded = true
-        }.bind(this)
-
-        img.src = require('./../assets/img/'+item.id+'.jpg')
-        return img.src
-      },
-
-      changeImgHeight() {
-        return this.$el.clientWidth * 225 / 371
-      }
+import moment from 'moment'
+moment.locale('es')
+export default {
+	name: 'Item',
+	props: {
+    item: Object,
+    noSelectedOrgs: Array,
+    selectedOrg: String
+  },
+  
+  data() {
+    return {
+      imgLoaded: false,
+      imgHeight: 0
     }
-	}
+  },
+
+  computed: {
+    // Set visibility depending onfilter falue
+    itemVisibility() {
+      if (this.selectedOrg === 'all') {
+        return true
+      } else {
+      	if(this.selectedOrg !== 'Otros') {
+      		return this.item['organización'] === this.selectedOrg
+      	} else {
+      		return this.noSelectedOrgs.indexOf(this.item['organización']) === -1
+      	}
+      }
+    },
+
+    itemClass() {
+      return this.item.organización.replace(' ', '-')
+    },
+
+    itemId() {
+      return `item-${this.item.id}`
+    },
+
+    formatDate() {
+      return moment(this.item.fecha).format('L')
+    }
+  },
+
+  mounted() {
+    // Set image height depending on viewport width
+    this.imgHeight = this.changeImgHeight()
+    window.addEventListener('resize', () => {
+      this.imgHeight = this.changeImgHeight()
+    })  
+  },
+
+  methods: {
+    // Set library class for every span
+    bibliotecaLang(biblioteca) {
+      if (biblioteca.split('.')[1] !== undefined) {
+        return biblioteca.split('.')[1]
+      } else {
+        return 'Otras'
+      }
+    },
+
+    // Opacity transition starts after img is loaded
+    loadImg(item) {
+      const img = new Image()
+      img.onload = function() {
+        this.imgLoaded = true
+      }.bind(this)
+
+      img.src = require('./../assets/img/'+item.id+'.jpg')
+      return img.src
+    },
+
+    changeImgHeight() {
+      return this.$el.clientWidth * 225 / 371
+    }
+  }
+}
 </script>
 <style scoped>
   .not-opacity {

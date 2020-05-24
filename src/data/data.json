@@ -23,7 +23,7 @@
 	
 	{
 		"titulo": "Los llamativos alquileres del fútbol español: esto paga tu equipo por su estadio municipal",
-		"fecha": "2019-07-12",
+		"fecha": "2019-12-07",
 		"url": "https://www.elconfidencial.com/deportes/futbol/2019-12-07/estadios-liga-alquiler-primera-division-segunda-precios_2355456/",
 		"biblioteca": ["Leaflet.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
@@ -228,6 +228,28 @@
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico", "buscador"],
 		"id": "22"
+	},
+
+	{
+		"titulo": "Metro inaccesible",
+		"fecha": "2019-09-06",
+		"url": "https://www.elconfidencial.com/espana/madrid/2019-09-06/metro-accesible-paradas-ascensor-escaleras_2209007/",
+		"biblioteca": ["d3.js", "beautifulsoup.py", "requests.py"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización interactiva", "gráfico", "web scraping"],
+		"id": "23"
+	},
+
+	{
+		"titulo": "Viaje a la luna: sigue minuto a minuto la histórica misión",
+		"fecha": "2019-07-16",
+		"url": "https://www.elconfidencial.com/tecnologia/ciencia/2019-07-16/viaje-a-la-luna-falso-directo_2122343/",
+		"biblioteca": ["d3.js", "Vanilla"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización estática", "web"],
+		"id": "24"
 	}
 
 ]
