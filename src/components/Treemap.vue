@@ -98,6 +98,8 @@ export default {
         .data(this.root.descendants())
         .enter()
         .append('rect')
+        .attr('rx', 3)
+        .attr('ry', 2)
         .call(rects => {
           return this.drawRects(rects)
         })
@@ -310,11 +312,6 @@ export default {
 
   .treemap_container .child.highClass {
     opacity: 0.9;
-  }  
-
-  svg rect {
-    rx: 3;
-    ry: 2;
   }
 
   .child.js, .labels .js {
