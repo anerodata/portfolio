@@ -21,6 +21,9 @@ export default {
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Karma&display=swap');
   html, body {
     min-height: 100vh;
     background-image: -o-linear-gradient(to bottom right, #383838, #272822);
