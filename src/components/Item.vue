@@ -101,7 +101,7 @@ export default {
     },
 
     changeImgHeight() {
-      return this.$el.clientWidth * 225 / 371
+      return this.$el.parentNode.clientWidth * 225 / 1180
     }
   }
 }
