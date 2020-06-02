@@ -101,7 +101,13 @@ export default {
     },
 
     changeImgHeight() {
-      return this.$el.parentNode.clientWidth * 225 / 1180
+      if (window.innerWidth <= 500) {
+        return this.$el.parentNode.clientWidth * 225 * 2.7 / 1180
+      } else if (window.innerWidth <= 700) {
+        return this.$el.parentNode.clientWidth * 225 * 1.5 / 1180
+      } else {
+        return this.$el.parentNode.clientWidth * 225 / 1180
+      }
     }
   }
 }
