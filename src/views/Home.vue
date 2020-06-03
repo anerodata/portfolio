@@ -99,7 +99,7 @@ export default {
           // If global children array doesn't have and object with tec name...
           if(!acc.children.some(allChild => allChild.name === keyTec)) {
               //... create it
-              acc.children.push({name: keyTec, children: []})
+              acc.children.push({name: keyTec, sum: 0, children: []})
           }
 
           // Get children tec array
@@ -109,17 +109,19 @@ export default {
           if(!keyList.children.some(tecChild => tecChild.name === keyLib)) {
             //... create it
             keyList.children.push({name: keyLib, value: 1})
+            keyList.sum += 1
           } else {
             // Otherwise, add 1 to value property of the array
             const tecList = keyList.children.filter(tecChild => tecChild.name === keyLib)[0]
             tecList.value += 1
+            keyList.sum += 1
           }
           
         })
         return acc
       }, { name: 'all', children: [] })
-
-      res.children = this.sortArr(res.children, 'children')
+      
+      res.children = this.sortArr(res.children, 'sum')
       res.children.forEach(child => { this.sortArr(child.children, 'value') })
       return res
     }
