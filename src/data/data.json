@@ -50,7 +50,7 @@
 		"biblioteca": ["requests.py", "beautifulsoup.py", "Open Refine"],
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "El Confidencial",
-		"descripción": ["Web scraping"],
+		"descripción": ["web scraping"],
 		"id": "5"
 	},
 	
@@ -58,10 +58,10 @@
 		"titulo": "Paracetamol o Ventolin: consulta aquí los 1.200 medicamentos que bajan de precio",
 		"fecha": "2019-10-31",
 		"url": "https://www.elconfidencial.com/alma-corazon-vida/2019-10-31/bajan-precios-medicamentos-paracetamol-ventolin_2308239/",
-		"biblioteca": ["requests.py", "beautifulsoup.py"],
+		"biblioteca": ["Tabula", "Open Refine"],
 		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "El Confidencial",
-		"descripción": ["Pdf scraping"],
+		"descripción": ["pdf scraping"],
 		"id": "6"
 	},
 
@@ -149,7 +149,7 @@
 		"biblioteca": ["requests.py", "beautifulsoup.py"],
 		"tecnología": [],
 		"organización": "ICIJ",
-		"descripción": ["web scraping", "pdf scraping"],
+		"descripción": ["web scraping"],
 		"id": "16"
 	},
 
@@ -250,6 +250,60 @@
 		"organización": "El Confidencial",
 		"descripción": ["visualización estática", "web"],
 		"id": "24"
-	}
+	},
 
+	{
+		"titulo": "Hacer política tras dejar la política: el 61% de los exministros ocupa cargos en fundaciones",
+		"fecha": "2019-07-08",
+		"url": "https://www.elconfidencial.com/espana/2019-07-08/politicos-fundaciones-lobby-ministros_2096406/",
+		"biblioteca": ["requests.py", "beautifulsoup.py", "pandas.py"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["web scraping", "análisis de datos"],
+		"id": "25"
+	},
+
+	{
+		"titulo": "Descubre los países en los que dos personas del mismo sexo se pueden casar",
+		"fecha": "2019-06-28",
+		"url": "https://www.vanitatis.elconfidencial.com/famosos/2019-06-28/mapa-paises-matrimonio-gay-especial-orgullo_2090234/",
+		"biblioteca": ["Leaflet.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización interactiva", "mapa"],
+		"id": "26"
+	},
+
+	{
+		"titulo": "Estos son los nuevos alcaldes de las capitales y grandes ciudades tras los pactos electorales",
+		"fecha": "2019-06-15",
+		"url": "https://www.elconfidencial.com/elecciones-municipales-y-autonomicas/2019-06-15/nuevos-alcaldes-2019-capitales-provincia-ciudades_2072860/",
+		"biblioteca": ["Vanilla.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["buscador"],
+		"id": "27"
+	},
+
+	{
+		"titulo": "Los tres motivos que han convertido al Everest en un parque temático",
+		"fecha": "2019-06-02",
+		"url": "https://www.elconfidencial.com/deportes/alpinismo/2019-06-02/everest-foto-masificacion-himalaya_2047510/",
+		"biblioteca": ["Tabula", "Open Refine"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["limpieza de datos"],
+		"id": "28"
+	},
+
+	{
+		"titulo": "Web sobre el Coronavirus",
+		"fecha": "2020-06-02",
+		"url": "https://civio.es/coronavirus/",
+		"biblioteca": ["Awesomeplete.js", "MapboxGL.js"],
+		"tecnología": [],
+		"organización": "Civio",
+		"descripción": ["buscador", "visualización interactiva", "mapa"],
+		"id": "29"
+	}
 ]
