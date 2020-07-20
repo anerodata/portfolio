@@ -297,13 +297,13 @@
 	},
 
 	{
-		"titulo": "Web sobre el Coronavirus",
-		"fecha": "2020-06-02",
-		"url": "https://civio.es/coronavirus/",
-		"biblioteca": ["awesomeplete.js", "mapboxgl.js"],
+		"titulo": "Asistente de ayudas relacionadas con el coronavirus",
+		"fecha": "2020-06-19",
+		"url": "https://civio.es/ayudas-sociales-coronavirus/",
+		"biblioteca": ["vue.js"],
 		"tecnología": [],
 		"organización": "Civio",
-		"descripción": ["buscador", "visualización interactiva", "mapa"],
+		"descripción": ["calculadora"],
 		"id": "29"
 	},
 	{
@@ -373,7 +373,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["visualización interactiva", "gráfico"],
+		"descripción": ["visualización interactiva", "gráfico", "calculadora"],
 		"id": "36"
 	}
 ]
