@@ -44,6 +44,7 @@ export default {
       this.createTreemap()
       window.addEventListener('resize', this.redraw);
     },
+    
     dimensions() {
       let chartPercentWidth = null
       if (window.innerWidth > 1000) {

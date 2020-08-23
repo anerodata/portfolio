@@ -77,6 +77,7 @@ export default {
       })
       this.selectedOrg = orgValue
     },
+    
     sortArr(arr, prop) {
       return arr.sort((a, b) => {
         if(a[prop] < b[prop]) {
@@ -86,6 +87,7 @@ export default {
         }
       })
     },
+
     setTreemapData() {
       const res = this.items.reduce((acc, obj) => {
         // Loop in library array
