@@ -1,6 +1,6 @@
 <template>
   <div class="treemap_container">
-    <svg id="chart"></svg>
+    <svg id="chart" height="0"></svg>
     <div id="tooltip"></div>
   </div>
 </template>
