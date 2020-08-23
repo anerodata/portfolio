@@ -6,7 +6,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
-		"descripción": ["visualización interactiva", "gráfico"],
+		"descripción": ["visualización interactiva", "gráfico", "buscador"],
 		"id": "1"
 	},
 	
@@ -83,7 +83,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["visualización interactiva", "gráfico"],
+		"descripción": ["visualización interactiva", "gráfico", "buscador"],
 		"id": "9"
 	},
 
@@ -105,7 +105,7 @@
 		"biblioteca": ["d3.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
-		"descripción": ["visualización interactiva", "calculadora"],
+		"descripción": ["visualización interactiva", "calculadora", "buscador"],
 		"id": "11"
 	},
 
@@ -310,7 +310,7 @@
 		"titulo": "¿En qué ayuntamiento se pagan más impuestos? (Consulta el tuyo)",
 		"fecha": "2019-05-24",
 		"url": "https://www.elconfidencial.com/economia/2019-05-24/municipios-cobran-mas-impuestos-recaudacion-ayutamientos_2019994/",
-		"biblioteca": ["highcharts.js", "vanilla.js"],
+		"biblioteca": ["highcharts.js"],
 		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["buscador", "visualización interactiva", "gráfico"],
@@ -375,5 +375,75 @@
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico", "calculadora"],
 		"id": "36"
+	},
+	{
+		"titulo": "Así abusa de los microcontratos a dedo la Comunidad de Madrid: 1 millón en dos años",
+		"fecha": "2018-06-04",
+		"url": "https://www.elconfidencial.com/espana/madrid/2018-06-04/comunidad-de-madrid-contratos-menores_1572865/",
+		"biblioteca": ["requests.py", "beautifulsoup.py"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["web scraping"],
+		"id": "37"
+	},
+	{
+		"titulo": "Ni los políticos cumplen la Ley de Igualdad: 25.000 mujeres en 70.000 cargos públicos",
+		"fecha": "2018-03-07",
+		"url": "https://www.elconfidencial.com/espana/2018-03-07/ley-igualdad-mujeres-hombres-cargos-politicos_1529799/",
+		"biblioteca": ["requests.py", "beautifulsoup.py", "vanilla.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["web scraping", "visualización interactiva", "gráfico", "buscador"],
+		"id": "38"
+	},
+	{
+		"titulo": "Personas vs Máquinas: “Mi trabajo desaparecerá en ocho años”",
+		"fecha": "2018-04-02",
+		"url": "https://www.elconfidencial.com/tecnologia/2018-04-02/robot-maquinas-quitar-trabajo-espana_1541583/",
+		"biblioteca": ["d3.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización interactiva", "gráfico"],
+		"id": "39"
+	},
+	{
+		"titulo": "El referéndum que negaron a Soto del Real y otras 76 consultas vetadas en democracia”",
+		"fecha": "2018-05-14",
+		"url": "https://www.elconfidencial.com/espana/2018-05-14/consultas-populares-referendum-pueblo-democracia_1562462/",
+		"biblioteca": ["d3.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización interactiva", "mapa"],
+		"id": "40"
+	},
+	{
+		"titulo": "Dime dónde vives y te diré cómo ha cambiado tu municipio en este siglo",
+		"fecha": "2017-10-14",
+		"url": "https://www.elconfidencial.com/espana/2017-10-14/variacion-demografia-pueblos-espana_1450772/",
+		"biblioteca": ["highcharts.js", "jquery.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización interactiva", "gráfico", "buscador"],
+		"id": "41"
+	},
+	{
+		"titulo": "La demografía de los 8.125 municipios españoles: ¿conoces quiénes son tus vecinos?",
+		"fecha": "2017-09-18",
+		"url": "https://www.elconfidencial.com/sociedad/2017-09-18/demografia-pueblos-ciudades-espana_1444345/",
+		"biblioteca": ["highcharts.js", "jquery.js", "rangeslider.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización interactiva", "gráfico", "buscador"],
+		"id": "42"
+	},
+	{
+		"titulo": "¿Buscas alquiler en Madrid o Barcelona? Este mapa muestra dónde te lo puedes permitir",
+		"fecha": "2017-09-01",
+		"url": "https://www.elconfidencial.com/vivienda/2017-09-01/alquiler-precio-barrios-madrid-barcelona_1435196/",
+		"biblioteca": ["leaflet.js"],
+		"tecnología": [],
+		"organización": "El Confidencial",
+		"descripción": ["visualización interactiva", "mapa"],
+		"id": "43"
 	}
 ]
