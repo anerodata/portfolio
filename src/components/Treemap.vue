@@ -28,17 +28,22 @@ export default {
     }
   },
 
-  mounted() {
-    this.svg = d3.select(`#${this.id}`)
-    this.dimensions()
-    this.treemapRootData()
-    this.treemapLayout()
-    this.bones()
-  	this.createTreemap()
-    window.addEventListener('resize', this.redraw);
+  watch: {
+    data() {
+      return this.init()
+    }
   },
   
   methods: {
+    init() {
+      this.svg = d3.select(`#${this.id}`)
+      this.dimensions()
+      this.treemapRootData()
+      this.treemapLayout()
+      this.bones()
+      this.createTreemap()
+      window.addEventListener('resize', this.redraw);
+    },
     dimensions() {
       let chartPercentWidth = null
       if (window.innerWidth > 1000) {

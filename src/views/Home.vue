@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import data from './../data/data.json'
 import Header from './../components/Header.vue'
 import Treemap from './../components/Treemap.vue'
 import FilterBtn from './../components/FilterBtn.vue'
 import Items from './../components/Items.vue'
+import { json } from 'd3-fetch'
 export default {
   name: 'Home',
   components: {
@@ -54,8 +54,17 @@ export default {
           }
         ],
       noSelectedOrgs: [],
-      selectedOrg: 'all'
+      selectedOrg: 'all',
+      items: [],
+      treemapData: {}
     }
+  },
+  mounted() {
+    json('https://raw.githubusercontent.com/anerodata/portfolio/master/src/data/data.json')
+      .then(data => {
+        this.items = data
+        this.treemapData = this.setTreemapData()
+      })
   },
   methods: {
     filterOrg(orgValue) {
@@ -68,7 +77,6 @@ export default {
       })
       this.selectedOrg = orgValue
     },
-
     sortArr(arr, prop) {
       return arr.sort((a, b) => {
         if(a[prop] < b[prop]) {
@@ -77,14 +85,8 @@ export default {
           return -1
         }
       })
-    }
-  },
-  computed: {
-    items() {
-      return data
     },
-
-    treemapData() {
+    setTreemapData() {
       const res = this.items.reduce((acc, obj) => {
         // Loop in library array
         obj.biblioteca.forEach((bib) => {
