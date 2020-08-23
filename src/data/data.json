@@ -4,7 +4,6 @@
 		"fecha": "2019-07-21",
 		"url": "https://www.elconfidencial.com/economia/2019-07-21/ayuntamientos-buscador-gasto-presupuesto-partidas_2135047/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico", "buscador"],
 		"id": "1"
@@ -15,7 +14,6 @@
 		"fecha": "2019-11-26",
 		"url": "https://www.elconfidencial.com/vivienda/2019-11-26/mapa-espana-urbanismo-edificios-historia_2348415/",
 		"biblioteca": ["mapboxgl.js", "geopandas.py"],
-		"tecnología": [{"key":"Javascript", "value":"js"}, {"key":"Python", "value":"py"}],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "mapa"],
 		"id": "2"
@@ -26,7 +24,6 @@
 		"fecha": "2019-12-07",
 		"url": "https://www.elconfidencial.com/deportes/futbol/2019-12-07/estadios-liga-alquiler-primera-division-segunda-precios_2355456/",
 		"biblioteca": ["leaflet.js"],
-		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "mapa"],
 		"id": "3"
@@ -37,7 +34,6 @@
 		"fecha": "2019-11-12",
 		"url": "https://www.elconfidencial.com/elecciones-generales/2019-11-12/izquierda-derecha-10n-pp-vox-psoe-podemos-calle-a-calle_2333127/",
 		"biblioteca": ["mapboxgl.js"],
-		"tecnología": [{"key":"Javascript", "value":"js"}],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "mapa"],
 		"id": "4"
@@ -48,7 +44,6 @@
 		"fecha": "2019-11-10",
 		"url": "https://www.elconfidencial.com/espana/2019-11-10/candidaturas-elecciones-generales-0_2275855/",
 		"biblioteca": ["requests.py", "beautifulsoup.py", "Open Refine"],
-		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "El Confidencial",
 		"descripción": ["web scraping"],
 		"id": "5"
@@ -59,7 +54,6 @@
 		"fecha": "2019-10-31",
 		"url": "https://www.elconfidencial.com/alma-corazon-vida/2019-10-31/bajan-precios-medicamentos-paracetamol-ventolin_2308239/",
 		"biblioteca": ["Tabula", "Open Refine"],
-		"tecnología": [{"key":"Python", "value":"py"}, {"key":"Open Refine", "value":"Open Refine"}],
 		"organización": "El Confidencial",
 		"descripción": ["pdf scraping"],
 		"id": "6"
@@ -70,7 +64,6 @@
 		"fecha": "2020-01-07",
 		"url": "https://www.elconfidencial.com/espana/2020-01-07/cuentas-investidura-pedro-sanchez-presidente-martes_2397720/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "calculadora"],
 		"id": "8"
@@ -81,7 +74,6 @@
 		"fecha": "2019-12-15",
 		"url": "https://www.elconfidencial.com/economia/2019-12-15/cuantos-nacimientos-muertes-bodas-municipios-espana-551_2377112/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico", "buscador"],
 		"id": "9"
@@ -92,7 +84,6 @@
 		"fecha": "2019-11-10",
 		"url": "https://www.elconfidencial.com/elecciones-generales/2019-11-10/resultados-directo-provincias-10n-variacion-28a_2322035/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "10"
@@ -103,7 +94,6 @@
 		"fecha": "2019-10-18",
 		"url": "https://www.elconfidencial.com/vivienda/2019-10-18/permitirte-alquiler-medio-vivienda-ciudades-espana_2287628/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "calculadora", "buscador"],
 		"id": "11"
@@ -114,7 +104,6 @@
 		"fecha": "2019-06-10",
 		"url": "https://anerodata.github.io/filete-vegano/",
 		"biblioteca": ["vanilla.js"],
-		"tecnología": [],
 		"organización": "Antonio",
 		"descripción": ["Reproductor de música", "web"],
 		"id": "12"
@@ -125,7 +114,6 @@
 		"fecha": "2019-09-27",
 		"url": "https://www.elconfidencial.com/economia/2019-09-27/exodo-urbano-espana-migraciones-ciudades-buscador_2251515/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "14"
@@ -136,7 +124,6 @@
 		"fecha": "2018-09-24",
 		"url": "https://www.europeandatajournalism.eu/eng/News/Data-news/How-many-hot-days-do-your-kids-face-compared-to-your-childhood",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "EDJNET",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "15"
@@ -147,7 +134,6 @@
 		"fecha": "2018-11-25",
 		"url": "https://www.icij.org/investigations/implant-files/new-database-tracks-faulty-medical-devices-across-the-globe/",
 		"biblioteca": ["requests.py", "beautifulsoup.py"],
-		"tecnología": [],
 		"organización": "ICIJ",
 		"descripción": ["web scraping"],
 		"id": "16"
@@ -158,7 +144,6 @@
 		"fecha": "2019-09-12",
 		"url": "https://www.elconfidencial.com/comunicacion/2019-09-12/radio-maria-por-que-se-escucha-espana-secreto_2217187/",
 		"biblioteca": ["QGIS"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización estática", "mapa"],
 		"id": "7"
@@ -169,7 +154,6 @@
 		"fecha": "2020-04-23",
 		"url": "https://civio.es/covid-movilidad-europea/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "Civio",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "17"
@@ -180,7 +164,6 @@
 		"fecha": "2019-08-28",
 		"url": "https://www.elconfidencial.com/economia/2019-08-28/demografia-ninos-espana-precariedad-laboral_2178267/",
 		"biblioteca": ["leaflet.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "mapa"],
 		"id": "18"
@@ -191,7 +174,6 @@
 		"fecha": "2020-05-14",
 		"url": "https://civio.es/el-boe-nuestro-de-cada-dia/2020/05/14/respuestas-a-preguntas-frecuentes/",
 		"biblioteca": ["vue.js", "lunr.js"],
-		"tecnología": [],
 		"organización": "Civio",
 		"descripción": ["buscador"],
 		"id": "19"
@@ -202,7 +184,6 @@
 		"fecha": "2019-08-10",
 		"url": "https://www.elconfidencial.com/espana/2019-08-10/inmigracion-marruecos-ministerio-de-interior-espana_2171927/",
 		"biblioteca": ["highcharts.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "20"
@@ -213,7 +194,6 @@
 		"fecha": "2019-08-19",
 		"url": "https://www.elconfidencial.com/mundo/2019-08-19/lolita-express-epstein-aterrizo-seis-veces-espana_2182579/",
 		"biblioteca": ["QGIS"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización estática", "mapa"],
 		"id": "21"
@@ -224,7 +204,6 @@
 		"fecha": "2019-08-05",
 		"url": "https://www.elconfidencial.com/economia/2019-08-05/universidad-dinero-ciencias-letras-egresados_2154839/",
 		"biblioteca": ["highcharts.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico", "buscador"],
 		"id": "22"
@@ -235,7 +214,6 @@
 		"fecha": "2019-09-06",
 		"url": "https://www.elconfidencial.com/espana/madrid/2019-09-06/metro-accesible-paradas-ascensor-escaleras_2209007/",
 		"biblioteca": ["d3.js", "beautifulsoup.py", "requests.py"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico", "web scraping"],
 		"id": "23"
@@ -246,7 +224,6 @@
 		"fecha": "2019-07-16",
 		"url": "https://www.elconfidencial.com/tecnologia/ciencia/2019-07-16/viaje-a-la-luna-falso-directo_2122343/",
 		"biblioteca": ["d3.js", "vanilla.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización estática", "web"],
 		"id": "24"
@@ -257,7 +234,6 @@
 		"fecha": "2019-07-08",
 		"url": "https://www.elconfidencial.com/espana/2019-07-08/politicos-fundaciones-lobby-ministros_2096406/",
 		"biblioteca": ["requests.py", "beautifulsoup.py", "pandas.py"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["web scraping", "análisis de datos"],
 		"id": "25"
@@ -268,7 +244,6 @@
 		"fecha": "2019-06-28",
 		"url": "https://www.vanitatis.elconfidencial.com/famosos/2019-06-28/mapa-paises-matrimonio-gay-especial-orgullo_2090234/",
 		"biblioteca": ["leaflet.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "mapa"],
 		"id": "26"
@@ -279,7 +254,6 @@
 		"fecha": "2019-06-15",
 		"url": "https://www.elconfidencial.com/elecciones-municipales-y-autonomicas/2019-06-15/nuevos-alcaldes-2019-capitales-provincia-ciudades_2072860/",
 		"biblioteca": ["vanilla.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["buscador"],
 		"id": "27"
@@ -290,7 +264,6 @@
 		"fecha": "2019-06-02",
 		"url": "https://www.elconfidencial.com/deportes/alpinismo/2019-06-02/everest-foto-masificacion-himalaya_2047510/",
 		"biblioteca": ["Tabula", "Open Refine"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["limpieza de datos"],
 		"id": "28"
@@ -301,7 +274,6 @@
 		"fecha": "2020-06-19",
 		"url": "https://civio.es/ayudas-sociales-coronavirus/",
 		"biblioteca": ["vue.js"],
-		"tecnología": [],
 		"organización": "Civio",
 		"descripción": ["calculadora"],
 		"id": "29"
@@ -311,7 +283,6 @@
 		"fecha": "2019-05-24",
 		"url": "https://www.elconfidencial.com/economia/2019-05-24/municipios-cobran-mas-impuestos-recaudacion-ayutamientos_2019994/",
 		"biblioteca": ["highcharts.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["buscador", "visualización interactiva", "gráfico"],
 		"id": "30"
@@ -321,7 +292,6 @@
 		"fecha": "2019-05-21",
 		"url": "https://www.elconfidencial.com/economia/2019-05-21/espana-vacia-un-grafico-provincias-mitad-poblacion-emigrada_2015102/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "31"
@@ -331,7 +301,6 @@
 		"fecha": "2019-04-28",
 		"url": "https://www.elconfidencial.com/elecciones-generales/2019-04-28/resultados-elecciones-28a-analisis-provincias_1969814/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "32"
@@ -341,7 +310,6 @@
 		"fecha": "2018-11-09",
 		"url": "https://www.elconfidencial.com/tecnologia/ciencia/2018-11-09/en-que-ciudad-vives-donde-deberias-vivir-espana_1641914/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "33"
@@ -351,7 +319,6 @@
 		"fecha": "2019-03-01",
 		"url": "https://www.elconfidencial.com/tecnologia/2019-03-01/wallapop-yaencontre-perfil-pisos-idea-secreta_1851554/",
 		"biblioteca": ["QGIS"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización estática", "mapa"],
 		"id": "34"
@@ -361,7 +328,6 @@
 		"fecha": "2019-02-09",
 		"url": "https://www.elconfidencial.com/tecnologia/ciencia/2019-02-09/donde-vas-a-morir_1811262/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "35"
@@ -371,7 +337,6 @@
 		"fecha": "2019-03-08",
 		"url": "https://www.elconfidencial.com/economia/2019-03-08/brecha-salarial-espana-mujer-8-marzo_1867874/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico", "calculadora"],
 		"id": "36"
@@ -381,7 +346,6 @@
 		"fecha": "2018-06-04",
 		"url": "https://www.elconfidencial.com/espana/madrid/2018-06-04/comunidad-de-madrid-contratos-menores_1572865/",
 		"biblioteca": ["requests.py", "beautifulsoup.py"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["web scraping"],
 		"id": "37"
@@ -391,7 +355,6 @@
 		"fecha": "2018-03-07",
 		"url": "https://www.elconfidencial.com/espana/2018-03-07/ley-igualdad-mujeres-hombres-cargos-politicos_1529799/",
 		"biblioteca": ["requests.py", "beautifulsoup.py", "vanilla.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["web scraping", "visualización interactiva", "gráfico", "buscador"],
 		"id": "38"
@@ -401,7 +364,6 @@
 		"fecha": "2018-04-02",
 		"url": "https://www.elconfidencial.com/tecnologia/2018-04-02/robot-maquinas-quitar-trabajo-espana_1541583/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "39"
@@ -411,7 +373,6 @@
 		"fecha": "2018-05-14",
 		"url": "https://www.elconfidencial.com/espana/2018-05-14/consultas-populares-referendum-pueblo-democracia_1562462/",
 		"biblioteca": ["d3.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "mapa"],
 		"id": "40"
@@ -421,7 +382,6 @@
 		"fecha": "2017-10-14",
 		"url": "https://www.elconfidencial.com/espana/2017-10-14/variacion-demografia-pueblos-espana_1450772/",
 		"biblioteca": ["highcharts.js", "jquery.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico", "buscador"],
 		"id": "41"
@@ -431,7 +391,6 @@
 		"fecha": "2017-09-18",
 		"url": "https://www.elconfidencial.com/sociedad/2017-09-18/demografia-pueblos-ciudades-espana_1444345/",
 		"biblioteca": ["highcharts.js", "jquery.js", "rangeslider.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico", "buscador"],
 		"id": "42"
@@ -441,7 +400,6 @@
 		"fecha": "2017-09-01",
 		"url": "https://www.elconfidencial.com/vivienda/2017-09-01/alquiler-precio-barrios-madrid-barcelona_1435196/",
 		"biblioteca": ["leaflet.js"],
-		"tecnología": [],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "mapa"],
 		"id": "43"
