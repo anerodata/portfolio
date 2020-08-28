@@ -45,7 +45,7 @@
 		"url": "https://www.elconfidencial.com/espana/2019-11-10/candidaturas-elecciones-generales-0_2275855/",
 		"biblioteca": ["requests.py", "beautifulsoup.py", "Open Refine"],
 		"organización": "El Confidencial",
-		"descripción": ["web scraping"],
+		"descripción": ["web scraping", "limpieza de datos"],
 		"id": "5"
 	},
 	
@@ -55,7 +55,7 @@
 		"url": "https://www.elconfidencial.com/alma-corazon-vida/2019-10-31/bajan-precios-medicamentos-paracetamol-ventolin_2308239/",
 		"biblioteca": ["Tabula", "Open Refine"],
 		"organización": "El Confidencial",
-		"descripción": ["pdf scraping"],
+		"descripción": ["pdf scraping", "limpieza de datos"],
 		"id": "6"
 	},
 
@@ -233,9 +233,9 @@
 		"titulo": "Hacer política tras dejar la política: el 61% de los exministros ocupa cargos en fundaciones",
 		"fecha": "2019-07-08",
 		"url": "https://www.elconfidencial.com/espana/2019-07-08/politicos-fundaciones-lobby-ministros_2096406/",
-		"biblioteca": ["requests.py", "beautifulsoup.py", "pandas.py"],
+		"biblioteca": ["requests.py", "beautifulsoup.py", "pandas.py", "Open Refine"],
 		"organización": "El Confidencial",
-		"descripción": ["web scraping", "análisis de datos"],
+		"descripción": ["web scraping", "análisis de datos", "limpieza de datos"],
 		"id": "25"
 	},
 
@@ -403,5 +403,23 @@
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "mapa"],
 		"id": "43"
+	},
+	{
+		"titulo": "Consulta en qué fase de la desescalada está tu municipio",
+		"fecha": "2020-05-22",
+		"url": "https://civio.es/el-boe-nuestro-de-cada-dia/2020/05/22/consulta-en-que-fase-de-la-desescalada-esta-tu-municipio/",
+		"biblioteca": ["mapboxgl.js"],
+		"organización": "Civio",
+		"descripción": ["visualización interactiva", "mapa"],
+		"id": "44"
+	},
+	{
+		"titulo": "Entre 500 y casi 800 eventuales solo en la Administración General del Estado",
+		"fecha": "2020-07-22",
+		"url": "https://civio.es/quien-manda/buscador-de-eventuales/",
+		"biblioteca": ["vue.js", "d3.js"],
+		"organización": "Civio",
+		"descripción": ["visualización interactiva", "gráfico"],
+		"id": "45"
 	}
 ]
