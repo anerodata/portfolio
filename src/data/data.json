@@ -354,7 +354,7 @@
 		"titulo": "Ni los políticos cumplen la Ley de Igualdad: 25.000 mujeres en 70.000 cargos públicos",
 		"fecha": "2018-03-07",
 		"url": "https://www.elconfidencial.com/espana/2018-03-07/ley-igualdad-mujeres-hombres-cargos-politicos_1529799/",
-		"biblioteca": ["selenium.py" "vanilla.js"],
+		"biblioteca": ["selenium.py", "vanilla.js"],
 		"organización": "El Confidencial",
 		"descripción": ["web scraping", "visualización interactiva", "gráfico", "buscador"],
 		"id": "38"
