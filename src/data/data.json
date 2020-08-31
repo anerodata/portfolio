@@ -233,7 +233,7 @@
 		"titulo": "Hacer política tras dejar la política: el 61% de los exministros ocupa cargos en fundaciones",
 		"fecha": "2019-07-08",
 		"url": "https://www.elconfidencial.com/espana/2019-07-08/politicos-fundaciones-lobby-ministros_2096406/",
-		"biblioteca": ["requests.py", "beautifulsoup.py", "pandas.py", "Open Refine"],
+		"biblioteca": ["selenium.py", "pandas.py", "Open Refine"],
 		"organización": "El Confidencial",
 		"descripción": ["web scraping", "análisis de datos", "limpieza de datos"],
 		"id": "25"
@@ -345,7 +345,7 @@
 		"titulo": "Así abusa de los microcontratos a dedo la Comunidad de Madrid: 1 millón en dos años",
 		"fecha": "2018-06-04",
 		"url": "https://www.elconfidencial.com/espana/madrid/2018-06-04/comunidad-de-madrid-contratos-menores_1572865/",
-		"biblioteca": ["requests.py", "beautifulsoup.py"],
+		"biblioteca": ["selenium.py"],
 		"organización": "El Confidencial",
 		"descripción": ["web scraping"],
 		"id": "37"
@@ -354,7 +354,7 @@
 		"titulo": "Ni los políticos cumplen la Ley de Igualdad: 25.000 mujeres en 70.000 cargos públicos",
 		"fecha": "2018-03-07",
 		"url": "https://www.elconfidencial.com/espana/2018-03-07/ley-igualdad-mujeres-hombres-cargos-politicos_1529799/",
-		"biblioteca": ["requests.py", "beautifulsoup.py", "vanilla.js"],
+		"biblioteca": ["selenium.py" "vanilla.js"],
 		"organización": "El Confidencial",
 		"descripción": ["web scraping", "visualización interactiva", "gráfico", "buscador"],
 		"id": "38"
