@@ -363,7 +363,7 @@
 		"titulo": "Personas vs Máquinas: “Mi trabajo desaparecerá en ocho años”",
 		"fecha": "2018-04-02",
 		"url": "https://www.elconfidencial.com/tecnologia/2018-04-02/robot-maquinas-quitar-trabajo-espana_1541583/",
-		"biblioteca": ["d3.js"],
+		"biblioteca": ["d3.js", "select2.js"],
 		"organización": "El Confidencial",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "39"
