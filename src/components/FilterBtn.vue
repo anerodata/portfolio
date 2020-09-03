@@ -16,9 +16,9 @@
 		methods: {
 	    filterItems(org) {
         if (org['name'] === this.selectedOrg) {
-          this.$emit('filter-org', 'all', 'name')
+          this.$emit('filter-org', 'all')
         } else {
-          this.$emit('filter-org', org.name, 'name')
+          this.$emit('filter-org', org.name)
         }
 	    },
 
