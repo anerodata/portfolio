@@ -14,8 +14,7 @@ export default {
   },
 
   props: {
-    items: Array,
-    orgs: Array
+    items: Array
   },
 
   computed: {

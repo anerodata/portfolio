@@ -16,31 +16,30 @@
   </div>
 </template>
 <script>
-	export default {
-		name: 'FilterBtn',
-		props: {
-      orgs: Array
-    },
-    data() {
-      return {
-        selectedOrg: 'all'
+import { ORGS } from './../data/variables.js'
+export default {
+	name: 'FilterBtn',
+  data() {
+    return {
+      selectedOrg: 'all',
+      orgs: ORGS
+    }
+  },
+	methods: {
+    filterItems(org) {
+      if (org['name'] === this.selectedOrg) {
+        this.selectedOrg = 'all'
+        this.$store.dispatch('filterItems', 'all')
+      } else {
+        this.selectedOrg = org.name
+        this.$store.dispatch('filterItems', org.name)
       }
     },
-		methods: {
-	    filterItems(org) {
-        if (org['name'] === this.selectedOrg) {
-          this.selectedOrg = 'all'
-          this.$store.dispatch('filterItems', 'all')
-        } else {
-          this.selectedOrg = org.name
-          this.$store.dispatch('filterItems', org.name)
-        }
-	    },
-      clicked(org) {
-        return org.name === this.selectedOrg
-      }
-  	},
-	}
+    clicked(org) {
+      return org.name === this.selectedOrg
+    }
+	},
+}
 </script>
 <style scoped>
   .filter-container {

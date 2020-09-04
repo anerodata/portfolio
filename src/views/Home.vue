@@ -5,14 +5,13 @@
       <Treemap :data="treemapData"/>
     </div>
     <section class="router-container">
-      <FilterBtn :orgs="orgs"/>
+      <FilterBtn/>
       <router-link to="/about" class="router-link desktop">
         About
       </router-link>
     </section>
     <Items 
       :items="items"
-      :orgs="orgs"
       />
   </div>
 </template>
@@ -33,20 +32,6 @@ export default {
   },
   data() {
     return {
-      orgs: [
-          {
-            name: 'El Confidencial'
-          },
-    
-          {
-            name: 'Civio'
-          },
-
-          {
-            name: 'Otros'
-          }
-        ],
-
       treemapData: {}
     }
   },
@@ -58,7 +43,6 @@ export default {
   watch: {
     items: function() {    
       if (this.items.length > 0) {
-        console.log(this.setTreemapData())
         this.treemapData = this.setTreemapData()
       }
     }
