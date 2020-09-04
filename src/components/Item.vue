@@ -89,12 +89,13 @@ export default {
     },
 
     changeImgHeight() {
+      const el = document.getElementsByClassName('items-container')[0]
       if (window.innerWidth <= 500) {
-        return this.$el.parentNode.clientWidth * 270 * 2.7 / 1180
+        return el.parentNode.clientWidth * 270 * 2.7 / 1180
       } else if (window.innerWidth <= 700) {
-        return this.$el.parentNode.clientWidth * 245 * 1.5 / 1180
+        return el.parentNode.clientWidth * 245 * 1.5 / 1180
       } else {
-        return this.$el.parentNode.clientWidth * 245 / 1180
+        return el.parentNode.clientWidth * 245 / 1180
       }
     }
   }
