@@ -14,6 +14,15 @@ export const store = new Vuex.Store({
 		fetchItems: (state, response) => {
 			state.allItems = response
 			state.items = state.allItems
+		},
+		filterItems: (state, payload) => {
+			if (payload === 'all') {
+				state.items = state.allItems
+			} else {
+				state.items = state.allItems.filter(d => {
+					return d['organización'] === payload
+				})
+			}
 		}
 	},
     actions: {
@@ -22,8 +31,10 @@ export const store = new Vuex.Store({
 				.then((response) => {
 					console.log(response)
 					context.commit('fetchItems', response)
-					return context.state.items
 				})
+    	},
+    	filterItems: (context, payload) => {
+    		context.commit('filterItems', payload)
     	}
     }
 })

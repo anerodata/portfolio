@@ -1,5 +1,5 @@
 <template>
-	<article class="item" v-show="itemVisibility" :class="itemClass" :id="itemId">
+	<article class="item" :class="itemClass" :id="itemId">
 		<a :href="item.url" target="_blank">
   			<div class="item_header">
           <figure class="item_img" :class="imgLoaded ? 'fullOpacity' : ''" :style="{ height: imgHeight + 'px' }">
@@ -45,18 +45,6 @@ export default {
   },
 
   computed: {
-    // Set visibility depending onfilter falue
-    itemVisibility() {
-      if (this.selectedOrg === 'all') {
-        return true
-      } else {
-      	if(this.selectedOrg !== 'Otros') {
-      		return this.item['organización'] === this.selectedOrg
-      	} else {
-      		return this.noSelectedOrgs.indexOf(this.item['organización']) === -1
-      	}
-      }
-    },
 
     itemClass() {
       return this.item.organización.replace(' ', '-')

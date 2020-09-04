@@ -9,19 +9,23 @@
 	export default {
 		name: 'FilterBtn',
 		props: {
-      orgs: Array,
-      selectedOrg: String
+      orgs: Array
     },
-
+    data() {
+      return {
+        selectedOrg: ''
+      }
+    },
 		methods: {
 	    filterItems(org) {
         if (org['name'] === this.selectedOrg) {
-          this.$emit('filter-org', 'all')
+          this.selectedOrg = 'all'
+          this.$store.dispatch('filterItems', 'all')
         } else {
-          this.$emit('filter-org', org.name)
+          this.selectedOrg = org.name
+          this.$store.dispatch('filterItems', org.name)
         }
 	    },
-
       clicked(org) {
         return org.name === this.selectedOrg
       }

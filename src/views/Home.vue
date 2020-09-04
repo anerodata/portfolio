@@ -5,7 +5,7 @@
       <Treemap :data="treemapData"/>
     </div>
     <section class="filter-router-container">
-      <FilterBtn :orgs="orgs" :selectedOrg="selectedOrg" @filter-org="filterOrg"/>
+      <FilterBtn :orgs="orgs" :selectedOrg="selectedOrg"/>
       <p v-show="this.selectedOrg !== 'all'" class="user-msg responsive">
         Pulsa sobre <span :class="selectedOrg.replace(/ /g, '-')" >{{ this.selectedOrg }}</span> de nuevo para volver a mostrar el resto de trabajos
       </p>
@@ -75,17 +75,6 @@ export default {
     }
   },
   methods: {
-    filterOrg(orgValue) {
-      this.selectedOrg = orgValue
-      this.noSelectedOrgs = []
-      this.orgs.forEach(org => {
-        if(org.name !== orgValue) {
-          this.noSelectedOrgs.push(org.name)
-        }
-      })
-      this.selectedOrg = orgValue
-    },
-    
     sortArr(arr, prop) {
       return arr.sort((a, b) => {
         if(a[prop] < b[prop]) {
