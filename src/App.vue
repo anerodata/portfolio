@@ -14,11 +14,15 @@
   </div>
 </template>
 <script>
-
+import { mapActions } from 'vuex'
 export default {
   name: 'App',
   mounted() {
-    this.$store.dispatch('fetchItems')
+    this.fetchItems()
+  },
+  
+  methods: {
+    ...mapActions(['fetchItems'])
   }
 }
 </script>

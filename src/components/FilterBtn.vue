@@ -1,7 +1,7 @@
 <template>
 	<div class="filter-container">
     <div class="filter-btn-container">
-      <button class="filter-btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(/ /g, '-'), { clicked: clicked(org) }]" v-on:click="filterItems(org)">
+      <button class="filter-btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(/ /g, '-'), { clicked: clicked(org) }]" v-on:click="filterHandler(org)">
         {{ org.name }}
       </button>
     </div>
@@ -16,6 +16,7 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
 export default {
 	name: 'FilterBtn',
   props: {
@@ -24,11 +25,13 @@ export default {
   },
 
 	methods: {
-    filterItems(org) {
+    ...mapActions(['filterItems']),
+    
+    filterHandler(org) {
       if (org['name'] === this.selectedOrg) {
-        this.$store.dispatch('filterItems', 'all')
+        this.filterItems('all')
       } else {
-        this.$store.dispatch('filterItems', org.name)
+        this.filterItems(org.name)
       }
     },
 

@@ -19,7 +19,7 @@ import Header from './../components/Header.vue'
 import Treemap from './../components/Treemap.vue'
 import FilterBtn from './../components/FilterBtn.vue'
 import Items from './../components/Items.vue'
-
+import { mapGetters } from 'vuex'
 export default {
   name: 'Home',
   components: {
@@ -29,18 +29,7 @@ export default {
     Items
   },
   computed: {
-    items() {
-      return this.$store.state.items
-    },
-    treemapData() {
-      return this.$store.state.treemapData
-    },
-    orgs() {
-      return this.$store.state.orgs
-    },
-    selectedOrg() {
-      return this.$store.state.selectedOrg
-    }
+    ...mapGetters(['items', 'treemapData', 'orgs', 'selectedOrg'])
   }
 }
 </script>

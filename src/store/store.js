@@ -18,6 +18,20 @@ export const store = new Vuex.Store({
 		// Current orgs
 		selectedOrg: 'all'
 	},
+	getters: {
+		items: (state) => {
+			return state.items
+		},
+		treemapData: (state) => {
+			return state.treemapData
+		},
+		orgs: (state) => {
+			return state.orgs
+		},
+		selectedOrg: (state) => {
+			return state.selectedOrg
+		}
+	},
 	mutations: {
 		fetchItems: (state, response) => {
 			state.allItems = response
@@ -97,7 +111,7 @@ export const store = new Vuex.Store({
 					context.commit('setTreemapData')
     			})
     	},
-    	
+
     	filterItems: (context, payload) => {
     		context.commit('filterItems', payload)
     	}
