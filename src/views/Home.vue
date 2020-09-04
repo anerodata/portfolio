@@ -29,7 +29,7 @@ import Header from './../components/Header.vue'
 import Treemap from './../components/Treemap.vue'
 import FilterBtn from './../components/FilterBtn.vue'
 import Items from './../components/Items.vue'
-import { json } from 'd3-fetch'
+
 export default {
   name: 'Home',
   components: {
@@ -55,16 +55,24 @@ export default {
         ],
       noSelectedOrgs: [],
       selectedOrg: 'all',
-      items: [],
+
       treemapData: {}
     }
   },
   mounted() {
-    json('https://raw.githubusercontent.com/anerodata/portfolio/master/src/data/data.json')
-      .then(data => {
-        this.items = data
+    console.log(this.treemapData)
+  },
+  computed: {
+    items() {
+      return this.$store.state.items
+    }
+  },
+  watch: {
+    items: function() {    
+      if (this.items.length > 0) {
         this.treemapData = this.setTreemapData()
-      })
+      }
+    }
   },
   methods: {
     filterOrg(orgValue) {
