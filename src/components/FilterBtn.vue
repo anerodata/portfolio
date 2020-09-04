@@ -18,14 +18,9 @@
 <script>
 export default {
 	name: 'FilterBtn',
-  computed: {
-    orgs() {
-      return this.$store.state.orgs
-    },
-
-    selectedOrg() {
-      return this.$store.state.selectedOrg
-    }
+  props: {
+    orgs: Array,
+    selectedOrg: String
   },
 
 	methods: {
@@ -36,7 +31,7 @@ export default {
         this.$store.dispatch('filterItems', org.name)
       }
     },
-    
+
     clicked(org) {
       return org.name === this.selectedOrg
     }

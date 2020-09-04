@@ -5,14 +5,12 @@
       <Treemap :data="treemapData"/>
     </div>
     <section class="router-container">
-      <FilterBtn/>
+      <FilterBtn :orgs="orgs" :selectedOrg="selectedOrg"/>
       <router-link to="/about" class="router-link desktop">
         About
       </router-link>
     </section>
-    <Items 
-      :items="items"
-      />
+    <Items :items="items"/>
   </div>
 </template>
 
@@ -34,9 +32,14 @@ export default {
     items() {
       return this.$store.state.items
     },
-    
     treemapData() {
       return this.$store.state.treemapData
+    },
+    orgs() {
+      return this.$store.state.orgs
+    },
+    selectedOrg() {
+      return this.$store.state.selectedOrg
     }
   }
 }
