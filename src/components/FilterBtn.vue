@@ -24,14 +24,25 @@ export default {
     selectedOrg: String
   },
 
+  data() {
+    return {
+      payload: {
+        key: 'organización',
+        value: ''
+      }
+    }
+  },
+
 	methods: {
     ...mapActions(['filterItems']),
-    
+
     filterHandler(org) {
       if (org['name'] === this.selectedOrg) {
-        this.filterItems('all')
+        this.payload.value = 'all'
+        this.filterItems(this.payload)
       } else {
-        this.filterItems(org.name)
+        this.payload.value = org.name
+        this.filterItems(this.payload)
       }
     },
 
