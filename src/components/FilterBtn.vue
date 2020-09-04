@@ -22,10 +22,12 @@ export default {
     orgs() {
       return this.$store.state.orgs
     },
+
     selectedOrg() {
       return this.$store.state.selectedOrg
     }
   },
+
 	methods: {
     filterItems(org) {
       if (org['name'] === this.selectedOrg) {
@@ -34,6 +36,7 @@ export default {
         this.$store.dispatch('filterItems', org.name)
       }
     },
+    
     clicked(org) {
       return org.name === this.selectedOrg
     }

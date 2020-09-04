@@ -11,6 +11,7 @@ export default {
   props: {
     data: Object
   },
+
   data() {
     return {
       id: 'chart',
@@ -29,8 +30,16 @@ export default {
   },
 
   watch: {
+    // First load
     data() {
-      return this.init()
+      this.init()
+    }
+  },
+
+  mounted() {
+    // Load when the user returns from another page (about)
+    if (this.data.children) {
+      this.init()
     }
   },
   

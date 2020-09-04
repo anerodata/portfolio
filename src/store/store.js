@@ -23,6 +23,7 @@ export const store = new Vuex.Store({
 			state.allItems = response
 			state.items = state.allItems
 		},
+
 		filterItems: (state, payload) => {
 			state.selectedOrg = payload
 			if (payload === 'all') {
@@ -37,6 +38,7 @@ export const store = new Vuex.Store({
 				})
 			}
 		},
+
 		setTreemapData(state) {
 			const res = state.items.reduce((acc, obj) => {
 			// Loop in library array
@@ -72,7 +74,6 @@ export const store = new Vuex.Store({
        			})
 		        return acc
 		    }, { name: 'all', children: [] })
-
 			res.children = sortArr(res.children, 'sum')
 			res.children.forEach(child => { sortArr(child.children, 'value') })
 			function sortArr(arr, prop) {
@@ -87,6 +88,7 @@ export const store = new Vuex.Store({
 			state.treemapData = res
 		}
 	},
+
     actions: {
     	fetchItems(context) {
     		json('https://raw.githubusercontent.com/anerodata/portfolio/master/src/data/data.json')
@@ -95,6 +97,7 @@ export const store = new Vuex.Store({
 					context.commit('setTreemapData')
     			})
     	},
+    	
     	filterItems: (context, payload) => {
     		context.commit('filterItems', payload)
     	}

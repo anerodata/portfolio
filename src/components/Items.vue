@@ -12,7 +12,7 @@ export default {
   components: {
     Item
   },
-
+  
   props: {
     items: Array
   },

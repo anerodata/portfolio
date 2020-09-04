@@ -34,8 +34,8 @@ export default {
     items() {
       return this.$store.state.items
     },
+    
     treemapData() {
-      console.log(this.$store.state.treemapData)
       return this.$store.state.treemapData
     }
   }
