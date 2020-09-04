@@ -18,6 +18,10 @@ export const store = new Vuex.Store({
 		filterItems: (state, payload) => {
 			if (payload === 'all') {
 				state.items = state.allItems
+			} else if(payload === 'Otros') {
+				state.items = state.allItems.filter(d => {
+					return d['organización'] !== 'El Confidencial' && d['organización'] !== 'Civio'
+				})
 			} else {
 				state.items = state.allItems.filter(d => {
 					return d['organización'] === payload
