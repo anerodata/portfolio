@@ -1,14 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { json } from 'd3-fetch'
+import { ORGS } from './../data/variables.js'
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
 	state: {
+		// Items
 		allItems: [],
-		// Filtered version
-		items: []
+		// Filtered items
+		items: [],
+		// Orgs
+		orgs: ORGS,
+		// Current orgs
+		selectedOrg: 'all'
 	},
 	mutations: {
 		fetchItems: (state, response) => {
@@ -16,6 +22,7 @@ export const store = new Vuex.Store({
 			state.items = state.allItems
 		},
 		filterItems: (state, payload) => {
+			state.selectedOrg = payload
 			if (payload === 'all') {
 				state.items = state.allItems
 			} else if(payload === 'Otros') {

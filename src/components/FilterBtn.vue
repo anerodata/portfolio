@@ -16,22 +16,21 @@
   </div>
 </template>
 <script>
-import { ORGS } from './../data/variables.js'
 export default {
 	name: 'FilterBtn',
-  data() {
-    return {
-      selectedOrg: 'all',
-      orgs: ORGS
+  computed: {
+    orgs() {
+      return this.$store.state.orgs
+    },
+    selectedOrg() {
+      return this.$store.state.selectedOrg
     }
   },
 	methods: {
     filterItems(org) {
       if (org['name'] === this.selectedOrg) {
-        this.selectedOrg = 'all'
         this.$store.dispatch('filterItems', 'all')
       } else {
-        this.selectedOrg = org.name
         this.$store.dispatch('filterItems', org.name)
       }
     },
