@@ -265,19 +265,19 @@ export default {
     redraw() {
       this.dimensions()
       this.treemapLayout()
-      d3.select('.rects')
+      this.svg.select('.rects')
         .selectAll('rect')
         .call(rects => {
           return this.drawRects(rects)
         })
 
-      d3.select('.labels')
+      this.svg.select('.labels')
         .selectAll('text')
         .call(texts => {
           return this.drawTexts(texts)
         })
 
-      d3.select('.labelContainers')
+      this.svg.select('.labelContainers')
         .selectAll('rect')
         .call(containers => {
           return this.drawLabelContainers(containers)

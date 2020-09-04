@@ -4,23 +4,16 @@
       <Header/>
       <Treemap :data="treemapData"/>
     </div>
-    <section class="filter-router-container">
-      <FilterBtn :orgs="orgs" :selectedOrg="selectedOrg"/>
-      <p v-show="this.selectedOrg !== 'all'" class="user-msg responsive">
-        Pulsa sobre <span :class="selectedOrg.replace(/ /g, '-')" >{{ this.selectedOrg }}</span> de nuevo para volver a mostrar el resto de trabajos
-      </p>
+    <section class="router-container">
+      <FilterBtn :orgs="orgs"/>
       <router-link to="/about" class="router-link desktop">
         About
       </router-link>
     </section>
-    <p v-show="this.selectedOrg !== 'all'" class="user-msg desktop">
-      Pulsa sobre <span :class="selectedOrg.replace(/ /g, '-')" >{{ this.selectedOrg }}</span> de nuevo para volver a mostrar el resto de trabajos
-    </p>
     <Items 
       :items="items"
       :orgs="orgs"
-      :noSelectedOrgs="noSelectedOrgs"
-      :selectedOrg="selectedOrg"/>
+      />
   </div>
 </template>
 
@@ -53,14 +46,9 @@ export default {
             name: 'Otros'
           }
         ],
-      noSelectedOrgs: [],
-      selectedOrg: 'all',
 
       treemapData: {}
     }
-  },
-  mounted() {
-    console.log(this.treemapData)
   },
   computed: {
     items() {
@@ -70,6 +58,7 @@ export default {
   watch: {
     items: function() {    
       if (this.items.length > 0) {
+        console.log(this.setTreemapData())
         this.treemapData = this.setTreemapData()
       }
     }
@@ -130,53 +119,23 @@ export default {
 }
 </script>
 <style scoped>
-  .filter-router-container {
+  .router-container {
     display: flex;
     justify-content: space-between;
     margin: 15px 22px 7px 22px;
   }
 
-  .user-msg {
-    max-width: 700px;
-    margin: 15px 0 5px 22px;
-    font-size: 0.9em;
-  }
-
-  .user-msg.responsive {
-    display: none;
-  }
-
-  span.Otros {
-    color: rgb(255, 216, 102);
-  }
-
-  span.Civio {
-    color: rgb(169, 220, 118);
-  }
-
-  span.El-Confidencial {
-    color: rgb(120, 220, 232);
-  }
-
   @media only screen and (max-width: 1000px) {
-    .filter-router-container {
+    .router-container {
       display: block;
       margin: 15px 2px 7px 2px;
     }
 
-    .filter-router-container .router-link {
+    .router-container .router-link {
       width: 100%;
       display: block;
       text-align: center;
       margin-top: 12px;
-    }
-
-    .user-msg.responsive {
-      display: block;
-    }
-
-    .user-msg.desktop {
-      display: none;
     }
   }
 </style>

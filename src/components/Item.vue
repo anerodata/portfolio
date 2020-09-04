@@ -45,7 +45,6 @@ export default {
   },
 
   computed: {
-
     itemClass() {
       return this.item.organización.replace(' ', '-')
     },

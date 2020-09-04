@@ -1,7 +1,7 @@
 <template>
  <div class="body-container">
   <div class="items-container">
-    <Item :item="item" :noSelectedOrgs="noSelectedOrgs" :selectedOrg="selectedOrg" v-for="(item, index) in sortedItems" :key="index"/>
+    <Item :item="item" v-for="(item, index) in sortedItems" :key="index"/>
   </div>
  </div>
 </template>
@@ -15,8 +15,6 @@ export default {
 
   props: {
     items: Array,
-    noSelectedOrgs: Array,
-    selectedOrg: String,
     orgs: Array
   },
 
