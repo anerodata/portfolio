@@ -30,13 +30,13 @@ export const store = new Vuex.Store({
 		orgs: (state) => {
 			return state.orgs
 		},
-		
+
 		filter: (state) => {
 			return state.filter
 		}
 	},
 	mutations: {
-		fetchItems: (state, response) => {
+		setItems: (state, response) => {
 			state.allItems = response
 			state.items = state.allItems
 		},
@@ -120,7 +120,7 @@ export const store = new Vuex.Store({
     	fetchItems(context) {
     		json('https://raw.githubusercontent.com/anerodata/portfolio/master/src/data/data.json')
     			.then(response => {
-    				context.commit('fetchItems', response)	
+    				context.commit('setItems', response)	
 					context.commit('setTreemapData')
     			})
     	},
