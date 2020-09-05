@@ -32,9 +32,7 @@ moment.locale('es')
 export default {
 	name: 'Item',
 	props: {
-    item: Object,
-    noSelectedOrgs: Array,
-    selectedOrg: String
+    item: Object
   },
   
   data() {
