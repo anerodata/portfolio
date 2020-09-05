@@ -181,13 +181,25 @@ export default {
         .attr('id', (d) => 'text-'+d.data.name)
         .attr('class', (d) => d.data.name)
         .attr('x', d => {
-          return d.x0 + (d.x1 - d.x0) / 2 - 6
+          console.log(d)
+          return d.x0 + (d.x1 - d.x0) / 2
         })
         .attr('y', d => {
           return d.y1 / 2
         })
         .text(d => {
           return `${this.labels[d.data.name]}: ${d.value}`
+        })
+      // Adjusting text position based on its width
+      texts
+        .attr('x', d => {
+          return d3.select('.labels')
+                    .select('#text-'+d.data.name).node()
+                    .getBBox().x - 
+
+                    d3.select('.labels')
+                    .select('#text-'+d.data.name).node()
+                    .getBBox().width / 2
         })
     },
 
