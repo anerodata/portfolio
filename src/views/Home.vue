@@ -10,7 +10,7 @@
         About
       </router-link>
     </section>
-    <Items :items="items"/>
+    <Items :items="items" :filter="filter"/>
   </div>
 </template>
 
