@@ -19,7 +19,7 @@
   		</a>
   		<div>
   			<div class="item-package">
-  				<span v-for="(biblioteca, index) in item.biblioteca" :key="index" :class="bibliotecaLang(biblioteca)" @click="filterHandler(biblioteca)">
+  				<span v-for="(biblioteca, index) in item.biblioteca" :key="index" :class="bibliotecaLang(biblioteca)">
   					{{ biblioteca }}
   				</span>
   			</div>
@@ -27,24 +27,20 @@
 	</article>
 </template>
 <script>
-import { mapActions } from 'vuex'
 import moment from 'moment'
 moment.locale('es')
 export default {
 	name: 'Item',
 	props: {
     item: Object,
-    filter: String
+    noSelectedOrgs: Array,
+    selectedOrg: String
   },
   
   data() {
     return {
       imgLoaded: false,
-      imgHeight: 0,
-      payload: {
-        key: 'biblioteca',
-        value: ''
-      }
+      imgHeight: 0
     }
   },
 
@@ -71,7 +67,6 @@ export default {
   },
 
   methods: {
-    ...mapActions(['filterItems']),
     // Set library class for every span
     bibliotecaLang(biblioteca) {
       if (biblioteca.split('.')[1] !== undefined) {
@@ -101,18 +96,6 @@ export default {
       } else {
         return el.parentNode.clientWidth * 245 / 1180
       }
-    },
-
-    filterHandler(biblioteca) {
-      console.log(biblioteca, this.filter)
-      if (biblioteca === this.filter) {
-        this.payload.value = 'all'
-        this.filterItems(this.payload)
-      } else {
-        this.payload.value = biblioteca
-        this.filterItems(this.payload)
-      }
-    
     }
   }
 }
@@ -186,12 +169,7 @@ export default {
 		margin: 10px 3px;
 		display: inline-block;
 		background: #272822;
-    cursor: pointer;
 	}
-
-  .item-package span:hover {
-    opacity: 0.5;
-  }
 
   .item.not-visible {
     display: none;

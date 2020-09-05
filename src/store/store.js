@@ -46,7 +46,6 @@ export const store = new Vuex.Store({
 		},
 
 		filterItems: (state, payload) => {
-			console.log(state.filter)
 			if (state.filter === 'all') {
 				state.items = state.allItems
 			} else if(state.filter === 'Otros') {
