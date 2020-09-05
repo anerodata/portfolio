@@ -93,7 +93,7 @@ export default {
 
   .user-msg {
     max-width: 700px;
-    margin: 15px 0 5px 22px;
+    margin: 15px 0 0px 5px;
     font-size: 0.9em;
   }
 
