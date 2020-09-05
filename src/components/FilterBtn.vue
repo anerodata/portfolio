@@ -6,10 +6,7 @@
       </button>
     </div>
     <div>
-      <p v-show="this.filter !== 'all'" class="user-msg responsive">
-        Pulsa sobre <span :class="filter.replace(/ /g, '-')" >{{ this.filter }}</span> de nuevo para volver a mostrar el resto de trabajos
-      </p>
-      <p v-show="this.filter !== 'all'" class="user-msg desktop">
+      <p v-show="this.filter !== 'all'" class="user-msg">
         Pulsa sobre <span :class="filter.replace(/ /g, '-')" >{{ this.filter }}</span> de nuevo para volver a mostrar el resto de trabajos
       </p>
     </div>
@@ -92,13 +89,8 @@ export default {
   }
 
   .user-msg {
-    max-width: 700px;
     margin: 15px 0 0px 5px;
     font-size: 0.9em;
-  }
-
-  .user-msg.responsive {
-    display: none;
   }
 
   span.Otros {
@@ -114,17 +106,12 @@ export default {
   }
 
   @media only screen and (max-width: 1000px) {
-    .filter-container {
-      justify-content: center;
+    .filter-btn-container {
       max-width: 100%;
+      justify-content: center;
     }
-
-    .user-msg.responsive {
-      display: block;
-    }
-
-    .user-msg.desktop {
-      display: none;
+    .user-msg {
+      text-align: center;
     }
   } 
 </style>
