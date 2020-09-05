@@ -16,7 +16,7 @@ export const store = new Vuex.Store({
 		// Orgs
 		orgs: ORGS,
 		// Current orgs
-		selectedOrg: 'all'
+		selectedFilter: 'all'
 	},
 	getters: {
 		items: (state) => {
@@ -28,8 +28,8 @@ export const store = new Vuex.Store({
 		orgs: (state) => {
 			return state.orgs
 		},
-		selectedOrg: (state) => {
-			return state.selectedOrg
+		selectedFilter: (state) => {
+			return state.selectedFilter
 		}
 	},
 	mutations: {
@@ -39,10 +39,10 @@ export const store = new Vuex.Store({
 		},
 
 		filterItems: (state, payload) => {
-			state.selectedOrg = payload.value
-			if (state.selectedOrg === 'all') {
+			state.selectedFilter = payload.value
+			if (state.selectedFilter === 'all') {
 				state.items = state.allItems
-			} else if(state.selectedOrg === 'Otros') {
+			} else if(state.selectedFilter === 'Otros') {
 				state.items = state.allItems.filter(item => {
 					let b = true
 					for(let i in state.orgs) {

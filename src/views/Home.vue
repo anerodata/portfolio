@@ -5,7 +5,7 @@
       <Treemap :data="treemapData"/>
     </div>
     <section class="router-container">
-      <FilterBtn :orgs="orgs" :selectedOrg="selectedOrg"/>
+      <FilterBtn :orgs="orgs" :selectedFilter="selectedFilter"/>
       <router-link to="/about" class="router-link desktop">
         About
       </router-link>
@@ -29,7 +29,7 @@ export default {
     Items
   },
   computed: {
-    ...mapGetters(['items', 'treemapData', 'orgs', 'selectedOrg'])
+    ...mapGetters(['items', 'treemapData', 'orgs', 'selectedFilter'])
   }
 }
 </script>
