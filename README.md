@@ -41,9 +41,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 7. ```git subtree push --prefix dist origin gh-pages```
 
-8. Don't commit ```.gitignore``` changes
+8. ```git push```
 
-9. Comment in ```.gitignore``` the ```/dist``` folder.
+9. Don't commit ```.gitignore``` changes
+
+10. Comment in ```.gitignore``` the ```/dist``` folder.
 
 ```
 npm run build
