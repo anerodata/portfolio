@@ -181,7 +181,6 @@ export default {
         .attr('id', (d) => 'text-'+d.data.name)
         .attr('class', (d) => d.data.name)
         .attr('x', d => {
-          console.log(d)
           return d.x0 + (d.x1 - d.x0) / 2
         })
         .attr('y', d => {
