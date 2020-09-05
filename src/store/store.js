@@ -16,20 +16,23 @@ export const store = new Vuex.Store({
 		// Orgs
 		orgs: ORGS,
 		// Current orgs
-		selectedFilter: 'all'
+		filter: 'all'
 	},
 	getters: {
 		items: (state) => {
 			return state.items
 		},
+
 		treemapData: (state) => {
 			return state.treemapData
 		},
+
 		orgs: (state) => {
 			return state.orgs
 		},
-		selectedFilter: (state) => {
-			return state.selectedFilter
+		
+		filter: (state) => {
+			return state.filter
 		}
 	},
 	mutations: {
@@ -38,11 +41,14 @@ export const store = new Vuex.Store({
 			state.items = state.allItems
 		},
 
+		setFilter: (state, payload) => {
+			state.filter = payload.value
+		},
+
 		filterItems: (state, payload) => {
-			state.selectedFilter = payload.value
-			if (state.selectedFilter === 'all') {
+			if (state.filter === 'all') {
 				state.items = state.allItems
-			} else if(state.selectedFilter === 'Otros') {
+			} else if(state.filter === 'Otros') {
 				state.items = state.allItems.filter(item => {
 					let b = true
 					for(let i in state.orgs) {
@@ -120,6 +126,7 @@ export const store = new Vuex.Store({
     	},
 
     	filterItems: (context, payload) => {
+    		context.commit('setFilter', payload)
     		context.commit('filterItems', payload)
     	}
     }

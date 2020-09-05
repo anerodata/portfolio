@@ -6,11 +6,11 @@
       </button>
     </div>
     <div>
-      <p v-show="this.selectedFilter !== 'all'" class="user-msg responsive">
-        Pulsa sobre <span :class="selectedFilter.replace(/ /g, '-')" >{{ this.selectedFilter }}</span> de nuevo para volver a mostrar el resto de trabajos
+      <p v-show="this.filter !== 'all'" class="user-msg responsive">
+        Pulsa sobre <span :class="filter.replace(/ /g, '-')" >{{ this.filter }}</span> de nuevo para volver a mostrar el resto de trabajos
       </p>
-      <p v-show="this.selectedFilter !== 'all'" class="user-msg desktop">
-        Pulsa sobre <span :class="selectedFilter.replace(/ /g, '-')" >{{ this.selectedFilter }}</span> de nuevo para volver a mostrar el resto de trabajos
+      <p v-show="this.filter !== 'all'" class="user-msg desktop">
+        Pulsa sobre <span :class="filter.replace(/ /g, '-')" >{{ this.filter }}</span> de nuevo para volver a mostrar el resto de trabajos
       </p>
     </div>
   </div>
@@ -21,7 +21,7 @@ export default {
 	name: 'FilterBtn',
   props: {
     orgs: Array,
-    selectedFilter: String
+    filter: String
   },
 
   data() {
@@ -37,7 +37,7 @@ export default {
     ...mapActions(['filterItems']),
 
     filterHandler(org) {
-      if (org['name'] === this.selectedFilter) {
+      if (org['name'] === this.filter) {
         this.payload.value = 'all'
         this.filterItems(this.payload)
       } else {
@@ -47,7 +47,7 @@ export default {
     },
 
     clicked(org) {
-      return org.name === this.selectedFilter
+      return org.name === this.filter
     }
 	},
 }
