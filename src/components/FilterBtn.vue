@@ -7,7 +7,7 @@
     </div>
     <div>
       <p v-show="this.filter !== 'all'" class="user-msg">
-        Pulsa sobre <span :class="filter.replace(/ /g, '-')" >{{ this.filter }}</span> de nuevo para volver a mostrar el resto de trabajos
+        Pulsa sobre <span :class="filter.replace(/ /g, '-')" v-on:click="filterHandler({ name: filter })">{{ this.filter }}</span> de nuevo para volver a mostrar el resto de trabajos
       </p>
     </div>
   </div>
@@ -91,6 +91,16 @@ export default {
   .user-msg {
     margin: 15px 0 0px 5px;
     font-size: 0.9em;
+  }
+
+  .user-msg span {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .user-msg span:hover {
+    opacity: 0.7;
+    text-decoration: none;
   }
 
   span.Otros {
