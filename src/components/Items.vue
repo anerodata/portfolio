@@ -1,7 +1,7 @@
 <template>
  <div class="body-container">
   <div class="items-container">
-    <Item :item="item" :filter="filter" v-for="(item, index) in sortedItems" :key="index"/>
+    <Item :item="item" v-for="(item, index) in sortedItems" :key="index"/>
   </div>
  </div>
 </template>
@@ -14,8 +14,7 @@ export default {
   },
   
   props: {
-    items: Array,
-    filter: String
+    items: Array
   },
 
   computed: {
