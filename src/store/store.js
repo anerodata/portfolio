@@ -66,7 +66,7 @@ export const store = new Vuex.Store({
 			}
 		},
 
-		setTreemapData(state) {
+		setTreemapData: (state) => {
 			const res = state.items.reduce((acc, obj) => {
 			// Loop in library array
 				obj.biblioteca.forEach((bib) => {
@@ -117,7 +117,7 @@ export const store = new Vuex.Store({
 	},
 
     actions: {
-    	fetchItems(context) {
+    	fetchItems: (context) => {
     		json('https://raw.githubusercontent.com/anerodata/portfolio/master/src/data/data.json')
     			.then(response => {
     				context.commit('setItems', response)	
