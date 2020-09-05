@@ -52,4 +52,5 @@ echo 'anerodata.com' > dist/CNAME
 git add dist/
 git commit -m "Building for production"
 git subtree push --prefix dist origin gh-pages
+git push
 ```
