@@ -1,13 +1,13 @@
 <template>
 	<div class="filter-container">
     <div class="filter-btn-container">
-      <button class="filter-btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(/ /g, '-'), { clicked: clicked(org) }]" v-on:click="filterHandler(org)">
+      <button class="filter-btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(/ /g, '-'), { clicked: clicked(org.name) }]" v-on:click="filterHandler(org.name)">
         {{ org.name }}
       </button>
     </div>
     <div>
       <p v-show="this.filter !== 'all'" class="user-msg">
-        Pulsa sobre <span :class="filter.replace(/ /g, '-')" v-on:click="filterHandler({ name: filter })">{{ this.filter }}</span> de nuevo para volver a mostrar el resto de trabajos
+        Pulsa sobre <span :class="filter.replace(/ /g, '-')" v-on:click="filterHandler(filter)">{{ this.filter }}</span> de nuevo para volver a mostrar el resto de trabajos
       </p>
     </div>
   </div>
@@ -33,18 +33,18 @@ export default {
 	methods: {
     ...mapActions(['filterItems']),
 
-    filterHandler(org) {
-      if (org['name'] === this.filter) {
+    filterHandler(orgName) {
+      if (orgName === this.filter) {
         this.payload.value = 'all'
         this.filterItems(this.payload)
       } else {
-        this.payload.value = org.name
+        this.payload.value = orgName
         this.filterItems(this.payload)
       }
     },
 
-    clicked(org) {
-      return org.name === this.filter
+    clicked(orgName) {
+      return orgName === this.filter
     }
 	},
 }
