@@ -52,7 +52,7 @@ export const store = new Vuex.Store({
 				state.items = state.allItems.filter(item => {
 					let b = true
 					for(let i in state.orgs) {
-						if (item[payload.key] === state.orgs[i].name) {
+						if (item[payload.key] === state.orgs[i]) {
 							b = false
 							break
 						}

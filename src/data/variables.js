@@ -1,13 +1,1 @@
-export const ORGS = [
-  {
-    "name": "El Confidencial"
-  },
-
-  {
-    "name": "Civio"
-  },
-
-  {
-    "name": "Otros"
-  }
-]
+export const ORGS = [ "El Confidencial", "Civio", "Otros" ]

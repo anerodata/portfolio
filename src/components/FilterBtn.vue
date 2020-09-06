@@ -1,8 +1,8 @@
 <template>
 	<div class="filter-container">
     <div class="filter-btn-container">
-      <button class="filter-btn" v-for="org in orgs" :key="org.value" :class="[org.name.replace(/ /g, '-'), { clicked: clicked(org.name) }]" v-on:click="filterHandler(org.name)">
-        {{ org.name }}
+      <button class="filter-btn" v-for="org in orgs" :key="org" :class="[org.replace(/ /g, '-'), { clicked: clicked(org) }]" v-on:click="filterHandler(org)">
+        {{ org }}
       </button>
     </div>
     <div>
@@ -33,18 +33,18 @@ export default {
 	methods: {
     ...mapActions(['filterItems']),
 
-    filterHandler(orgName) {
-      if (orgName === this.filter) {
+    filterHandler(org) {
+      if (org === this.filter) {
         this.payload.value = 'all'
         this.filterItems(this.payload)
       } else {
-        this.payload.value = orgName
+        this.payload.value = org
         this.filterItems(this.payload)
       }
     },
 
-    clicked(orgName) {
-      return orgName === this.filter
+    clicked(org) {
+      return org === this.filter
     }
 	},
 }
