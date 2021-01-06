@@ -421,5 +421,14 @@
 		"organización": "Civio",
 		"descripción": ["visualización interactiva", "gráfico"],
 		"id": "45"
+	},
+	{
+		"titulo": "Wikisearcher",
+		"fecha": "2017-04-06",
+		"url": "https://anerodata.github.io/wikisearcher/",
+		"biblioteca": ["jquery.js"],
+		"organización": "Antonio",
+		"descripción": ["buscador"],
+		"id": "46"
 	}
 ]
