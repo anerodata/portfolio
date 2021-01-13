@@ -16,6 +16,7 @@
     "express": "*",
     "moment": "^2.26.0",
     "node-forge": "^0.10.0",
+    "serialize-javascript": "^5.0.1",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"
