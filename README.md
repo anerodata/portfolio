@@ -3,6 +3,8 @@
 - [Standalone](http://www.anerodata.com)
 
 ## Project setup
+
+### Install `npm`
 ```
 $ npm install
 ```
