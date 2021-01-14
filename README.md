@@ -27,6 +27,7 @@ $ npm run lint
 ```
 $ git push heroku master
 ```
+Push and deploy is made at the same time. The proccess is documented in [this article](https://www.binarcode.com/blog/deploying-vue-apps-to-heroku-the-right-way/).
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
