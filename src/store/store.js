@@ -118,7 +118,7 @@ export const store = new Vuex.Store({
 
     actions: {
     	fetchItems: (context) => {
-    		json('https://raw.githubusercontent.com/anerodata/portfolio/master/src/data/data.json')
+    		json('https://raw.githubusercontent.com/anerodata/datasets/main/portfolio/data.json')
     			.then(response => {
     				context.commit('setItems', response)	
 					context.commit('setTreemapData')
