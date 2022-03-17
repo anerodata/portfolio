@@ -13,7 +13,7 @@
     "core-js": "^3.6.4",
     "d3": "^5.15.1",
     "d3-fetch": "^1.1.2",
-    "express": "*",
+    "express": "^4.17.1",
     "highlight.js": "^10.5.0",
     "moment": "^2.26.0",
     "node-forge": "^0.10.0",
