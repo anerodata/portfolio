@@ -120,7 +120,7 @@ export const store = new Vuex.Store({
     fetchItems: (context) => {
       json('https://raw.githubusercontent.com/anerodata/portfolio/master/src/data/assignments.json')
         .then(response => {
-          context.commit('setItems', response)	
+          context.commit('setItems', response)
           context.commit('setTreemapData')
         })
     },
