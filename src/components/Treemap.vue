@@ -42,7 +42,7 @@ export default {
       this.init()
     }
   },
-  
+
   methods: {
     init() {
       this.svg = d3.select(`#${this.id}`)
@@ -53,7 +53,7 @@ export default {
       this.createTreemap()
       window.addEventListener('resize', this.redraw);
     },
-    
+
     dimensions() {
       let chartPercentWidth = null
       if (window.innerWidth > 1000) {
@@ -68,10 +68,10 @@ export default {
         .parentNode
         .clientWidth * chartPercentWidth / 100
 
-      this.height = 80
-      this.svg
-        .attr('width', this.width)
-        .attr('height', this.height)
+        this.height = 80
+        this.svg
+          .attr('width', this.width)
+          .attr('height', this.height)
     },
 
     treemapRootData() {
@@ -87,7 +87,7 @@ export default {
         .paddingInner(5)
         .paddingOuter(0)
 
-      treemapLayout(this.root)
+        treemapLayout(this.root)
     },
 
     bones() {
@@ -95,15 +95,15 @@ export default {
         .append('g')
         .attr('class', 'rects')
 
-      this.svg
-        .append('g')
-        .attr('class', 'labelContainers')
-        .attr('opacity', 1)
+        this.svg
+          .append('g')
+          .attr('class', 'labelContainers')
+          .attr('opacity', 1)
 
-      this.svg
-        .append('g')
-        .attr('class', 'labels')
-        .attr('opacity', 1)
+          this.svg
+            .append('g')
+            .attr('class', 'labels')
+            .attr('opacity', 1)
     },
 
     createTreemap() {
@@ -132,33 +132,33 @@ export default {
           this.hidTooltip()
         })
 
-      this.svg
+        this.svg
           .on('mouseover', () => this.hidLabels())
 
-      this.svg
-          .on('mouseout', () => this.showLabels())
+          this.svg
+            .on('mouseout', () => this.showLabels())
 
-      this.svg
-        .select('.labels')
-        .selectAll('text')
-        .data(this.root.descendants())
-        .enter()
-        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
-        .append('text')
-        .call(texts => {
-          return this.drawTexts(texts)
-        })
+            this.svg
+              .select('.labels')
+              .selectAll('text')
+              .data(this.root.descendants())
+              .enter()
+              .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
+              .append('text')
+              .call(texts => {
+                return this.drawTexts(texts)
+              })
 
-      this.svg
-        .select('.labelContainers')
-        .selectAll('rect')
-        .data(this.root.descendants())
-        .enter()
-        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
-        .append('rect')
-        .call(containers => {
-          return this.drawLabelContainers(containers)
-        })
+              this.svg
+                .select('.labelContainers')
+                .selectAll('rect')
+                .data(this.root.descendants())
+                .enter()
+                .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
+                .append('rect')
+                .call(containers => {
+                  return this.drawLabelContainers(containers)
+                })
     },
 
     drawRects(rects) {
@@ -189,40 +189,40 @@ export default {
         .text(d => {
           return `${this.labels[d.data.name]}: ${d.value}`
         })
-      // Adjusting text position based on its width
-      texts
-        .attr('x', d => {
-          return d3.select('.labels')
-                    .select('#text-'+d.data.name).node()
-                    .getBBox().x - 
+        // Adjusting text position based on its width
+        texts
+          .attr('x', d => {
+            return d3.select('.labels')
+              .select('#text-'+d.data.name).node()
+              .getBBox().x - 
 
-                    d3.select('.labels')
-                    .select('#text-'+d.data.name).node()
-                    .getBBox().width / 2
-        })
+                d3.select('.labels')
+                  .select('#text-'+d.data.name).node()
+                  .getBBox().width / 2
+          })
     },
 
     drawLabelContainers(containers) {
       containers
         .attr('x', d => {
           return d3.select('.labels')
-                    .select('#text-'+d.data.name).node()
-                    .getBBox().x - 6
+            .select('#text-'+d.data.name).node()
+            .getBBox().x - 6
         })
         .attr('y', d => {
           return d3.select('.labels')
-                    .select('#text-'+d.data.name).node()
-                    .getBBox().y - 1
+            .select('#text-'+d.data.name).node()
+            .getBBox().y - 1
         })
         .attr('width', (d) => {
           return d3.select('.labels')
-                    .select('#text-'+d.data.name).node()
-                    .getBBox().width + 11
+            .select('#text-'+d.data.name).node()
+            .getBBox().width + 11
         })
         .attr('height', (d) => {
           return d3.select('.labels')
-                    .select('#text-'+d.data.name).node()
-                    .getBBox().height + 4
+            .select('#text-'+d.data.name).node()
+            .getBBox().height + 4
         })
     },
 
@@ -231,18 +231,18 @@ export default {
         .style('display', 'block')
         .style('top', mousePos[1]-8+'px')
 
-      let xPos = null
-      if(mousePos[0] > this.width / 2) {
+        let xPos = null
+        if(mousePos[0] > this.width / 2) {
           xPos = this.width - mousePos[0]+8
           d3.select('#tooltip')
             .style('right', xPos+'px')
             .style('left', null)
-      } else {
+        } else {
           xPos = mousePos[0]+12
           d3.select('#tooltip')
             .style('left', xPos+'px')
             .style('right', null)
-      }
+        }
     },
 
     writeTooltip(d) {
@@ -260,16 +260,16 @@ export default {
       d3.select('.labelContainers')
         .attr('opacity', 0)
 
-      d3.select('.labels')
-        .attr('opacity', 0)
+        d3.select('.labels')
+          .attr('opacity', 0)
     },
 
     showLabels() {
       d3.select('.labelContainers')
         .attr('opacity', 1)
 
-      d3.select('.labels')
-        .attr('opacity', 1)
+        d3.select('.labels')
+          .attr('opacity', 1)
     },
 
     setHighClass(rect) {
@@ -291,64 +291,64 @@ export default {
           return this.drawRects(rects)
         })
 
-      this.svg.select('.labels')
-        .selectAll('text')
-        .call(texts => {
-          return this.drawTexts(texts)
-        })
+        this.svg.select('.labels')
+          .selectAll('text')
+          .call(texts => {
+            return this.drawTexts(texts)
+          })
 
-      this.svg.select('.labelContainers')
-        .selectAll('rect')
-        .call(containers => {
-          return this.drawLabelContainers(containers)
-        })
+          this.svg.select('.labelContainers')
+            .selectAll('rect')
+            .call(containers => {
+              return this.drawLabelContainers(containers)
+            })
     }
   }
 }
 </script>
 <style>
 
-  .treemap_container {
-    flex-basis: 60%;
-    position: relative;
-  }
+.treemap_container {
+  flex-basis: 60%;
+  position: relative;
+}
 
-  .parent {
-    fill: transparent;
-  }
+.parent {
+  fill: transparent;
+}
 
-  .child {
-    fill: white;
-  }
+.child {
+  fill: white;
+}
 
-  #tooltip {
-    display: none;
-    position: absolute;
-    background-color: #383838;
-    padding: 3px 7px;
-  }
-  
-  .labelContainers {
-    fill: #383838;
-  }
+#tooltip {
+  display: none;
+  position: absolute;
+  background-color: #383838;
+  padding: 3px 7px;
+}
 
-  .labelContainers, .labels, #tooltip {
-    pointer-events: none;
-  }
+.labelContainers {
+  fill: #383838;
+}
 
-  .treemap_container .child.highClass {
-    opacity: 0.9;
-  }
+.labelContainers, .labels, #tooltip {
+  pointer-events: none;
+}
 
-  .child.js, .labels .js {
-    fill: #ff6188;
-  }
+.treemap_container .child.highClass {
+  opacity: 0.9;
+}
 
-  .child.py, .labels .py{
-    fill: #ab9df2;
-  }
+.child.js, .labels .js {
+  fill: #ff6188;
+}
 
-  .child.Otras, .labels .Otras{
-    fill: #fc9867;
-  }
+.child.py, .labels .py{
+  fill: #ab9df2;
+}
+
+.child.Otras, .labels .Otras{
+  fill: #fc9867;
+}
 </style>
