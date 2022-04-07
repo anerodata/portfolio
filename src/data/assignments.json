@@ -484,5 +484,14 @@
     "organización": "El Confidencial",
     "descripción": ["web scraping"],
     "id": "52"
+  },
+  {
+    "titulo": "Al menos la mitad de los contratos de emergencia de 2020 se publicaron con retraso",
+    "fecha": "2021-03-25",
+    "url": "https://civio.es/quien-cobra-la-obra/2021/03/25/la-mitad-de-los-contratos-de-emergencia-de-2020-se-publicaron-con-retraso/",
+    "biblioteca": ["d3.js"],
+    "organización": "Civio",
+    "descripción": ["visualización estática", "gráfico"],
+    "id": "53"
   }
 ]
