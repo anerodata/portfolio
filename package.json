@@ -15,7 +15,7 @@
     "d3-fetch": "^1.1.2",
     "express": "^4.17.3",
     "highlight.js": "^10.5.0",
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "node-forge": "^1.0.0",
     "serialize-javascript": "^5.0.1",
     "vue": "^2.6.11",
