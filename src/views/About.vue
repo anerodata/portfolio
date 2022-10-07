@@ -8,7 +8,7 @@
         &larr; Home
       </router-link>
       <p>
-        Mi nombre es Antonio Hernández y soy desarrollador web en <a href="https://civio.es/"><strong>Civio</strong></a>. Anteriormente, pasé dos años y medio en la unidad de datos de <a href="https://www.elconfidencial.com/"><strong>El Confidencial</strong></a>. Desarrollo gráficos, visualizaciones y mapas interactivos. También trabajo con datos en dos fases: <i>scraping</i> y análisis.
+        Mi nombre es Antonio Hernández y soy desarrollador web en Nalanda Global. Anteriormente, pasé dos años y medio en la unidad de datos de <a href="https://www.elconfidencial.com/"><strong>El Confidencial</strong></a> y otros dos en <a href="https://civio.es/"><strong>Civio</strong></a> desarrollando gráficos, visualizaciones y mapas interactivos. También he trabajado con datos en dos fases: <i>scraping</i> y análisis.
       </p>
 
       <p>
@@ -20,10 +20,10 @@
       </p>
 
       <p>
-        Me interesa todo lo relacionado con la <strong>programación</strong> y la web. No obstante, siento predilección por la <strong>visualicación de datos</strong>. Tengo bastante experiencia con <span class="lib-code">d3.js</span>, <span class="lib-code">Leaflet.js</span>, <span class="lib-code">Highcharts.js</span> y <span class="lib-code">MapboxGL.js</span>. Para el minado y <strong>análisis de datos</strong> utilizo el paquete de Python <span class="lib-code">pandas.py</span> y para hacer <i>web scraping</i>, <span class="lib-code">bs4.py</span>. Además, he realizado algunos trabajos con el <strong>sistema de información geográfica</strong> <i>open source</i> QGIS.
+        Me interesa todo lo relacionado con la <strong>programación</strong> y la web y tengo bastante experiencia con algunas librerías de <strong>visualización de datos</strong> como <span class="lib-code">d3.js</span>, <span class="lib-code">Leaflet.js</span>, <span class="lib-code">Highcharts.js</span> y <span class="lib-code">MapboxGL.js</span>. Para el minado y <strong>análisis de datos</strong> he utilizado el paquete de Python <span class="lib-code">pandas.py</span> y para hacer <i>web scraping</i>, <span class="lib-code">bs4.py</span>. Además, he realizado algunos trabajos con el <strong>sistema de información geográfica</strong> <i>open source</i> QGIS.
       </p>
       <p>
-        En cuanto a desarrollo de grandes proyectos de <i>front-end</i>, tengo algo de experiencia con el <i>framework</i> de Javascript <span class="lib-code">Vue.js</span>.
+        En cuanto a desarrollo de grandes proyectos de <i>front-end</i>, tengo experiencia con el <i>framework</i> de Javascript <span class="lib-code">Vue.js</span>.
       </p>
       <p>
         Puedes encontrarme en <a href="https://github.com/anerodata">Github</a> y <a href="https://www.linkedin.com/in/antonio-hern%C3%A1ndez-637a2a74/">Linkedin</a>.
