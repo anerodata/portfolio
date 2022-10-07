@@ -3,10 +3,10 @@
     <router-link to="/">
       <div id="header-title">
         <h1>
-          &lt;Antonio Hernández/&gt;
+          Antonio Hernández
         </h1>
         <span>
-          &lt;Periodismo de datos y desarrollo web/&gt;
+          Desarrollador front-end
         </span>
       </div>
     </router-link>
