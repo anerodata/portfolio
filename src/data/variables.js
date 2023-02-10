@@ -1,1 +1,1 @@
-export const ORGS = [ "El Confidencial", "Civio", "Otros" ]
+export const ORGS = [ 'El Confidencial', 'Civio', 'Otros' ]

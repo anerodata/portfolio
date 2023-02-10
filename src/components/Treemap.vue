@@ -51,7 +51,7 @@ export default {
       this.treemapLayout()
       this.bones()
       this.createTreemap()
-      window.addEventListener('resize', this.redraw);
+      window.addEventListener('resize', this.redraw)
     },
 
     dimensions() {
@@ -68,17 +68,17 @@ export default {
         .parentNode
         .clientWidth * chartPercentWidth / 100
 
-        this.height = 80
-        this.svg
-          .attr('width', this.width)
-          .attr('height', this.height)
+      this.height = 80
+      this.svg
+        .attr('width', this.width)
+        .attr('height', this.height)
     },
 
     treemapRootData() {
       this.root = d3.hierarchy(this.data)
       this.root.sum(function(d) {
-        return d.value;
-      });
+        return d.value
+      })
     },
 
     treemapLayout() {
@@ -87,7 +87,7 @@ export default {
         .paddingInner(5)
         .paddingOuter(0)
 
-        treemapLayout(this.root)
+      treemapLayout(this.root)
     },
 
     bones() {
@@ -95,15 +95,15 @@ export default {
         .append('g')
         .attr('class', 'rects')
 
-        this.svg
-          .append('g')
-          .attr('class', 'labelContainers')
-          .attr('opacity', 1)
+      this.svg
+        .append('g')
+        .attr('class', 'labelContainers')
+        .attr('opacity', 1)
 
-          this.svg
-            .append('g')
-            .attr('class', 'labels')
-            .attr('opacity', 1)
+      this.svg
+        .append('g')
+        .attr('class', 'labels')
+        .attr('opacity', 1)
     },
 
     createTreemap() {
@@ -132,33 +132,33 @@ export default {
           this.hidTooltip()
         })
 
-        this.svg
-          .on('mouseover', () => this.hidLabels())
+      this.svg
+        .on('mouseover', () => this.hidLabels())
 
-          this.svg
-            .on('mouseout', () => this.showLabels())
+      this.svg
+        .on('mouseout', () => this.showLabels())
 
-            this.svg
-              .select('.labels')
-              .selectAll('text')
-              .data(this.root.descendants())
-              .enter()
-              .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
-              .append('text')
-              .call(texts => {
-                return this.drawTexts(texts)
-              })
+      this.svg
+        .select('.labels')
+        .selectAll('text')
+        .data(this.root.descendants())
+        .enter()
+        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
+        .append('text')
+        .call(texts => {
+          return this.drawTexts(texts)
+        })
 
-              this.svg
-                .select('.labelContainers')
-                .selectAll('rect')
-                .data(this.root.descendants())
-                .enter()
-                .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
-                .append('rect')
-                .call(containers => {
-                  return this.drawLabelContainers(containers)
-                })
+      this.svg
+        .select('.labelContainers')
+        .selectAll('rect')
+        .data(this.root.descendants())
+        .enter()
+        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
+        .append('rect')
+        .call(containers => {
+          return this.drawLabelContainers(containers)
+        })
     },
 
     drawRects(rects) {
@@ -190,16 +190,16 @@ export default {
           return `${this.labels[d.data.name]}: ${d.value}`
         })
         // Adjusting text position based on its width
-        texts
-          .attr('x', d => {
-            return d3.select('.labels')
-              .select('#text-'+d.data.name).node()
-              .getBBox().x - 
+      texts
+        .attr('x', d => {
+          return d3.select('.labels')
+            .select('#text-'+d.data.name).node()
+            .getBBox().x - 
 
                 d3.select('.labels')
                   .select('#text-'+d.data.name).node()
                   .getBBox().width / 2
-          })
+        })
     },
 
     drawLabelContainers(containers) {
@@ -231,18 +231,18 @@ export default {
         .style('display', 'block')
         .style('top', mousePos[1]-8+'px')
 
-        let xPos = null
-        if(mousePos[0] > this.width / 2) {
-          xPos = this.width - mousePos[0]+8
-          d3.select('#tooltip')
-            .style('right', xPos+'px')
-            .style('left', null)
-        } else {
-          xPos = mousePos[0]+12
-          d3.select('#tooltip')
-            .style('left', xPos+'px')
-            .style('right', null)
-        }
+      let xPos = null
+      if(mousePos[0] > this.width / 2) {
+        xPos = this.width - mousePos[0]+8
+        d3.select('#tooltip')
+          .style('right', xPos+'px')
+          .style('left', null)
+      } else {
+        xPos = mousePos[0]+12
+        d3.select('#tooltip')
+          .style('left', xPos+'px')
+          .style('right', null)
+      }
     },
 
     writeTooltip(d) {
@@ -260,16 +260,16 @@ export default {
       d3.select('.labelContainers')
         .attr('opacity', 0)
 
-        d3.select('.labels')
-          .attr('opacity', 0)
+      d3.select('.labels')
+        .attr('opacity', 0)
     },
 
     showLabels() {
       d3.select('.labelContainers')
         .attr('opacity', 1)
 
-        d3.select('.labels')
-          .attr('opacity', 1)
+      d3.select('.labels')
+        .attr('opacity', 1)
     },
 
     setHighClass(rect) {
@@ -291,17 +291,17 @@ export default {
           return this.drawRects(rects)
         })
 
-        this.svg.select('.labels')
-          .selectAll('text')
-          .call(texts => {
-            return this.drawTexts(texts)
-          })
+      this.svg.select('.labels')
+        .selectAll('text')
+        .call(texts => {
+          return this.drawTexts(texts)
+        })
 
-          this.svg.select('.labelContainers')
-            .selectAll('rect')
-            .call(containers => {
-              return this.drawLabelContainers(containers)
-            })
+      this.svg.select('.labelContainers')
+        .selectAll('rect')
+        .call(containers => {
+          return this.drawLabelContainers(containers)
+        })
     }
   }
 }
