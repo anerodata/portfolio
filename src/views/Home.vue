@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header-container">
       <Header/>
-      <Treemap :data="treemapData"/>
+      <Treemap :data="treemapData" @filterByLibrary="filterByLibrary"/>
     </div>
     <section class="router-container">
       <FilterBtn :orgs="orgs" :filter="filter"/>
@@ -30,6 +30,11 @@ export default {
   },
   computed: {
     ...mapGetters(['items', 'treemapData', 'orgs', 'filter'])
+  },
+  methods: {
+    filterByLibrary (techonology) {
+      console.log(techonology)
+    }
   }
 }
 </script>

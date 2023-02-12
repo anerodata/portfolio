@@ -131,6 +131,9 @@ export default {
           this.removeHighClass(nodes[i])
           this.hidTooltip()
         })
+        .on('click', (d) => {
+          this.$emit('filterByLibrary', d.data.name)
+        })
 
       this.svg
         .on('mouseover', () => this.hidLabels())

@@ -16,7 +16,9 @@ export const store = new Vuex.Store({
     // Orgs
     orgs: ORGS,
     // Current orgs
-    filter: 'all'
+    filter: 'all',
+    // Current software (program or library)
+    software: 'all',
   },
   getters: {
     items: (state) => {
@@ -33,6 +35,10 @@ export const store = new Vuex.Store({
 
     filter: (state) => {
       return state.filter
+    },
+
+    software: (state) => {
+      return state.software
     }
   },
   mutations: {
@@ -46,12 +52,14 @@ export const store = new Vuex.Store({
     },
 
     filterItems: (state, payload) => {
+      console.log(state, payload.key)
       if (state.filter === 'all') {
         state.items = state.allItems
       } else if(state.filter === 'Otros') {
         state.items = state.allItems.filter(item => {
           let b = true
           for(let i in state.orgs) {
+            console.log(payload.key)
             if (item[payload.key] === state.orgs[i]) {
               b = false
               break
@@ -113,6 +121,9 @@ export const store = new Vuex.Store({
         })
       }
       state.treemapData = res
+    },
+    setSoftware: (software) => {
+      this.state.software = software
     }
   },
 
