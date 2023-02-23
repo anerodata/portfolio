@@ -118,14 +118,15 @@ export default {
         .call(rects => {
           return this.drawRects(rects)
         })
+
+      this.svg
+        .selectAll('.child')
         .on('mouseover', (d, i, nodes) => {
           this.setHighClass(nodes[i])
         })
         .on('mousemove', (d, i, nodes) => {
           this.moveTooltip(d3.mouse(nodes[i]))
-          if(d.children === undefined) {
-            this.writeTooltip(d)
-          }
+          this.writeTooltip(d)
         })
         .on('mouseout', (d, i, nodes) => {
           this.removeHighClass(nodes[i])
