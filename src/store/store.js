@@ -20,7 +20,6 @@ export const store = new Vuex.Store({
       state.items = state.allItems
     }
   },
-
   actions: {
     fetchItems: (context) => {
       json('https://raw.githubusercontent.com/anerodata/portfolio/master/src/data/assignments.json')
