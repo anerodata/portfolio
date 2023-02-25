@@ -1,6 +1,10 @@
 <template>
   <div class="treemap_container">
-    <svg id="chart" height="0"></svg>
+    <svg id="chart" height="0">
+      <g class="rects"></g>
+      <g class="labelContainers" opacity="1"></g>
+      <g class="labels" opacity="1"></g>
+    </svg>
     <div id="tooltip"></div>
   </div>
 </template>
@@ -35,14 +39,12 @@ export default {
       this.init()
     }
   },
-
   methods: {
     init() {
       this.svg = d3.select(`#${this.id}`)
       this.dimensions()
       this.treemapRootData()
       this.treemapLayout()
-      this.bones()
       this.createTreemap()
       window.addEventListener('resize', this.redraw)
     },
@@ -82,23 +84,6 @@ export default {
 
       treemapLayout(this.root)
     },
-
-    bones() {
-      this.svg
-        .append('g')
-        .attr('class', 'rects')
-
-      this.svg
-        .append('g')
-        .attr('class', 'labelContainers')
-        .attr('opacity', 1)
-
-      this.svg
-        .append('g')
-        .attr('class', 'labels')
-        .attr('opacity', 1)
-    },
-
     createTreemap() {
       this.svg
         .select('.rects')
