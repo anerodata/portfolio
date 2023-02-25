@@ -109,7 +109,6 @@ export default {
         .attr('rx', 3)
         .attr('ry', 2)
         .call(rects => {
-          console.log(rects)
           return this.drawRects(rects)
         })
 
