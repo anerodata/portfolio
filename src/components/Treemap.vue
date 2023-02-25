@@ -36,13 +36,6 @@ export default {
     }
   },
 
-  mounted() {
-    // Load when the user returns from another page (about)
-    if (this.data.children) {
-      this.init()
-    }
-  },
-
   methods: {
     init() {
       this.svg = d3.select(`#${this.id}`)
@@ -116,6 +109,7 @@ export default {
         .attr('rx', 3)
         .attr('ry', 2)
         .call(rects => {
+          console.log(rects)
           return this.drawRects(rects)
         })
 
@@ -142,12 +136,14 @@ export default {
       this.svg
         .on('mouseout', () => this.showLabels())
 
+      const parentTec = this.root.descendants()
+        .filter(d => d.children && d.data.name !== 'all' && d.data.name !== 'Otras')
+
       this.svg
         .select('.labels')
         .selectAll('text')
-        .data(this.root.descendants())
+        .data(parentTec)
         .enter()
-        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
         .append('text')
         .call(texts => {
           return this.drawTexts(texts)
@@ -156,9 +152,8 @@ export default {
       this.svg
         .select('.labelContainers')
         .selectAll('rect')
-        .data(this.root.descendants())
+        .data(parentTec)
         .enter()
-        .filter(d => d.children !== undefined && d.data.name !== 'all' && d.data.name !== 'Otras')
         .append('rect')
         .call(containers => {
           return this.drawLabelContainers(containers)
@@ -294,7 +289,7 @@ export default {
         .call(rects => {
           return this.drawRects(rects)
         })
-
+        
       this.svg.select('.labels')
         .selectAll('text')
         .call(texts => {

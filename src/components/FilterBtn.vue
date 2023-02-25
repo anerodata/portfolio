@@ -13,36 +13,25 @@
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex'
 export default {
   name: 'FilterBtn',
   props: {
     orgs: Array,
     filter: String
   },
-
   data() {
     return {
-      payload: {
-        key: 'organización',
-        value: ''
-      }
+      filterSelected: ''
     }
   },
-
   methods: {
-    ...mapActions(['filterItems']),
-
     filterHandler(org) {
-      if (org === this.filter) {
-        this.payload.value = 'all'
-        this.filterItems(this.payload)
-      } else {
-        this.payload.value = org
-        this.filterItems(this.payload)
+      this.filterSelected = 'all'
+      if (org !== this.filter) {
+        this.filterSelected = org
       }
+      this.$emit('filterItems', this.filterSelected)
     },
-
     clicked(org) {
       return org === this.filter
     }

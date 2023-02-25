@@ -14,16 +14,8 @@
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex'
 export default {
-  name: 'App',
-  mounted() {
-    this.fetchItems()
-  },
-
-  methods: {
-    ...mapActions(['fetchItems'])
-  }
+  name: 'App'
 }
 </script>
 

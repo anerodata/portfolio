@@ -12,11 +12,9 @@ export default {
   components: {
     Item
   },
-
   props: {
     items: Array
   },
-
   computed: {
     sortedItems() {
       const res = this.items
