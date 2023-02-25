@@ -43,9 +43,6 @@ export default {
     treemapData () {
       const treemapData = this.items.reduce((acc, obj) => {
         // Loop in library array
-        if (this.items.length === 0) {
-          return {}
-        }
         obj.biblioteca.forEach((bib) => {
 
           // Get tec (js, py) and lib (Leaflet, bs4)
