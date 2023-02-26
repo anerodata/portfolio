@@ -89,10 +89,7 @@ export default {
       return treemapData
     },
     filteredItems () {
-      let filteredItems = []
-      if (this.filterByOrgValue === 'all') {
-        filteredItems = this.items
-      } 
+      let filteredItems = this.items
       if (this.filterByOrgValue === 'Otros') {
         return this.items.filter(item => {
           return !this.orgs.find(org => item['organización'] === org)
