@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header-container">
       <Header/>
-      <Treemap :data="treemapData" @filterByLibrary="filterByLibrary"/>
+      <Treemap :filterByTecPayload="filterByTecPayload" :data="treemapData" @filterItemsByTec="filterItemsByTec"/>
     </div>
     <section class="router-container">
       <FilterBtn :orgs="orgs" :filter="filterByOrgValue" @filterItems="filterItemsByOrg"/>
@@ -32,7 +32,8 @@ export default {
   data () {
     return {
       orgs: ORGS,
-      filterByOrgValue: 'all'
+      filterByOrgValue: 'all',
+      filterByTecPayload: { 'tec': 'all', 'parenTec': null }
     }
   },
   mounted() {
@@ -91,13 +92,21 @@ export default {
     filteredItems () {
       let filteredItems = this.items
       if (this.filterByOrgValue === 'Otros') {
-        return this.items.filter(item => {
+        filteredItems = filteredItems.filter(item => {
           return !this.orgs.find(org => item['organización'] === org)
         })
       }
       if (this.filterByOrgValue !== 'Otros' && this.filterByOrgValue !== 'all') {
-        filteredItems = this.items.filter(item => {
+        filteredItems = filteredItems.filter(item => {
           return item['organización'] === this.filterByOrgValue 
+        })
+      }
+      if (this.filterByTecPayload.tec !== 'all') {
+        filteredItems = filteredItems.filter(item => {
+          if (this.filterByTecPayload.parentTec === 'Otras') {
+            return item['biblioteca'].indexOf(this.filterByTecPayload.tec) > -1
+          }
+          return item['biblioteca'].indexOf(`${this.filterByTecPayload.tec}.${this.filterByTecPayload.parentTec}`) > -1
         })
       }
       return filteredItems
@@ -105,15 +114,11 @@ export default {
   },
   methods: {
     ...mapActions(['fetchItems', 'filterItemsBySoftware']),
-    filterByLibrary (filterValue) {
-      console.log(filterValue)
-    },
     filterItemsByOrg (filterValue) {
-      console.log(filterValue)
       this.filterByOrgValue = filterValue
     },
     filterItemsByTec (filterValue) {
-      this.filterItemsByTecValue = filterValue
+      this.filterByTecPayload = filterValue
     },
   }
 }

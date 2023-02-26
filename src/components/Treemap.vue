@@ -13,7 +13,8 @@ import * as d3 from 'd3'
 export default {
   name: 'Treemap',
   props: {
-    data: Object
+    data: Object,
+    filterByTecPayload: { 'tec': 'all', 'parenTec': null }
   },
 
   data() {
@@ -111,7 +112,15 @@ export default {
           this.hidTooltip()
         })
         .on('click', (d) => {
-          this.$emit('filterByLibrary', d.data.name)
+          if (this.filterByTecPayload.tec === d.data.name && this.filterByTecPayload.parentTec === d.parent.data.name) {
+            this.filterByTecPayload.tec = 'all'
+            this.filterByTecPayload.parentTec = null
+            this.$emit('filterByLibrary', this.filterByTecPayload)
+            return
+          }
+          this.filterByTecPayload.tec = d.data.name
+          this.filterByTecPayload.parentTec = d.parent.data.name
+          this.$emit('filterItemsByTec', this.filterByTecPayload)
         })
 
       this.svg
