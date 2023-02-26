@@ -5,7 +5,7 @@
       <Treemap :data="treemapData" @filterByLibrary="filterByLibrary"/>
     </div>
     <section class="router-container">
-      <FilterBtn :orgs="orgs" :filter="filter" @filterItems="filterItems"/>
+      <FilterBtn :orgs="orgs" :filter="filterByOrgValue" @filterItems="filterItemsByOrg"/>
       <router-link to="/about" class="router-link desktop">
         About
       </router-link>
@@ -32,7 +32,7 @@ export default {
   data () {
     return {
       orgs: ORGS,
-      filter: 'all'
+      filterByOrgValue: 'all'
     }
   },
   mounted() {
@@ -89,26 +89,34 @@ export default {
       return treemapData
     },
     filteredItems () {
-      if (this.filter === 'all') {
-        return this.items
+      let filteredItems = []
+      if (this.filterByOrgValue === 'all') {
+        filteredItems = this.items
       } 
-      if(this.filter === 'Otros') {
+      if (this.filterByOrgValue === 'Otros') {
         return this.items.filter(item => {
           return !this.orgs.find(org => item['organización'] === org)
         })
       }
-      return this.items.filter(item => {
-        return item['organización'] === this.filter 
-      })
+      if (this.filterByOrgValue !== 'Otros' && this.filterByOrgValue !== 'all') {
+        filteredItems = this.items.filter(item => {
+          return item['organización'] === this.filterByOrgValue 
+        })
+      }
+      return filteredItems
     }
   },
   methods: {
     ...mapActions(['fetchItems', 'filterItemsBySoftware']),
-    filterByLibrary (technology) {
-      console.log(technology)
+    filterByLibrary (filterValue) {
+      console.log(filterValue)
     },
-    filterItems (filterValue) {
-      this.filter = filterValue
+    filterItemsByOrg (filterValue) {
+      console.log(filterValue)
+      this.filterByOrgValue = filterValue
+    },
+    filterItemsByTec (filterValue) {
+      this.filterItemsByTecValue = filterValue
     },
   }
 }
