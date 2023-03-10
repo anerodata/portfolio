@@ -1,5 +1,6 @@
 <template>
   <div class="treemap_container">
+    Pulsa sobre los recuadros para filtrar poro tecnología
     <svg id="chart" height="0">
       <g class="rects"></g>
       <g class="labelContainers" opacity="1"></g>
