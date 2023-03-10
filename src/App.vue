@@ -74,7 +74,7 @@ span.Otras, #tooltip.Otras {
   border: 1px solid #fc9867;
 }
 
-rect, .item-package span {
+.item-package span {
   opacity: 0.7;
 }
 

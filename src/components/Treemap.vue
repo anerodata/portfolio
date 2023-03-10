@@ -311,6 +311,7 @@ export default {
 
 .child {
   fill: white;
+  cursor: pointer;
 }
 
 #tooltip {
@@ -342,5 +343,11 @@ export default {
 
 .child.Otras, .labels .Otras{
   fill: #fc9867;
+}
+.child {
+  opacity: 0.7;
+}
+.child:hover {
+  opacity: 1;
 }
 </style>
