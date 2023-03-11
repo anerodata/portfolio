@@ -26,7 +26,7 @@ export default {
       width: null,
       height: null,
       pad: {
-        top: 10, left: 0, bottom: 0, right: 0
+        top: 3, left: 0, bottom: 0, right: 0
       },
       labels: {
         'js': 'Javascript',
@@ -83,6 +83,7 @@ export default {
         .size([this.width, this.height])
         .paddingInner(5)
         .paddingOuter(0)
+        .paddingTop(this.pad.top)
 
       treemapLayout(this.root)
     },
@@ -177,7 +178,7 @@ export default {
           return d.x0 + (d.x1 - d.x0) / 2
         })
         .attr('y', d => {
-          return d.y1 / 2
+          return d.y1 / 2 + 6
         })
         .text(d => {
           return `${this.labels[d.data.name]}: ${d.value}`
