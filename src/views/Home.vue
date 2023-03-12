@@ -33,7 +33,7 @@ export default {
     return {
       orgs: ORGS,
       filterByOrgValue: 'all',
-      filterByTecPayload: { 'tec': 'all', 'parenTec': null }
+      filterByTecPayload: { 'tec': 'all', 'parentTec': null }
     }
   },
   mounted() {

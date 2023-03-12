@@ -1,6 +1,11 @@
 <template>
   <div class="treemap_container">
-    Pulsa sobre los recuadros para filtrar por tecnología
+    <p class="treemap-container_filter-paragraph" v-show="filterByTecPayload.tec === 'all'">
+      Pulsa sobre los recuadros para filtrar por tecnología
+    </p>
+    <p class="treemap-container_filter-paragraph" v-show="filterByTecPayload.tec !== 'all'">
+      Pulsa de nuevo sobre <span class="treemap-container_filter-library" :class="filterByTecPayload.parentTec">{{filterByTecPayload.tec}}</span> para mostrar todos los trabajos de nuevo
+    </p>
     <svg id="chart" height="0">
       <g class="rects"></g>
       <g class="labelContainers" opacity="1"></g>
@@ -15,7 +20,7 @@ export default {
   name: 'Treemap',
   props: {
     data: Object,
-    filterByTecPayload: { 'tec': 'all', 'parenTec': null }
+    filterByTecPayload: { 'tec': 'all', 'parentTec': null }
   },
 
   data() {
@@ -113,13 +118,19 @@ export default {
           this.removeHighClass(nodes[i])
           this.hidTooltip()
         })
-        .on('click', (d) => {
+        .on('click', (d, i, nodes) => {
+          nodes.forEach(element => {
+            if (element.classList.contains('selected')) {
+              element.classList.remove('selected')
+            }
+          })
           if (this.filterByTecPayload.tec === d.data.name && this.filterByTecPayload.parentTec === d.parent.data.name) {
             this.filterByTecPayload.tec = 'all'
             this.filterByTecPayload.parentTec = null
             this.$emit('filterByLibrary', this.filterByTecPayload)
             return
           }
+          nodes[i].classList.add('selected')
           this.filterByTecPayload.tec = d.data.name
           this.filterByTecPayload.parentTec = d.parent.data.name
           this.$emit('filterItemsByTec', this.filterByTecPayload)
@@ -349,7 +360,13 @@ export default {
 .child {
   opacity: 0.7;
 }
-.child:hover {
+.child:hover, .child.selected {
   opacity: 1;
+}
+.treemap-container_filter-paragraph {
+  margin: 0;
+}
+span.treemap-container_filter-library {
+  border-width: 0px;
 }
 </style>
