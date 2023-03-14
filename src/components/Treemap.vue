@@ -4,7 +4,7 @@
       Pulsa sobre los recuadros para filtrar por tecnología
     </p>
     <p class="treemap-container_filter-paragraph" v-show="filterByTecPayload.tec !== 'all'">
-      Pulsa de nuevo sobre <span class="treemap-container_filter-library" :class="filterByTecPayload.parentTec">{{filterByTecPayload.tec}}</span> para mostrar todos los trabajos de nuevo
+      Pulsa de nuevo sobre <span class="treemap-container_filter-library" :class="filterByTecPayload.parentTec" @click="selectAllTecs">{{filterByTecPayload.tec}}</span> para mostrar todos los trabajos de nuevo
     </p>
     <svg id="chart" height="0">
       <g class="rects"></g>
@@ -293,6 +293,7 @@ export default {
       this.svg.select('.rects')
         .selectAll('rect')
         .call(rects => {
+
           return this.drawRects(rects)
         })
         
@@ -307,6 +308,13 @@ export default {
         .call(containers => {
           return this.drawLabelContainers(containers)
         })
+    },
+    selectAllTecs() {
+      this.svg.selectAll('.child')
+        .classed('selected', false)
+      this.filterByTecPayload.tec = 'all'
+      this.filterByTecPayload.parentTec = null
+      this.$emit('filterByLibrary', this.filterByTecPayload)
     }
   }
 }
@@ -368,5 +376,7 @@ export default {
 }
 span.treemap-container_filter-library {
   border-width: 0px;
+  text-decoration: underline;
+  cursor: pointer;
 }
 </style>
