@@ -107,15 +107,11 @@ export default {
 
       this.svg
         .selectAll('.child')
-        .on('mouseover', (d, i, nodes) => {
-          this.setHighClass(nodes[i])
-        })
         .on('mousemove', (d, i, nodes) => {
           this.moveTooltip(d3.mouse(nodes[i]))
           this.writeTooltip(d)
         })
-        .on('mouseout', (d, i, nodes) => {
-          this.removeHighClass(nodes[i])
+        .on('mouseout', () => {
           this.hidTooltip()
         })
         .on('click', (d, i, nodes) => {
@@ -276,17 +272,6 @@ export default {
       d3.select('.labels')
         .attr('opacity', 1)
     },
-
-    setHighClass(rect) {
-      d3.select(rect)
-        .classed('highClass', true)
-    },
-
-    removeHighClass(rect) {
-      d3.select(rect)
-        .classed('highClass', false)
-    },
-
     redraw() {
       this.dimensions()
       this.treemapLayout()
@@ -350,7 +335,7 @@ export default {
   pointer-events: none;
 }
 
-.treemap_container .child.highClass {
+.treemap_container {
   opacity: 0.9;
 }
 
@@ -368,7 +353,7 @@ export default {
 .child {
   opacity: 0.7;
 }
-.child:hover, .child.selected {
+.child.selected {
   opacity: 1;
 }
 .treemap-container_filter-paragraph {
