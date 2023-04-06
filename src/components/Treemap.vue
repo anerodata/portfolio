@@ -107,26 +107,24 @@ export default {
 
       this.svg
         .selectAll('.child')
-        .on('mousemove', (d, i, nodes) => {
-          this.moveTooltip(d3.mouse(nodes[i]))
+        .on('mousemove', (evt, d) => {
+          this.moveTooltip([evt.layerX, evt.layerY])
           this.writeTooltip(d)
         })
         .on('mouseout', () => {
           this.hidTooltip()
         })
-        .on('click', (d, i, nodes) => {
-          nodes.forEach(element => {
-            if (element.classList.contains('selected')) {
-              element.classList.remove('selected')
-            }
-          })
+        .on('click', (evt, d) => {
+          this.svg
+            .selectAll('.child')
+            .classed('selected', false)
           if (this.filterByTecPayload.tec === d.data.name && this.filterByTecPayload.parentTec === d.parent.data.name) {
             this.filterByTecPayload.tec = 'all'
             this.filterByTecPayload.parentTec = null
             this.$emit('filterByLibrary', this.filterByTecPayload)
             return
           }
-          nodes[i].classList.add('selected')
+          evt.target.classList.add('selected')
           this.filterByTecPayload.tec = d.data.name
           this.filterByTecPayload.parentTec = d.parent.data.name
           this.$emit('filterItemsByTec', this.filterByTecPayload)
