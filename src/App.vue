@@ -3,13 +3,13 @@
     <router-view/>
     <footer id="footer">
       Desarrollado por Antonio Hernández con <span class="lib-code">Vue.js</span> y <span class="lib-code">d3.js</span>, siguiendo el esquema de color <a id="monokai-anchor" href="https://monokai.pro/" target="_blank">
-        <span style="color: #ff6188;">M</span>
-        <span style="color: #fc9867;">o</span>
-        <span style="color: #ffd866;">n</span>
-        <span style="color: #a9dc76;">o</span>
-        <span style="color: #78dce8;">k</span>
-        <span style="color: #ab9df2;">a</span>
-        <span style="color: #ab9df2;">i</span></a>.
+      <span style="color: #ff6188;">M</span>
+      <span style="color: #fc9867;">o</span>
+      <span style="color: #ffd866;">n</span>
+      <span style="color: #a9dc76;">o</span>
+      <span style="color: #78dce8;">k</span>
+      <span style="color: #ab9df2;">a</span>
+      <span style="color: #ab9df2;">i</span></a>.
     </footer>
   </div>
 </template>
